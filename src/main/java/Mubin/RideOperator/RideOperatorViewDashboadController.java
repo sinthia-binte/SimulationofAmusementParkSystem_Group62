@@ -2,7 +2,7 @@ package Mubin.RideOperator;
 
 import javafx.event.ActionEvent;
 
-public class RideOperatorViewController
+public class RideOperatorViewDashboadController
 {
     @javafx.fxml.FXML
     public void initialize() {
