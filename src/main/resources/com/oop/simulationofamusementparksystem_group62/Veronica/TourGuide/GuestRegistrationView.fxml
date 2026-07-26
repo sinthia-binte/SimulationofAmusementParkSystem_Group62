@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="850.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Veronica.TourGuide.GuestRegistrationController">
+
+    <children>
+
+        <!-- Title -->
+
+        <Label layoutX="280.0"
+               layoutY="25.0"
+               text="Guest Registration"
+               style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+
+        <!-- Tour Session Selection -->
+
+        <Label layoutX="50.0"
+               layoutY="90.0"
+               text="Select Tour Session"/>
+
+        <ComboBox fx:id="TourSessionCB"
+                  layoutX="180.0"
+                  layoutY="85.0"
+                  prefWidth="250.0"/>
+
+
+        <!-- Guest Group Information -->
+
+        <Label layoutX="50.0"
+               layoutY="140.0"
+               text="Group Name"/>
+
+        <TextField fx:id="GroupNameTF"
+                   layoutX="180.0"
+                   layoutY="135.0"
+                   prefWidth="250.0"/>
+
+
+        <Label layoutX="50.0"
+               layoutY="190.0"
+               text="Number of Guests"/>
+
+        <TextField fx:id="NumberGuestTF"
+                   layoutX="180.0"
+                   layoutY="185.0"
+                   prefWidth="250.0"/>
+
+
+        <Label layoutX="50.0"
+               layoutY="240.0"
+               text="Guest Details"/>
+
+        <TextArea fx:id="GuestDetailsTA"
+                  layoutX="180.0"
+                  layoutY="235.0"
+                  prefWidth="250.0"
+                  prefHeight="90.0"/>
+
+
+
+        <!-- Contact Information -->
+
+        <Label layoutX="470.0"
+               layoutY="140.0"
+               text="Contact Information"/>
+
+        <TextField fx:id="ContactTF"
+                   layoutX="600.0"
+                   layoutY="135.0"
+                   prefWidth="200.0"/>
+
+
+        <!-- Payment Information -->
+
+        <Label layoutX="470.0"
+               layoutY="190.0"
+               text="Payment Information"/>
+
+        <TextField fx:id="PaymentTF"
+                   layoutX="600.0"
+                   layoutY="185.0"
+                   prefWidth="200.0"/>
+
+
+
+        <!-- Preview -->
+
+        <Button text="Preview Registration"
+                layoutX="250.0"
+                layoutY="360.0"
+                prefWidth="170.0"
+                onAction="#previewRegistrationOA"/>
+
+
+        <!-- Submit -->
+
+        <Button text="Submit Registration"
+                layoutX="450.0"
+                layoutY="360.0"
+                prefWidth="170.0"
+                onAction="#submitRegistrationOA"/>
+
+
+        <!-- Confirmation Area -->
+
+        <Label layoutX="50.0"
+               layoutY="430.0"
+               text="Registration Details"/>
+
+
+        <TextArea fx:id="PreviewTA"
+                  layoutX="50.0"
+                  layoutY="455.0"
+                  prefWidth="750.0"
+                  prefHeight="150.0"
+                  editable="false"/>
+
+
+    </children>
+
+</AnchorPane>
