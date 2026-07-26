@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650" prefWidth="900" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.TourGuide.TourCompletionController">
+    <children>
+        <Label layoutX="260" layoutY="30" style="-fx-font-size:24px; -fx-font-weight:bold;" text="Close Completed Tour" />
+        <Label layoutX="50" layoutY="90" text="Select Tour Session" />
+        <ComboBox fx:id="TourSessionCB" layoutX="200" layoutY="85" onAction="#selectTourOA" prefWidth="300" />
+        <Label layoutX="50" layoutY="150" text="Guest Count" />
+        <TextField fx:id="GuestCountTF" editable="false" layoutX="200" layoutY="145" />
+        <Label layoutX="50" layoutY="200" text="Attendance" />
+        <TextField fx:id="AttendanceTF" editable="false" layoutX="200" layoutY="195" />
+        <Label layoutX="50" layoutY="250" text="Duration" />
+        <TextField fx:id="DurationTF" editable="false" layoutX="200" layoutY="245" />
+        <Label layoutX="50" layoutY="310" text="Completion Summary" />
+        <Button layoutX="200" layoutY="440" onAction="#reviewCompletionOA" prefWidth="120" text="Review" />
+        <Button layoutX="370" layoutY="440" onAction="#submitCompletionOA" prefWidth="150" text="Close Tour" />
+      <Label fx:id="ConfirmationLabel" layoutX="105.0" layoutY="501.0" prefHeight="110.0" prefWidth="310.0" />
+      <Label fx:id="ReviewLabel" layoutX="520.0" layoutY="237.0" prefHeight="110.0" prefWidth="310.0" />
+      <Label fx:id="SummaryLabel" layoutX="200.0" layoutY="301.0" prefHeight="74.0" prefWidth="206.0" />
+    </children>
+</AnchorPane>

@@ -1,5 +1,7 @@
 package Veronica.TourGuide;
 
+import javafx.event.ActionEvent;
+
 public class TourGuideDashboardController
 {
     @javafx.fxml.FXML

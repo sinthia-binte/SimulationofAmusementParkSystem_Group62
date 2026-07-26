@@ -1,6 +1,7 @@
 module com.oop.simulationofamusementparksystem_group62 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens com.oop.simulationofamusementparksystem_group62 to javafx.fxml;

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600"
+            prefWidth="900"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Veronica.TourGuide.AttractionController">
+
+    <children>
+        <Label layoutX="280"
+               layoutY="30"
+               text="Attraction Information"
+               style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="50"
+               layoutY="90"
+               text="Search Attraction"/>
+
+        <TextField fx:id="SearchTF"
+                   layoutX="170"
+                   layoutY="85"
+                   prefWidth="250"
+                   promptText="Enter attraction name"/>
+
+        <Button text="Search"
+                layoutX="450"
+                layoutY="85"
+                prefWidth="120"
+                onAction="#searchAttractionOA"/>
+
+        <Label layoutX="380"
+               layoutY="150"
+               text="Attraction Details"
+               style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="380"
+               layoutY="190"
+               text="Attraction Name"/>
+
+        <TextField fx:id="AttractionNameTF"
+                   layoutX="500"
+                   layoutY="185"
+                   prefWidth="300"
+                   editable="false"/>
+
+        <Label layoutX="380"
+               layoutY="230"
+               text="Location"/>
+
+        <TextField fx:id="LocationTF"
+                   layoutX="500"
+                   layoutY="225"
+                   prefWidth="300"
+                   editable="false"/>
+
+        <Label layoutX="380"
+               layoutY="270"
+               text="Visiting Time"/>
+
+        <TextField fx:id="VisitingTimeTF"
+                   layoutX="500"
+                   layoutY="265"
+                   prefWidth="300"
+                   editable="false"/>
+
+        <Label layoutX="380"
+               layoutY="310"
+               text="Description"/>
+
+        <TextArea fx:id="DescriptionTA"
+                  layoutX="500"
+                  layoutY="305"
+                  prefWidth="300"
+                  prefHeight="120"
+                  editable="false"/>
+
+        <Button text="View Attraction"
+                layoutX="50"
+                layoutY="480"
+                prefWidth="150"
+                onAction="#viewAttractionOA"/>
+
+        <Button text="Back to Dashboard"
+                layoutX="650"
+                layoutY="550"
+                prefWidth="150"
+                onAction="#backToDashboardOA"/>
+    </children>
+
+</AnchorPane>

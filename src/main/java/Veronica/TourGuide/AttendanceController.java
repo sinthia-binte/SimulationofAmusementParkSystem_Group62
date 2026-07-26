@@ -1,32 +1,23 @@
 package Veronica.TourGuide;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
 
 public class AttendanceController
 {
     @javafx.fxml.FXML
-    private TableColumn<Attendance,String> StatusColumn;
+    private ComboBox GuestCB;
     @javafx.fxml.FXML
-    private TextArea ConfirmationTA;
+    private ComboBox StatusCB;
     @javafx.fxml.FXML
-    private ComboBox<String> StatusCB;
+    private Label ConfirmationLabel;
     @javafx.fxml.FXML
-    private TableColumn <Attendance,String> GuestNameColumn;
+    private Label ReviewLabel;
     @javafx.fxml.FXML
-    private ComboBox<String> SessionCB;
-    @javafx.fxml.FXML
-    private TableView<Attendance> AttendanceTable;
+    private ComboBox SessionCB;
 
     @javafx.fxml.FXML
     public void initialize() {
-
-        SessionCB.getItems().addAll("City History Tour","Nature Adventure");
-
-
     }
 
     @javafx.fxml.FXML
@@ -35,6 +26,10 @@ public class AttendanceController
 
     @javafx.fxml.FXML
     public void markAttendanceOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void reviewAttendanceOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

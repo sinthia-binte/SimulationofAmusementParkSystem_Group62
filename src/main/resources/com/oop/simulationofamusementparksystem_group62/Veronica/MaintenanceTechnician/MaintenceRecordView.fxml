@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.MaintenanceTechnician.MaintenanceRecordController">
+    <children>
+        <Label layoutX="220.0" layoutY="20.0" style="-fx-font-size:20px; -fx-font-weight:bold;" text="Record Maintenance Activity" />
+        <Label layoutX="40.0" layoutY="70.0" text="Ride ID:" />
+        <ComboBox fx:id="rideCB" layoutX="150.0" layoutY="65.0" prefWidth="180.0" />
+        <Label layoutX="40.0" layoutY="120.0" text="Maintenance History:" />
+        <Label layoutX="48.0" layoutY="166.0" text="Work Description:" />
+        <Label layoutX="48.0" layoutY="228.0" text="Parts Replaced:" />
+        <TextField fx:id="partsField" layoutX="180.0" layoutY="224.0" prefWidth="450.0" />
+        <Label layoutX="63.0" layoutY="299.0" text="Issues Fixed:" />
+        <Button layoutX="107.0" layoutY="390.0" onAction="#reviewMaintenanceOA" prefWidth="120.0" text="Review" />
+        <Button layoutX="296.0" layoutY="390.0" onAction="#saveMaintenanceOA" prefWidth="120.0" text="Save" />
+        <Label fx:id="messageLabel" layoutX="150.0" layoutY="471.0" prefHeight="129.0" prefWidth="450.0" style="-fx-text-fill:green; -fx-font-size:14px;" />
+      <TextField fx:id="historyTF" layoutX="180.0" layoutY="108.0" />
+      <TextField fx:id="WorkDescriptionTF" layoutX="180.0" layoutY="162.0" />
+      <TextField fx:id="IssuesFixedTF" layoutX="180.0" layoutY="295.0" />
+    </children>
+</AnchorPane>
