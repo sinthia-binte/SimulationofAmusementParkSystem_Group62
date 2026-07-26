@@ -7,10 +7,6 @@ import javafx.scene.control.TextField;
 public class ManageBoardingViewController {
     @javafx.fxml.FXML
     private TextField guestCountField;
-    @javafx.fxml.FXML
-    private Label eligibilityLabel;
-    @javafx.fxml.FXML
-    private Label boardingLogLabel;
 
     @javafx.fxml.FXML
     public void backToDashboardMBS(ActionEvent actionEvent) {
@@ -20,7 +16,7 @@ public class ManageBoardingViewController {
     public void openQueueGateMBS(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void finalSafetySweepMBS(ActionEvent actionEvent) {
     }
 

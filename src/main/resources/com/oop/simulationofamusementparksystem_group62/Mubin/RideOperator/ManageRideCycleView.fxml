@@ -22,15 +22,15 @@
         </Label>
         <Line endX="319.33331298828125" endY="1.52587890625E-5" layoutX="192.0" layoutY="90.0" startX="-100.0" />
 
-        <Button layoutX="90.0" layoutY="102.0" mnemonicParsing="false" onAction="#confirmStopMRCS" prefHeight="25.0" prefWidth="421.0" text="Confirm Ride Has Stopped" />
+        <Button layoutX="90.0" layoutY="102.0" mnemonicParsing="false" onAction="#confirmStopButtonOA" prefHeight="25.0" prefWidth="421.0" text="Confirm Ride Has Stopped" />
 
-        <Button layoutX="90.0" layoutY="142.0" mnemonicParsing="false" onAction="#releaseRestraintsMRCS" prefHeight="25.0" prefWidth="421.0" text="Announce &amp; Release Restraints" />
+        <Button layoutX="90.0" layoutY="142.0" mnemonicParsing="false" onAction="#releaseRestraintsButtonOA" prefHeight="25.0" prefWidth="421.0" text="Announce &amp; Release Restraints" />
 
-        <Button layoutX="90.0" layoutY="182.0" mnemonicParsing="false" onAction="#assistExitMRCS" prefHeight="25.0" prefWidth="421.0" text="Anounce Guests Exiting" />
+        <Button layoutX="90.0" layoutY="182.0" mnemonicParsing="false" onAction="#guestExitOA" prefHeight="25.0" prefWidth="421.0" text="Anounce Guests Exiting" />
 
-        <Button layoutX="90.0" layoutY="221.0" mnemonicParsing="false" onAction="#confirmReadyMRCS" prefHeight="25.0" prefWidth="421.0" text="Confirm Ready for Next Cycle" />
+        <Button layoutX="90.0" layoutY="221.0" mnemonicParsing="false" onAction="#confirmReadyButtonOA" prefHeight="25.0" prefWidth="421.0" text="Confirm Ready for Next Cycle" />
 
-        <Button layoutX="100.0" layoutY="265.0" mnemonicParsing="false" onAction="#backToDashboardMRCS" prefHeight="25.0" prefWidth="120.0" text="Back" />
-        <Button layoutX="380.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="RED" />
+        <Button layoutX="100.0" layoutY="265.0" mnemonicParsing="false" onAction="#backToDashboardButtonOA" prefHeight="25.0" prefWidth="120.0" text="Back" />
+        <Button layoutX="380.0" layoutY="265.0" mnemonicParsing="false" onAction="#logOutButtonOA" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="RED" />
     </children>
 </AnchorPane>

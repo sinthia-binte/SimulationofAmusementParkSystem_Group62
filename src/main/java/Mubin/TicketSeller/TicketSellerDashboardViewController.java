@@ -2,7 +2,7 @@ package Mubin.TicketSeller;
 
 import javafx.event.ActionEvent;
 
-public class TicketSellerDashboadViewController {
+public class TicketSellerDashboardViewController {
     @javafx.fxml.FXML
     public void sellTicketButtonOA(ActionEvent actionEvent) {
     }
@@ -27,7 +27,7 @@ public class TicketSellerDashboadViewController {
     public void processRefundButtonOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void logOutButtonOA(ActionEvent actionEvent) {
     }
 

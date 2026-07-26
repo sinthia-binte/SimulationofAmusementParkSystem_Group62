@@ -9,23 +9,47 @@ public class ManageRideCycleViewController {
     public void inspectSeatsMRCS(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backToDashboardMRCS(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void releaseRestraintsMRCS(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void assistExitMRCS(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void confirmStopMRCS(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void confirmReadyMRCS(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void guestExitOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void releaseRestraintsButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void confirmStopButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void confirmReadyButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void logOutButtonOA(ActionEvent actionEvent) {
     }
 }

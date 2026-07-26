@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.TicketSeller.TicketSellerDashboadViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.TicketSeller.TicketSellerDashboardViewController">
    <children>
       <Label layoutX="407.0" layoutY="54.0" text="Ticket Seller" textFill="#3e8ddb">
          <font>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="409.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.TicketSeller.RefundViewController">
+    <children>
+        <Label layoutX="91.0" layoutY="42.0" text="Independent Amusement Park" />
+        <Label layoutX="91.0" layoutY="60.0" text="User Dashboard">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="446.0" layoutY="42.0" text="Ticket Seller" textFill="#4e95cf" />
+        <Label layoutX="449.0" layoutY="60.0" text="Refund" textFill="#4e95cf">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Line endX="319.33331298828125" endY="1.52587890625E-5" layoutX="192.0" layoutY="90.0" startX="-100.0" />
+
+        <Label layoutX="90.0" layoutY="105.0" text="Ticket No." />
+        <TextField fx:id="ticketReferenceTF" layoutX="198.0" layoutY="101.0" prefHeight="25.0" prefWidth="313.0" />
+
+        <Button layoutX="90.0" layoutY="136.0" mnemonicParsing="false" onAction="#retrieveTicketButtonOA" prefHeight="25.0" prefWidth="421.0" text="Retrieve Ticket" />
+
+        <Label layoutX="90.0" layoutY="176.0" text="Refund Reason" />
+        <ComboBox fx:id="refundReasonComboBox" layoutX="198.0" layoutY="172.0" prefHeight="25.0" prefWidth="313.0" />
+
+        <Label layoutX="90.0" layoutY="212.0" text="Refund Amount" />
+        <Label fx:id="refundAmountLabel" layoutX="197.0" layoutY="212.0" prefHeight="17.0" prefWidth="313.0" style="-fx-background-color: yellow;" />
+
+        <Button layoutX="90.0" layoutY="248.0" mnemonicParsing="false" onAction="#confirmRefundButtonOA" prefHeight="25.0" prefWidth="421.0" text="Confirm Refund" />
+
+        <Label layoutX="90.0" layoutY="288.0" text="Refund Reference ID" />
+        <Label fx:id="refundReferenceLabel" layoutX="212.0" layoutY="288.0" prefHeight="17.0" prefWidth="298.0" style="-fx-background-color: yellow;" />
+
+        <Button layoutX="99.0" layoutY="330.0" mnemonicParsing="false" onAction="#backToDashboardButtonOA" prefHeight="25.0" prefWidth="120.0" text="Back" />
+        <Button layoutX="379.0" layoutY="330.0" mnemonicParsing="false" onAction="#logOutButtonOA" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="RED" />
+    </children>
+</AnchorPane>
