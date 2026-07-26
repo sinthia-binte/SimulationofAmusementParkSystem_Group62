@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="355.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.RideOperator.ViewScheduleViewController">
+    <children>
+        <Label layoutX="91.0" layoutY="42.0" text="Independent Amusement Park" />
+        <Label layoutX="91.0" layoutY="60.0" text="User Dashboard">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="436.0" layoutY="42.0" text="Ride Operator" textFill="#4fd058" />
+        <Label layoutX="389.0" layoutY="60.0" text="View Schedule" textFill="#4fd058">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Line endX="319.33331298828125" endY="1.52587890625E-5" layoutX="192.0" layoutY="90.0" startX="-100.0" />
+
+        <Button layoutX="90.0" layoutY="102.0" mnemonicParsing="false" onAction="#loadScheduleButtonOA" prefHeight="25.0" prefWidth="421.0" text="Load My Schedule" />
+
+        <ListView fx:id="scheduleListView" layoutX="90.0" layoutY="142.0" prefHeight="130.0" prefWidth="421.0" />
+
+        <Button layoutX="100.0" layoutY="286.0" mnemonicParsing="false" onAction="#backToDashboardbuttonOA" prefHeight="25.0" prefWidth="120.0" text="Back" />
+        <Button layoutX="380.0" layoutY="286.0" mnemonicParsing="false" onAction="#logOutButtonOA" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="RED" />
+    </children>
+</AnchorPane>

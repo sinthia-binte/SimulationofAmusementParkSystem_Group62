@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="347.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.RideOperator.ReportIncidentViewController">
+    <children>
+        <Label layoutX="91.0" layoutY="42.0" text="Independent Amusement Park" />
+        <Label layoutX="91.0" layoutY="60.0" text="User Dashboard">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="436.0" layoutY="42.0" text="Ride Operator" textFill="#4fd058" />
+        <Label layoutX="379.0" layoutY="60.0" text="Report Incident" textFill="#4fd058">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Line endX="319.33331298828125" endY="1.52587890625E-5" layoutX="192.0" layoutY="90.0" startX="-100.0" />
+
+        <Label layoutX="90.0" layoutY="109.0" text="Incident Type" />
+        <ComboBox fx:id="incidentTypeComboBox" layoutX="260.0" layoutY="105.0" prefHeight="25.0" prefWidth="251.0" />
+
+        <Label layoutX="90.0" layoutY="144.0" text="Incident Details" />
+        <TextField fx:id="incidentDetailsTF" layoutX="260.0" layoutY="140.0" prefHeight="58.0" prefWidth="251.0" />
+
+        <Label layoutX="90.0" layoutY="208.0" text="Guests Involved?" />
+
+        <Button layoutX="90.0" layoutY="247.0" mnemonicParsing="false" onAction="#submitIncidentRIS" prefHeight="25.0" prefWidth="421.0" text="Submit Incident Report" />
+
+        <Button layoutX="102.0" layoutY="292.0" mnemonicParsing="false" onAction="#backToDashboardRIS" prefHeight="25.0" prefWidth="120.0" text="Back" />
+        <Button layoutX="382.0" layoutY="292.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="RED" />
+      <CheckBox fx:id="isGuestInvoledCheckBox" layoutX="260.0" layoutY="208.0" mnemonicParsing="false" text="Yes" />
+    </children>
+</AnchorPane>
