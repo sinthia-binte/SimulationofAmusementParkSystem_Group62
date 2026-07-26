@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.TicketSeller.TicketSellerDashboadViewController">
+   <children>
+      <Label layoutX="407.0" layoutY="54.0" text="Ticket Seller">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="90.0" layoutY="96.0" mnemonicParsing="false" onAction="#sellTicketButtonOA" prefHeight="25.0" prefWidth="131.0" text="Sell Ticket" />
+      <Button layoutX="237.0" layoutY="96.0" mnemonicParsing="false" onAction="#updateTicketButtonOA" prefHeight="25.0" prefWidth="120.0" text="Upgrade Ticket" />
+      <Button layoutX="374.0" layoutY="96.0" mnemonicParsing="false" onAction="#applyPromoCodeButtonOA" prefHeight="25.0" prefWidth="138.0" text="Apply Promo Code" />
+      <Button layoutX="90.0" layoutY="137.0" mnemonicParsing="false" onAction="#processGroupBookingButtonOA" prefHeight="25.0" prefWidth="203.0" text="Process Group Booking" />
+      <Button layoutX="308.0" layoutY="137.0" mnemonicParsing="false" onAction="#processRefundButtonOA" prefHeight="25.0" prefWidth="203.0" text="Process Refund" />
+      <Button layoutX="90.0" layoutY="222.0" mnemonicParsing="false" onAction="#viewTransactionButtonOA" prefHeight="25.0" prefWidth="421.0" text="View Transaction" />
+      <Line endX="319.33331298828125" endY="1.52587890625E-5" layoutX="192.0" layoutY="193.0" startX="-100.0" />
+      <Button layoutX="91.0" layoutY="258.0" mnemonicParsing="false" onAction="#checkInventoryButtonOA" prefHeight="25.0" prefWidth="421.0" text="Check Inventory" />
+      <Button layoutX="91.0" layoutY="294.0" mnemonicParsing="false" onAction="#eodReportButtonOA" prefHeight="25.0" prefWidth="421.0" text="End of Day Report" />
+      <Label layoutX="461.0" layoutY="36.0" text="Welcome" />
+      <Label layoutX="91.0" layoutY="36.0" text="Independent Amusement Park" />
+      <Label layoutX="91.0" layoutY="54.0" text="User Dashboard">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="238.0" layoutY="343.0" mnemonicParsing="false" onAction="#logOutButtonOA" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="RED" />
+   </children>
+</AnchorPane>
