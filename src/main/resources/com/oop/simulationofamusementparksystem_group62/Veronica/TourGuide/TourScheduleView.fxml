@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0"
+            prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Veronica.TourGuide.TourScheduleController">
+
+
+    <children>
+
+        <Label layoutX="280"
+               layoutY="30"
+               text="Assigned Tour Schedule"
+               style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+
+        <TableView fx:id="ScheduleTable"
+                   layoutX="50"
+                   layoutY="100"
+                   prefWidth="800"
+                   prefHeight="300">
+
+            <columns>
+
+                <TableColumn fx:id="TourNameColumn"
+                             text="Tour Name"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="DateColumn"
+                             text="Date"
+                             prefWidth="120"/>
+
+                <TableColumn fx:id="TimeColumn"
+                             text="Time"
+                             prefWidth="120"/>
+
+                <TableColumn fx:id="LocationColumn"
+                             text="Location"
+                             prefWidth="150"/>
+
+            </columns>
+
+        </TableView>
+
+
+        <Button text="View Details"
+                layoutX="350"
+                layoutY="450"
+                prefWidth="180"
+                onAction="#viewDetailsOA"/>
+
+
+        <TextArea fx:id="DetailsTA"
+                  layoutX="50"
+                  layoutY="500"
+                  prefWidth="800"
+                  prefHeight="80"
+                  editable="false"/>
+
+
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600"
+            prefWidth="900"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Veronica.TourGuide.AttendanceController">
+
+
+    <children>
+
+
+        <Label layoutX="300"
+               layoutY="30"
+               text="Guest Attendance"
+               style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+
+        <Label layoutX="50"
+               layoutY="90"
+               text="Select Tour Session"/>
+
+
+        <ComboBox fx:id="SessionCB"
+                  layoutX="180"
+                  layoutY="85"
+                  prefWidth="250"/>
+
+
+
+        <Button text="Load Guest List"
+                layoutX="500"
+                layoutY="85"
+                prefWidth="150"
+                onAction="#loadGuestListOA"/>
+
+
+
+        <TableView fx:id="AttendanceTable"
+                   layoutX="50"
+                   layoutY="150"
+                   prefWidth="800"
+                   prefHeight="250">
+
+
+            <columns>
+
+
+                <TableColumn fx:id="GuestNameColumn"
+                             text="Guest Name"
+                             prefWidth="250"/>
+
+
+                <TableColumn fx:id="StatusColumn"
+                             text="Attendance Status"
+                             prefWidth="250"/>
+
+
+            </columns>
+
+
+        </TableView>
+
+
+
+        <Label layoutX="50"
+               layoutY="440"
+               text="Attendance Status"/>
+
+
+        <ComboBox fx:id="StatusCB"
+                  layoutX="180"
+                  layoutY="435"
+                  prefWidth="200">
+
+
+            <items>
+
+                <String fx:value="Present"/>
+                <String fx:value="Absent"/>
+                <String fx:value="Late"/>
+
+            </items>
+
+
+        </ComboBox>
+
+
+
+        <Button text="Mark Attendance"
+                layoutX="450"
+                layoutY="435"
+                prefWidth="170"
+                onAction="#markAttendanceOA"/>
+
+
+
+        <Button text="Save Attendance"
+                layoutX="650"
+                layoutY="435"
+                prefWidth="150"
+                onAction="#saveAttendanceOA"/>
+
+
+
+        <TextArea fx:id="ConfirmationTA"
+                  layoutX="50"
+                  layoutY="500"
+                  prefWidth="800"
+                  prefHeight="70"
+                  editable="false"/>
+
+
+    </children>
+
+</AnchorPane>
