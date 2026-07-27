@@ -5,11 +5,12 @@ import javafx.scene.control.Label;
 
 public class SecurityInChargeVeiwController {
     @javafx.fxml.FXML
-private Label securityInChargeLabel;
+    private Label securityInChargeLabel;
 
     @javafx.fxml.FXML
     public void incidentOA(ActionEvent actionEvent) {
     }
+
     @javafx.fxml.FXML
     public void accessControOA(ActionEvent actionEvent) {
     }
@@ -25,5 +26,4 @@ private Label securityInChargeLabel;
     @javafx.fxml.FXML
     public void trainingOA(ActionEvent actionEvent) {
     }
-}
 }
