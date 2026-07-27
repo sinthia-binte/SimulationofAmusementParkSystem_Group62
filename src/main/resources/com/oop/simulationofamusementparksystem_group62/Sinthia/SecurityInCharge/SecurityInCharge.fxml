@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.SecurityInChargeViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.SecurityInCharge.SecurityInChargeVeiwController">
    <children>
       <Label fx:id="securityInChargeLabel" layoutX="185.0" layoutY="21.0" prefHeight="62.0" prefWidth="216.0" style="-fx-background-color: pink;" text="Security In-Charge" textOverrun="CENTER_ELLIPSIS">
          <cursor>

@@ -1,4 +1,4 @@
-package Sinthia;
+package Sinthia.EventCoordinator;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
