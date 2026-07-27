@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.MaintenanceTechnician.MaintenanceManualController">
+
+    <children>
+
+        <Label layoutX="280" layoutY="20" style="-fx-font-size:22px; -fx-font-weight:bold;" text="Maintenance Manual Viewer" />
+
+        <Label layoutX="40" layoutY="80" text="Equipment Name / ID" />
+
+        <TextField fx:id="EquipmentSearchTF" layoutX="180" layoutY="75" prefWidth="250" />
+
+        <Button layoutX="229.0" layoutY="337.0" onAction="#searchManualOA" text="Search" />
+
+
+        <Label layoutX="40" layoutY="150" text="Selected Equipment" />
+
+        <TextField fx:id="SelectedEquipmentTF" editable="false" layoutX="180" layoutY="145" prefWidth="250" />
+
+        <Button layoutX="180" layoutY="200" onAction="#openManualOA" prefWidth="150" text="Open Manual" />
+
+        <Label layoutX="520" layoutY="80" text="Maintenance Manual" />
+
+        <Label layoutX="520" layoutY="450" text="Status" />
+        <TextField fx:id="NotificationTF" editable="false" layoutX="520" layoutY="480" prefWidth="320" />
+        <Button layoutX="360" layoutY="540" onAction="#closeManualOA" prefWidth="140" text="Close Manual" />
+      <TextField fx:id="ManualContentTF" editable="false" layoutX="555.0" layoutY="111.0" prefHeight="266.0" prefWidth="250" />
+    </children>
+
+</AnchorPane>

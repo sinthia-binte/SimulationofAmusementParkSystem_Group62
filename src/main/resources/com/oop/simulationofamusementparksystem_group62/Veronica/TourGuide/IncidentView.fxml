@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650"
+            prefWidth="900"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Veronica.TourGuide.IncidentController">
+
+
+    <children>
+
+
+        <Label layoutX="270"
+               layoutY="30"
+               text="Guest Incident Report"
+               style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+
+
+
+
+        <Label layoutX="50"
+               layoutY="90"
+               text="Select Tour Session"/>
+
+
+        <ComboBox fx:id="SessionCB"
+                  layoutX="200"
+                  layoutY="85"
+                  prefWidth="300"/>
+
+
+
+
+
+
+
+        <Label layoutX="50"
+               layoutY="150"
+               text="Guest Name"/>
+
+
+        <TextField fx:id="GuestNameTF"
+                   layoutX="200"
+                   layoutY="145"
+                   prefWidth="300"/>
+
+
+
+        <Label layoutX="50"
+               layoutY="200"
+               text="Incident Time"/>
+
+
+        <TextField fx:id="TimeTF"
+                   layoutX="200"
+                   layoutY="195"
+                   prefWidth="300"
+                   promptText="Enter time"/>
+
+
+
+        <Label layoutX="50"
+               layoutY="250"
+               text="Location"/>
+
+
+        <TextField fx:id="LocationTF"
+                   layoutX="200"
+                   layoutY="245"
+                   prefWidth="300"/>
+
+
+
+
+        <Label layoutX="50"
+               layoutY="310"
+               text="Incident Description"/>
+
+
+        <TextArea fx:id="DescriptionTA"
+                  layoutX="200"
+                  layoutY="305"
+                  prefWidth="400"
+                  prefHeight="100"/>
+
+
+
+
+
+
+
+
+        <Label layoutX="50"
+               layoutY="440"
+               text="Evidence"/>
+
+
+        <TextField fx:id="EvidenceTF"
+                   layoutX="200"
+                   layoutY="435"
+                   prefWidth="300"
+                   editable="false"/>
+
+
+        <Button text="Upload Evidence"
+                layoutX="520"
+                layoutY="435"
+                prefWidth="150"
+                onAction="#uploadEvidenceOA"/>
+
+
+
+
+
+
+        <!-- Event-7: Review -->
+
+
+        <Button text="Review Report"
+                layoutX="200"
+                layoutY="500"
+                prefWidth="150"
+                onAction="#reviewReportOA"/>
+
+
+
+
+
+
+
+
+        <Button text="Submit Incident"
+                layoutX="400"
+                layoutY="500"
+                prefWidth="150"
+                onAction="#submitReportOA"/>
+
+
+
+
+
+
+
+
+
+        <TextArea fx:id="ConfirmationTA"
+                  layoutX="50"
+                  layoutY="560"
+                  prefWidth="800"
+                  prefHeight="60"
+                  editable="false"/>
+
+
+
+    </children>
+
+</AnchorPane>

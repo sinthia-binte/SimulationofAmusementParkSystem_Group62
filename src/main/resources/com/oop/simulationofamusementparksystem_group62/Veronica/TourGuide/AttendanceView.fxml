@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.TourGuide.AttendanceController">
+    <children>
+        <Label layoutX="280" layoutY="30" style="-fx-font-size:24px; -fx-font-weight:bold;" text="Guest Attendance" />
+        <Label layoutX="50" layoutY="90" text="Select Tour Session" />
+        <ComboBox fx:id="SessionCB" layoutX="200" layoutY="85" prefWidth="250" />
+        <Button layoutX="500" layoutY="85" onAction="#loadGuestListOA" prefWidth="150" text="Load Guests" />
+        <Label layoutX="50" layoutY="160" text="Select Guest" />
+        <ComboBox fx:id="GuestCB" layoutX="200" layoutY="155" prefWidth="250" />
+        <Label layoutX="50" layoutY="220" text="Attendance Status" />
+        <ComboBox fx:id="StatusCB" layoutX="200" layoutY="215" prefWidth="250" />
+        <Button layoutX="500" layoutY="215" onAction="#markAttendanceOA" prefWidth="150" text="Mark Attendance" />
+        <Button layoutX="200" layoutY="300" onAction="#reviewAttendanceOA" prefWidth="150" text="Review Attendance" />
+        <Button layoutX="34.0" layoutY="300.0" onAction="#saveAttendanceOA" prefWidth="150" text="Save Attendance" />
+      <Label fx:id="ConfirmationLabel" layoutX="65.0" layoutY="386.0" prefHeight="104.0" prefWidth="226.0" />
+      <Label fx:id="ReviewLabel" layoutX="430.0" layoutY="392.0" prefHeight="125.0" prefWidth="330.0" />
+
+    </children>
+
+</AnchorPane>

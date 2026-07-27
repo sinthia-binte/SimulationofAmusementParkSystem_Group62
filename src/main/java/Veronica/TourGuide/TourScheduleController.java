@@ -24,11 +24,10 @@ public class TourScheduleController {
     @FXML
     private TableView<TourSchedule> ScheduleTable;
 
-    @FXML
-    private TextArea DetailsTA;
-
 
     private ObservableList<TourSchedule> tourList;
+    @FXML
+    private Label DetailsLabel;
 
 
     @FXML

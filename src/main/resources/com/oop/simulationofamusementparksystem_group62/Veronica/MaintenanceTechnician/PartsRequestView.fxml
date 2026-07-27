@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.MaintenanceTechnician.PartsRequestController">
+    <children>
+        <Label layoutX="300" layoutY="20" style="-fx-font-size:22px; -fx-font-weight:bold;" text="Replacement Parts Request" />
+        <Label layoutX="40" layoutY="80" text="Ride / Equipment ID:" />
+        <ComboBox fx:id="RideCB" layoutX="180" layoutY="75" onAction="#loadEquipmentDetailsOA" prefWidth="220" />
+        <Label layoutX="40" layoutY="125" text="Maintenance History" />
+        <Label layoutX="40" layoutY="230" text="Inventory Status" />
+        <Label layoutX="40" layoutY="340" text="Part Name" />
+        <TextField fx:id="PartNameTF" layoutX="180" layoutY="335" prefWidth="220" />
+        <Label layoutX="40" layoutY="385" text="Quantity" />
+        <TextField fx:id="QuantityTF" layoutX="180" layoutY="380" prefWidth="120" />
+        <Label layoutX="40" layoutY="430" text="Specification" />
+        <Label layoutX="520" layoutY="80" text="Request Review" />
+        <Label layoutX="520" layoutY="380" text="Request ID" />
+        <TextField fx:id="RequestIDTF" editable="false" layoutX="600" layoutY="375" prefWidth="180" />
+        <Label layoutX="520" layoutY="425" text="Notification" />
+        <Button layoutX="110.0" layoutY="628.0" onAction="#reviewRequestOA" prefWidth="140" text="Review Request" />
+        <Button layoutX="300.0" layoutY="628.0" onAction="#submitRequestOA" prefWidth="140" text="Submit Request" /><Button layoutX="492.0" layoutY="628.0" onAction="#clearFormOA" prefWidth="140" text="Clear" />
+      <TextField fx:id="HistoryTF" layoutX="202.0" layoutY="130.0" prefHeight="77.0" prefWidth="275.0" />
+      <TextField fx:id="StarusTF" layoutX="180.0" layoutY="239.0" prefHeight="77.0" prefWidth="275.0" />
+      <TextField fx:id="ReviewTF" layoutX="529.0" layoutY="104.0" prefHeight="77.0" prefWidth="275.0" />
+      <TextField fx:id="SpecificationTF" layoutX="162.0" layoutY="434.0" prefHeight="77.0" prefWidth="275.0" />
+      <TextField fx:id="NotificationTF" layoutX="538.0" layoutY="466.0" prefHeight="77.0" prefWidth="275.0" />
+    </children>
+</AnchorPane>

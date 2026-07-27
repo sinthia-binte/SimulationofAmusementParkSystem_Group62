@@ -15,7 +15,7 @@
                text="Create Tour Session"
                style="-fx-font-size:22px; -fx-font-weight:bold;" />
 
-        <!-- Tour Details -->
+
 
         <Label layoutX="40.0" layoutY="70.0" text="Title" />
         <TextField fx:id="TitleTF"
@@ -48,7 +48,6 @@
                   layoutY="295.0"
                   prefWidth="250.0" />
 
-        <!-- Schedule -->
 
         <Label layoutX="470.0" layoutY="70.0" text="Date" />
         <DatePicker fx:id="DateDP"
@@ -74,7 +73,7 @@
                    layoutY="200.0"
                    prefWidth="220.0" />
 
-        <!-- Pricing -->
+
 
         <Label layoutX="470.0" layoutY="250.0" text="Ticket Price" />
         <TextField fx:id="PriceTF"
@@ -88,7 +87,6 @@
                    layoutY="290.0"
                    prefWidth="220.0" />
 
-        <!-- Buttons -->
 
         <Button layoutX="280.0"
                 layoutY="355.0"
@@ -102,7 +100,7 @@
                 text="Save Tour"
                 onAction="#saveTourButtonOA"/>
 
-        <!-- Preview -->
+
 
         <Label layoutX="40.0" layoutY="410.0" text="Tour Preview" />
 
