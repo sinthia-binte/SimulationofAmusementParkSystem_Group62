@@ -9,25 +9,47 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="360.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mubin.LoginViewController">
-   <children>
-      <Label layoutX="209.0" layoutY="45.0" text="Welcome to" textAlignment="CENTER" />
-      <Label layoutX="123.0" layoutY="66.0" text="Independent Amusement Park" textFill="#ad3cb5">
-         <font>
-            <Font name="Jokerman" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="113.0" layoutY="108.0" text="UserID" />
-      <Label layoutX="113.0" layoutY="142.0" text="Password" />
-      <TextField fx:id="userIdTF" layoutX="184.0" layoutY="104.0" prefHeight="25.0" prefWidth="183.0" />
-      <Button layoutX="209.0" layoutY="217.0" mnemonicParsing="false" onAction="#loginButtonOA" prefHeight="25.0" prefWidth="64.0" text="Login" />
-      <Label fx:id="errorMsgLabel" contentDisplay="CENTER" layoutX="117.0" layoutY="258.0" prefHeight="60.0" prefWidth="247.0" style="-fx-background-color: Yellow;">
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Label>
-      <ComboBox layoutX="184.0" layoutY="173.0" prefHeight="25.0" prefWidth="183.0" />
-      <Label layoutX="114.0" layoutY="177.0" text="User Type" />
-      <PasswordField fx:id="passwordPF" layoutX="185.0" layoutY="138.0" prefHeight="25.0" prefWidth="183.0" />
-   </children>
+<AnchorPane prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.LoginViewController">
+
+    <children>
+
+        <Label layoutX="209.0" layoutY="45.0" prefHeight="18.0" prefWidth="64.0" text="Welcome to" textAlignment="CENTER" />
+
+        <Label layoutX="123.0" layoutY="66.0" text="Independent Amusement Park" textFill="#ad3cb5">
+
+            <font>
+                <Font name="Jokerman" size="16.0" />
+            </font>
+
+        </Label>
+
+
+        <Label layoutX="113.0" layoutY="108.0" text="User ID" />
+
+        <TextField fx:id="userIdTF" layoutX="184.0" layoutY="104.0" prefHeight="25.0" prefWidth="183.0" />
+
+
+        <Label layoutX="113.0" layoutY="142.0" text="Password" />
+
+        <PasswordField fx:id="passwordPF" layoutX="185.0" layoutY="138.0" prefHeight="25.0" prefWidth="183.0" />
+
+
+        <Label layoutX="114.0" layoutY="177.0" text="Role" />
+
+        <ComboBox fx:id="roleCB" layoutX="184.0" layoutY="173.0" prefHeight="25.0" prefWidth="183.0" />
+
+
+        <Button layoutX="209.0" layoutY="217.0" mnemonicParsing="false" onAction="#loginButtonOA" prefHeight="25.0" prefWidth="64.0" text="Login" />
+
+
+        <Label fx:id="errorMsgLabel" contentDisplay="CENTER" layoutX="117.0" layoutY="258.0" prefHeight="60.0" prefWidth="247.0" style="-fx-background-color: Yellow;">
+
+            <effect>
+                <ColorAdjust />
+            </effect>
+
+        </Label>
+
+    </children>
+
 </AnchorPane>
