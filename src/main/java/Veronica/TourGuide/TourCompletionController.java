@@ -2,6 +2,7 @@ package Veronica.TourGuide;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -11,7 +12,7 @@ public class TourCompletionController
     private TextField GuestCountTF;
     @javafx.fxml.FXML
     private ComboBox<TourCompletion> TourSessionCB;
-    @javafx.fxml.FXML
+    //
     private TextField AttendanceTF;
     @javafx.fxml.FXML
     private TextField DurationTF;

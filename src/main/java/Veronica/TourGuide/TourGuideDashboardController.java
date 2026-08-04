@@ -1,42 +1,91 @@
 package Veronica.TourGuide;
 
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
-public class TourGuideDashboardController
-{
-    @javafx.fxml.FXML
+public class TourGuideDashboardController {
+
+    private TourGuide loggedInGuide;
+
+    public void setLoggedInGuide(TourGuide guide) {
+        this.loggedInGuide = guide;
+    }
+
+    @FXML
     public void initialize() {
+
     }
 
-    @javafx.fxml.FXML
-    public void cancelRegistrationOA(ActionEvent actionEvent) {
+    @FXML
+    private void createTourSessionOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TourSessionView.fxml", "Create Tour Session");
     }
 
-    @javafx.fxml.FXML
-    public void recordAttendanceOA(ActionEvent actionEvent) {
+    @FXML
+    private void registerGuestOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "Registration.fxml", "Guest Registration");
     }
 
-    @javafx.fxml.FXML
-    public void logoutOA(ActionEvent actionEvent) {
+    @FXML
+    private void closeTourOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "CloseTour.fxml", "Close Tour");
     }
 
-    @javafx.fxml.FXML
-    public void reportIncidentOA(ActionEvent actionEvent) {
+    @FXML
+    private void reportIncidentOA(ActionEvent event) {
+        SceneSwitcher.switchScene(
+                event,
+                "ReportIncident.fxml",
+                "Report Incident"
+        );
     }
 
-    @javafx.fxml.FXML
-    public void createTourSessionOA(ActionEvent actionEvent) {
+    @FXML
+    private void recordAttendanceOA(ActionEvent event) {
+        SceneSwitcher.switchScene(
+                event,
+                "Attendance.fxml",
+                "Guest Attendance"
+        );
     }
 
-    @javafx.fxml.FXML
-    public void closeTourOA(ActionEvent actionEvent) {
+    @FXML
+    private void viewScheduleOA(ActionEvent event) {
+        SceneSwitcher.switchScene(
+                event,
+                "TourSchedule.fxml",
+                "Assigned Tour Schedule"
+        );
     }
 
-    @javafx.fxml.FXML
-    public void registerGuestOA(ActionEvent actionEvent) {
+    @FXML
+    private void attractionInfoOA(ActionEvent event) {
+        SceneSwitcher.switchScene(
+                event,
+                "AttractionView.fxml",
+                "Attraction Information"
+        );
     }
 
-    @javafx.fxml.FXML
-    public void updateTourSessionOA(ActionEvent actionEvent) {
+    @FXML
+    private void notificationOA(ActionEvent event) {
+        SceneSwitcher.switchScene(
+                event,
+                "Notification.fxml",
+                "Ride Updates and Notifications"
+        );
+    }
+
+    @FXML
+    private void logoutOA(ActionEvent event) {
+
+        loggedInGuide = null;
+
+        SceneSwitcher.switchScene(
+                event,
+                "Login.fxml",
+                "Login"
+        );
     }
 }

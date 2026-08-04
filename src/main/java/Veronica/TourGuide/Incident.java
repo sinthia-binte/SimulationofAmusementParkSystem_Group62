@@ -1,13 +1,17 @@
 package Veronica.TourGuide;
 
-public class Incident {
-    private int incidentId;
-    private String TourGuide,guestId,time,location,description,evidence,status;
+import java.io.Serializable;
 
-    public Incident(int incidentId, String tourGuide, String guestId, String time, String location, String description, String evidence, String status) {
+public class Incident implements Serializable {
+
+    private int incidentId;
+    private String tourGuide, guestName, time, location, description, evidence, status;
+
+    public Incident(int incidentId, String tourGuide, String guestName, String time,
+                    String location, String description, String evidence, String status) {
         this.incidentId = incidentId;
-        TourGuide = tourGuide;
-        this.guestId = guestId;
+        this.tourGuide = tourGuide;
+        this.guestName = guestName;
         this.time = time;
         this.location = location;
         this.description = description;
@@ -24,19 +28,19 @@ public class Incident {
     }
 
     public String getTourGuide() {
-        return TourGuide;
+        return tourGuide;
     }
 
     public void setTourGuide(String tourGuide) {
-        TourGuide = tourGuide;
+        this.tourGuide = tourGuide;
     }
 
-    public String getGuestId() {
-        return guestId;
+    public String getGuestName() {
+        return guestName;
     }
 
-    public void setGuestId(String guestId) {
-        this.guestId = guestId;
+    public void setGuestName(String guestName) {
+        this.guestName = guestName;
     }
 
     public String getTime() {
@@ -78,6 +82,4 @@ public class Incident {
     public void setStatus(String status) {
         this.status = status;
     }
-
-
 }

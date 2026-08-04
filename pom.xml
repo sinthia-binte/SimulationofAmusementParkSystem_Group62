@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.oop.simulationofamusementparksystem_group62/com.oop.simulationofamusementparksystem_group62.HelloApplication
+                                com.oop.simulationofamusementparksystem_group62/com.oop.simulationofamusementparksystem_group62.Application
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

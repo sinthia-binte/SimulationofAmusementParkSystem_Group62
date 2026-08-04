@@ -4,33 +4,84 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.TourGuide.TourGuideDashboardController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Veronica.TourGuide.TourGuideDashboardController">
 
     <children>
 
+        <Label layoutX="300.0"
+               layoutY="30.0"
+               style="-fx-font-size:26px; -fx-font-weight:bold;"
+               text="Tour Guide Dashboard"/>
 
-        <Label layoutX="300.0" layoutY="30.0" style="-fx-font-size:26px; -fx-font-weight:bold;" text="Tour Guide Dashboard" />
+        <Label layoutX="40.0"
+               layoutY="90.0"
+               style="-fx-font-size:18px;"
+               text="Welcome, Tour Guide"/>
 
+        <Button layoutX="80.0"
+                layoutY="150.0"
+                onAction="#createTourSessionOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="Create Tour Session"/>
 
-        <Label layoutX="40.0" layoutY="90.0" style="-fx-font-size:18px;" text="Welcome, Tour Guide" />
+        <Button layoutX="80.0"
+                layoutY="210.0"
+                onAction="#viewScheduleOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="View Tour Schedule"/>
 
+        <Button layoutX="80.0"
+                layoutY="270.0"
+                onAction="#registerGuestOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="Register Guest"/>
 
+        <Button layoutX="80.0"
+                layoutY="330.0"
+                onAction="#recordAttendanceOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="Record Attendance"/>
 
-        <Button layoutX="80.0" layoutY="160.0" onAction="#createTourSessionOA" prefHeight="40.0" prefWidth="250.0" text="Create Tour Session" />
+        <Button layoutX="500.0"
+                layoutY="150.0"
+                onAction="#attractionInfoOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="Attraction Information"/>
 
-        <Button layoutX="80.0" layoutY="220.0" onAction="#updateTourSessionOA" prefHeight="40.0" prefWidth="250.0" text="Update Tour Session" />
+        <Button layoutX="500.0"
+                layoutY="210.0"
+                onAction="#notificationOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="Ride Updates &amp; Notifications"/>
 
-        <Button layoutX="80.0" layoutY="280.0" onAction="#registerGuestOA" prefHeight="40.0" prefWidth="250.0" text="Register Guest" />
+        <Button layoutX="500.0"
+                layoutY="270.0"
+                onAction="#reportIncidentOA"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                text="Report Incident"/>
 
-        <Button layoutX="500.0" layoutY="160.0" onAction="#cancelRegistrationOA" prefHeight="40.0" prefWidth="250.0" text="Cancel Registration" />
+        <Button layoutX="290.0"
+                layoutY="390.0"
+                onAction="#closeTourOA"
+                prefHeight="45.0"
+                prefWidth="300.0"
+                text="Close Tour Session"/>
 
-        <Button layoutX="500.0" layoutY="220.0" onAction="#recordAttendanceOA" prefHeight="40.0" prefWidth="250.0" text="Record Attendance" />
-
-        <Button layoutX="500.0" layoutY="280.0" onAction="#reportIncidentOA" prefHeight="40.0" prefWidth="250.0" text="Report Incident" />
-
-        <Button layoutX="290.0" layoutY="360.0" onAction="#closeTourOA" prefHeight="45.0" prefWidth="300.0" text="Close Tour Session" />
-
-        <Button layoutX="770.0" layoutY="20.0" onAction="#logoutOA" prefWidth="90.0" text="Logout" />
+        <Button layoutX="770.0"
+                layoutY="20.0"
+                onAction="#logoutOA"
+                prefWidth="90.0"
+                text="Logout"/>
 
     </children>
 

@@ -8,28 +8,23 @@
             xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Veronica.TourGuide.TourSessionViewController">
-
     <children>
 
         <Label layoutX="300.0" layoutY="20.0"
                text="Create Tour Session"
                style="-fx-font-size:22px; -fx-font-weight:bold;" />
 
-
-
         <Label layoutX="40.0" layoutY="70.0" text="Title" />
         <TextField fx:id="TitleTF"
                    layoutX="150.0"
                    layoutY="65.0"
                    prefWidth="250.0" />
-
         <Label layoutX="40.0" layoutY="115.0" text="Description" />
         <TextArea fx:id="DescriptionTF"
                   layoutX="150.0"
                   layoutY="110.0"
                   prefWidth="250.0"
                   prefHeight="80.0" />
-
         <Label layoutX="40.0" layoutY="210.0" text="Location" />
         <TextField fx:id="LocationTF"
                    layoutX="150.0"

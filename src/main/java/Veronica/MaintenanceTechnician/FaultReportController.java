@@ -1,50 +1,151 @@
 package Veronica.MaintenanceTechnician;
 
+import Veronica.BinaryFileUtil;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-public class FaultReportController
-{
-    @javafx.fxml.FXML
-    private ComboBox RideCB;
-    @javafx.fxml.FXML
+import java.util.ArrayList;
+
+public class FaultReportController {
+
+    @FXML
+    private ComboBox<String> RideCB;
+
+    @FXML
     private TextField EquipmentNameTF;
-    @javafx.fxml.FXML
-    private TextArea FaultDescriptionTA;
-    @javafx.fxml.FXML
-    private ComboBox SeverityCB;
-    @javafx.fxml.FXML
-    private TextArea ObservedIssueTA;
-    @javafx.fxml.FXML
-    private TextArea ReviewTA;
-    @javafx.fxml.FXML
-    private TextField FaultReportIDTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextArea EquipmentHistoryTA;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TextArea FaultDescriptionTA;
+
+    @FXML
+    private ComboBox<String> SeverityCB;
+
+    @FXML
+    private TextArea ObservedIssueTA;
+
+    @FXML
+    private TextArea ReviewTA;
+
+    @FXML
+    private TextField FaultReportIDTF;
+
+    @FXML
     private TextArea NotificationTA;
 
-    @javafx.fxml.FXML
+
+    private FaultReport selectedRide;
+
+
+    @FXML
     public void initialize() {
+
+        SeverityCB.getItems().addAll("Low", "Medium", "High", "Critical");
+        loadRides();
+
+        RideCB.setOnAction(e -> loadRideDetails());
+
     }
 
-    @javafx.fxml.FXML
-    public void submitReportOA(ActionEvent actionEvent) {
+
+    public void loadRides() {
+
+        ArrayList<FaultReport> reports = BinaryFileUtil.readObjects("FaultReport.bin");
+
+        for(FaultReport r : reports) {
+            RideCB.getItems().add(r.getRideId());
+
+        }
+
     }
 
 
-    @javafx.fxml.FXML
-    public void clearFormOA(ActionEvent actionEvent) {
+    public void loadRideDetails() {
+        String id = RideCB.getValue();
+
+        ArrayList<FaultReport> reports = BinaryFileUtil.readObjects("FaultReport.bin");
+
+
+        for(FaultReport r : reports) {
+
+            if(r.getRideId().equals(id)) {
+                selectedRide = r;
+                EquipmentNameTF.setText(r.getRideName());
+                EquipmentHistoryTA.setText("Previous Fault: " + r.getFaultDescription());
+                break;
+
+            }
+
+        }
+
     }
 
-    @javafx.fxml.FXML
+
+    @FXML
     public void reviewReportOA(ActionEvent actionEvent) {
+        ReviewTA.setText("Equipment: "
+                        + EquipmentNameTF.getText()
+                        + "\nFault Description: "
+                        + FaultDescriptionTA.getText()
+                        + "\nSeverity: "
+                        + SeverityCB.getValue()
+                        + "\nObserved Issue: "
+                        + ObservedIssueTA.getText()
+        );
+
     }
 
 
-    @Deprecated
-    public void loadRideDetailsOA(ActionEvent actionEvent) {
+
+    @FXML
+    public void submitReportOA(ActionEvent actionEvent) {
+
+
+        if(selectedRide == null) {NotificationTA.setText("Select equipment first");
+            return;
+        }
+        if(FaultDescriptionTA.getText().isEmpty() || SeverityCB.getValue() == null) {
+            NotificationTA.setText("Complete fault information");
+            return;
+        }
+        String id = "FR" + (int)(Math.random()*10000);
+
+
+
+        FaultReport report = new FaultReport(
+                        id,
+                        selectedRide.getRideId(),
+                        selectedRide.getRideName(),
+                        FaultDescriptionTA.getText(),
+                        SeverityCB.getValue(),
+                        ObservedIssueTA.getText(),
+                        "Maintenance Technician"
+                );
+
+
+
+        BinaryFileUtil.appendObject("FaultReport.bin", report);
+        FaultReportIDTF.setText(id);
+
+
+        NotificationTA.setText("Fault report sent to Supervisor\nSeverity: " + SeverityCB.getValue());
+
     }
+
+
+
+    @FXML
+    public void clearFormOA(ActionEvent actionEvent) {
+        FaultDescriptionTA.clear();
+        ObservedIssueTA.clear();
+        ReviewTA.clear();
+        NotificationTA.clear();
+        FaultReportIDTF.clear();
+        SeverityCB.setValue(null);
+
+    }
+
 }
