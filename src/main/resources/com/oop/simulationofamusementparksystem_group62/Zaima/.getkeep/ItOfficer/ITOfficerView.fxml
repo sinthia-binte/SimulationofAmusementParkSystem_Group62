@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.ItOfficer.ItOfficerViewController">
+   <children>
+      <Label fx:id="ITOfficerLabel" layoutX="226.0" layoutY="7.0" prefHeight="39.0" prefWidth="231.0" text="ITOfficer" textFill="#1115d4">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="221.0" layoutY="75.0" mnemonicParsing="false" onAction="#ManageUserAccountsOA" text="Manage User Accounts" />
+      <Button layoutX="236.0" layoutY="111.0" mnemonicParsing="false" onAction="#ResetPasswordOA" text="Reset Password" />
+      <Button layoutX="223.0" layoutY="146.0" mnemonicParsing="false" onAction="#BackupSystemDataOA" text="Backup System Data" />
+      <Button layoutX="223.0" layoutY="187.0" mnemonicParsing="false" onAction="#SystemPerformanceOA" text="System Performance" />
+      <Button layoutX="235.0" layoutY="221.0" mnemonicParsing="false" onAction="#SystemSecurityOA" text="System Security" />
+      <Button layoutX="230.0" layoutY="257.0" mnemonicParsing="false" onAction="#SoftwareUpdatesOA" text="Software Updates" />
+      <Button layoutX="210.0" layoutY="294.0" mnemonicParsing="false" onAction="#RideandTicketMonitoringOA" text="Ride and Ticket Monitoring" />
+      <Button layoutX="235.0" layoutY="331.0" mnemonicParsing="false" onAction="#SystemReportsOA" text="System Reports" />
+   </children>
+</AnchorPane>
