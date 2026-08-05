@@ -1,5 +1,6 @@
 package Veronica.TourGuide;
 
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.scene.control.ComboBox;
@@ -55,4 +56,11 @@ public class NotificationController
 
 
     }
+
+    @javafx.fxml.FXML
+    public void BackToDashboardOA(ActionEvent actionEvent) {
+
+        SceneSwitcher.switchScene(actionEvent, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
+    }
+
 }

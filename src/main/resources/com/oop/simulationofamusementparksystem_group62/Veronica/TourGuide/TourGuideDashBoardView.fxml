@@ -16,10 +16,14 @@
                style="-fx-font-size:26px; -fx-font-weight:bold;"
                text="Tour Guide Dashboard"/>
 
-        <Label layoutX="40.0"
+
+        <!-- Fixed welcome label -->
+        <Label fx:id="welcomeLabel"
+               layoutX="40.0"
                layoutY="90.0"
                style="-fx-font-size:18px;"
                text="Welcome, Tour Guide"/>
+
 
         <Button layoutX="80.0"
                 layoutY="150.0"
@@ -28,12 +32,14 @@
                 prefWidth="250.0"
                 text="Create Tour Session"/>
 
+
         <Button layoutX="80.0"
                 layoutY="210.0"
                 onAction="#viewScheduleOA"
                 prefHeight="40.0"
                 prefWidth="250.0"
                 text="View Tour Schedule"/>
+
 
         <Button layoutX="80.0"
                 layoutY="270.0"
@@ -42,12 +48,14 @@
                 prefWidth="250.0"
                 text="Register Guest"/>
 
+
         <Button layoutX="80.0"
                 layoutY="330.0"
                 onAction="#recordAttendanceOA"
                 prefHeight="40.0"
                 prefWidth="250.0"
                 text="Record Attendance"/>
+
 
         <Button layoutX="500.0"
                 layoutY="150.0"
@@ -56,12 +64,14 @@
                 prefWidth="250.0"
                 text="Attraction Information"/>
 
+
         <Button layoutX="500.0"
                 layoutY="210.0"
                 onAction="#notificationOA"
                 prefHeight="40.0"
                 prefWidth="250.0"
                 text="Ride Updates &amp; Notifications"/>
+
 
         <Button layoutX="500.0"
                 layoutY="270.0"
@@ -70,6 +80,7 @@
                 prefWidth="250.0"
                 text="Report Incident"/>
 
+
         <Button layoutX="290.0"
                 layoutY="390.0"
                 onAction="#closeTourOA"
@@ -77,11 +88,13 @@
                 prefWidth="300.0"
                 text="Close Tour Session"/>
 
+
         <Button layoutX="770.0"
                 layoutY="20.0"
                 onAction="#logoutOA"
                 prefWidth="90.0"
                 text="Logout"/>
+
 
     </children>
 

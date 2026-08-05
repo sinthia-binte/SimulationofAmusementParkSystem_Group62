@@ -29,5 +29,6 @@
       <TextField fx:id="ReviewTF" layoutX="529.0" layoutY="104.0" prefHeight="77.0" prefWidth="275.0" />
       <TextField fx:id="SpecificationTF" layoutX="162.0" layoutY="434.0" prefHeight="77.0" prefWidth="275.0" />
       <TextField fx:id="NotificationTF" layoutX="538.0" layoutY="466.0" prefHeight="77.0" prefWidth="275.0" />
+      <Button layoutX="745.0" layoutY="628.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="110.0" text="Back" />
     </children>
 </AnchorPane>

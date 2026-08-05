@@ -5,13 +5,24 @@ import java.time.LocalDate;
 
 public class TourGuide extends User {
 
-    public TourGuide(String name, String phoneNo, String email, String address,
-                     String gender, String password, LocalDate dob) {
-        super(name, phoneNo, email, address, gender, password, dob);
+
+    public TourGuide(String name,
+                     String gender,
+                     String password,
+                     String id,
+                     LocalDate dob,
+                     String address,
+                     String phoneNo,
+                     String email) {
+
+        super(name,
+                gender,
+                password,
+                id,
+                dob,
+                address,
+                phoneNo,
+                email);
     }
 
-    @Override
-    public String generateId() {
-        return "TG" + (int)(Math.random() * 10000);
-    }
 }

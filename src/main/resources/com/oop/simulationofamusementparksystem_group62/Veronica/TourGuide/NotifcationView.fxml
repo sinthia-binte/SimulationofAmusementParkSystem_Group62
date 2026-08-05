@@ -43,7 +43,8 @@
         <TextField fx:id="StatusTF" editable="false" layoutX="170" layoutY="425" prefWidth="200" />
 
         <Button layoutX="170" layoutY="480" onAction="#acknowledgeOA" prefWidth="180" text="Acknowledge Update" />
-      <Label fx:id="ConfirmationLabel" layoutX="568.0" layoutY="141.0" prefHeight="120.0" prefWidth="230.0" />
+      <Label fx:id="ConfirmationLabel" layoutX="466.0" layoutY="420.0" prefHeight="120.0" prefWidth="308.0" />
+      <Button layoutX="709.0" layoutY="88.0" mnemonicParsing="false" onAction="#BackToDashboardOA" prefHeight="26.0" prefWidth="138.0" text="Back" />
 
     </children>
 

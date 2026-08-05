@@ -2,25 +2,39 @@ package Veronica.MaintenanceTechnician;
 
 import Veronica.User;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class MaintenanceTechnician extends User {
+public class MaintenanceTechnician extends User implements Serializable {
 
     private ArrayList<MaintenanceTask> assignedTasks;
 
 
-    public MaintenanceTechnician(String name, String phoneNo, String email, String address, String gender, String password, LocalDate dob, ArrayList<MaintenanceTask> assignedTasks) {
-        super(name, phoneNo, email, address, gender, password, dob);
-        this.assignedTasks = assignedTasks;
+    public MaintenanceTechnician(String name,
+                                 String gender,
+                                 String password,
+                                 String id,
+                                 LocalDate dob,
+                                 String address,
+                                 String phoneNo,
+                                 String email) {
+
+
+        super(name,
+                gender,
+                password,
+                id,
+                dob,
+                address,
+                phoneNo,
+                email);
+
+
+        this.assignedTasks = new ArrayList<>();
+
     }
 
-    @Override
-    public String generateId() {
-
-        return "MT" + System.currentTimeMillis();
-
-    }
 
 
     public ArrayList<MaintenanceTask> getAssignedTasks() {
@@ -30,11 +44,13 @@ public class MaintenanceTechnician extends User {
     }
 
 
+
     public void setAssignedTasks(ArrayList<MaintenanceTask> assignedTasks) {
 
         this.assignedTasks = assignedTasks;
 
     }
+
 
 
     public void addTask(MaintenanceTask task) {
@@ -44,11 +60,13 @@ public class MaintenanceTechnician extends User {
     }
 
 
+
     public void removeTask(MaintenanceTask task) {
 
         assignedTasks.remove(task);
 
     }
+
 
 
     @Override
@@ -59,4 +77,5 @@ public class MaintenanceTechnician extends User {
                 "\nAssigned Tasks: " + assignedTasks.size();
 
     }
+
 }

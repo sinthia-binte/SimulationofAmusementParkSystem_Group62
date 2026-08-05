@@ -1,8 +1,9 @@
 package Veronica.MaintenanceTechnician;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class MaintenanceRecord {
+public class MaintenanceRecord implements Serializable {
     private int recordId,rideId;
     private String technicianName,rideName,workDescription,partsReplaced,issuesFixed,maintenanceStatus;
     private LocalDate maintenanceDate;

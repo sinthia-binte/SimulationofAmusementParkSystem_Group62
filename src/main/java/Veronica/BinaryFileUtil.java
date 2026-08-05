@@ -1,6 +1,6 @@
 package Veronica;
 
-import Veronica.TourGuide.Incident;
+import Veronica.TourGuide.TourSession;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class BinaryFileUtil {
     }
 
     // Save an entire ArrayList
-    public static <T extends Serializable> void saveList(String fileName, ArrayList<Incident> list) {
+    public static <T extends Serializable> void saveList(String fileName, ArrayList<TourSession> list) {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))) {
             out.writeObject(list);
         } catch (IOException e) {

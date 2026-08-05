@@ -20,19 +20,17 @@
         <Label layoutX="40" layoutY="340" text="Work Done" />
         <Label layoutX="40" layoutY="450" text="Parts Used" />
         <Label layoutX="520" layoutY="80" text="Completion Notes" />
-        <Label layoutX="520" layoutY="250" text="Evidence Path" />
-        <TextField fx:id="EvidencePathTF" layoutX="520" layoutY="275" prefWidth="230" />
-        <Button layoutX="760" layoutY="275" onAction="#uploadEvidenceOA" text="Upload" />
-        <Label layoutX="520" layoutY="350" text="Review" />
-        <Label layoutX="520" layoutY="540" text="Notification" />
-        <TextField fx:id="NotificationTF" editable="false" layoutX="600" layoutY="535" prefWidth="240" />
-        <Button layoutX="180" layoutY="620" onAction="#reviewCompletionOA" prefWidth="140" text="Review" />
-        <Button layoutX="340" layoutY="620" onAction="#completeTaskOA" prefWidth="160" text="Complete Task" />
-        <Button layoutX="520" layoutY="620" onAction="#clearFormOA" prefWidth="120" text="Clear" />
+        <Label layoutX="532.0" layoutY="242.0" text="Review" />
+        <Label layoutX="514.0" layoutY="424.0" text="Notification" />
+        <TextField fx:id="NotificationTF" editable="false" layoutX="602.0" layoutY="420.0" prefWidth="240" />
+        <Button layoutX="14.0" layoutY="507.0" onAction="#reviewCompletionOA" prefWidth="140" text="Review" />
+        <Button layoutX="496.0" layoutY="481.0" onAction="#completeTaskOA" prefWidth="160" text="Complete Task" />
+        <Button layoutX="698.0" layoutY="468.0" onAction="#clearFormOA" prefWidth="120" text="Clear" />
       <TextField fx:id="CompletionNotesTF" editable="false" layoutX="535.0" layoutY="117.0" prefHeight="105.0" prefWidth="250" />
       <TextField fx:id="TaskDescriptionTF" editable="false" layoutX="179.0" layoutY="127.0" prefWidth="250" />
-      <TextField fx:id="ReviewTF" layoutX="545.0" layoutY="392.0" prefHeight="116.0" prefWidth="230" />
+      <TextField fx:id="ReviewTF" layoutX="545.0" layoutY="275.0" prefHeight="116.0" prefWidth="230" />
       <TextField fx:id="WorkDoneTF" layoutX="190.0" layoutY="317.0" prefHeight="116.0" prefWidth="230" />
       <TextField fx:id="PartsUsedTF" layoutX="180.0" layoutY="450.0" prefHeight="116.0" prefWidth="230" />
+      <Button layoutX="591.0" layoutY="533.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="188.0" text="Back" />
     </children>
 </AnchorPane>

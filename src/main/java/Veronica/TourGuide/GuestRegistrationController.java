@@ -1,5 +1,6 @@
 package Veronica.TourGuide;
 
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
@@ -70,4 +71,11 @@ public class GuestRegistrationController {
                         "Payment: " + PaymentTF.getText()
         );
     }
-}
+
+    @javafx.fxml.FXML
+    public void BackToDashboardOA(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene(actionEvent, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
+    }
+
+
+    }

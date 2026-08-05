@@ -1,5 +1,7 @@
 package Veronica.TourGuide;
 
+import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,10 +11,11 @@ import javafx.scene.control.Label;
 
 import java.util.ArrayList;
 
-
 public class AttendanceController {
+
     @FXML
     private ComboBox<String> SessionCB;
+
     @FXML
     private ComboBox<String> GuestCB;
 
@@ -25,49 +28,95 @@ public class AttendanceController {
     @FXML
     private Label ReviewLabel;
 
-    ObservableList<Attendance> attendanceList =
+    private ObservableList<Attendance> attendanceList =
             FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        SessionCB.getItems().addAll("City Tour", "Historical Tour", "Nature Adventure");
-        StatusCB.getItems().addAll("Present", "Absent", "Late");
 
+        SessionCB.getItems().addAll(
+                "City Tour",
+                "Historical Tour",
+                "Nature Adventure"
+        );
+
+        StatusCB.getItems().addAll(
+                "Present",
+                "Absent",
+                "Late"
+        );
     }
+
     @FXML
     public void loadGuestListOA(ActionEvent event) {
+
         GuestCB.getItems().clear();
 
-        GuestCB.getItems().addAll("John", "David", "Sarah");
-
+        GuestCB.getItems().addAll(
+                "John",
+                "David",
+                "Sarah"
+        );
     }
+
     @FXML
     public void markAttendanceOA(ActionEvent event) {
 
-        Attendance attendance = new Attendance(SessionCB.getValue(), GuestCB.getValue(), StatusCB.getValue());
-        attendanceList.add(attendance);
-        ConfirmationLabel.setText("Attendance marked.");
+        if (SessionCB.getValue() == null ||
+                GuestCB.getValue() == null ||
+                StatusCB.getValue() == null) {
 
+            ConfirmationLabel.setText("Please select all fields.");
+            return;
+        }
+
+        Attendance attendance = new Attendance(
+                GuestCB.getValue(),
+                SessionCB.getValue(),
+                StatusCB.getValue()
+        );
+
+        attendanceList.add(attendance);
+
+        ConfirmationLabel.setText("Attendance marked.");
     }
+
     @FXML
     public void reviewAttendanceOA(ActionEvent event) {
-        String data = "";
-        for(Attendance a : attendanceList){
-            data += a.getGuestName()
-                    + " - "
-                    + a.getStatus()
-                    + "\n";
 
+        StringBuilder data = new StringBuilder();
+
+        for (Attendance a : attendanceList) {
+
+            data.append("Guest: ")
+                    .append(a.getGuestName())
+                    .append("\nSession: ")
+                    .append(a.getTourSession())
+                    .append("\nStatus: ")
+                    .append(a.getStatus())
+                    .append("\n\n");
         }
-        ReviewLabel.setText(data);
+
+        ReviewLabel.setText(data.toString());
     }
+
     @FXML
     public void saveAttendanceOA(ActionEvent event) {
+
         ArrayList<Attendance> list = new ArrayList<>(attendanceList);
-      //  BinaryFileUtil.saveList("attendance.bin", //list);
+
+        BinaryFileUtil.saveList("attendance.bin", list);
 
         ConfirmationLabel.setText("Attendance saved successfully.");
-
     }
 
+    @FXML
+    public void BackToDashboardOA(ActionEvent actionEvent) {
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/Veronica/TourGuide/TourGuideDashBoardView.fxml",
+                "Tour Guide Dashboard"
+        );
+    }
 }

@@ -7,7 +7,9 @@ import javafx.scene.control.*;
 
 import java.util.ArrayList;
 
+
 public class PartsRequestController {
+
 
     @FXML
     private ComboBox<String> RideCB;
@@ -16,7 +18,7 @@ public class PartsRequestController {
     private TextField HistoryTF;
 
     @FXML
-    private TextField StarusTF;
+    private TextField StatusTF;
 
     @FXML
     private TextField PartNameTF;
@@ -37,7 +39,9 @@ public class PartsRequestController {
     private TextField NotificationTF;
 
 
+
     private PartsRequest selectedRide;
+
 
 
     @FXML
@@ -48,13 +52,20 @@ public class PartsRequestController {
     }
 
 
-    public void loadEquipment() {
+
+
+
+    private void loadEquipment() {
+
 
         ArrayList<PartsRequest> list =
-                BinaryFileUtil.readObjects("PartsRequest.bin");
+                BinaryFileUtil.readObjects(
+                        "Equipment.bin"
+                );
 
 
         for(PartsRequest p : list) {
+
 
             RideCB.getItems().add(
                     p.getRideId()
@@ -65,29 +76,40 @@ public class PartsRequestController {
     }
 
 
+
+
+
     @FXML
     public void loadEquipmentDetailsOA(ActionEvent actionEvent) {
 
-        String id = RideCB.getValue();
+
+        String id =
+                RideCB.getValue();
+
 
 
         ArrayList<PartsRequest> list =
-                BinaryFileUtil.readObjects("PartsRequest.bin");
+                BinaryFileUtil.readObjects(
+                        "Equipment.bin"
+                );
+
 
 
         for(PartsRequest p : list) {
 
+
             if(p.getRideId().equals(id)) {
+
 
                 selectedRide = p;
 
 
                 HistoryTF.setText(
-                        "Previous maintenance available"
+                        "Maintenance history available"
                 );
 
 
-                StarusTF.setText(
+                StatusTF.setText(
                         p.getStatus()
                 );
 
@@ -102,16 +124,28 @@ public class PartsRequestController {
 
 
 
+
+
     @FXML
     public void reviewRequestOA(ActionEvent actionEvent) {
 
+
         ReviewTF.setText(
-                "Part Name: " + PartNameTF.getText()
-                        + "\nQuantity: " + QuantityTF.getText()
-                        + "\nSpecification: " + SpecificationTF.getText()
+
+                "Part Name: "
+                        + PartNameTF.getText()
+
+                        + "\nQuantity: "
+                        + QuantityTF.getText()
+
+                        + "\nSpecification: "
+                        + SpecificationTF.getText()
+
         );
 
     }
+
+
 
 
 
@@ -121,42 +155,86 @@ public class PartsRequestController {
 
         if(selectedRide == null) {
 
-            NotificationTF.setText(
-                    "Select equipment first"
-            );
-
-            return;
-        }
-
-
-        if(PartNameTF.getText().isEmpty()
-                || QuantityTF.getText().isEmpty()) {
 
             NotificationTF.setText(
-                    "Complete request information"
+                    "Select equipment first."
             );
 
             return;
 
         }
+
+
+
+        if(PartNameTF.getText().isBlank()
+                || QuantityTF.getText().isBlank()) {
+
+
+            NotificationTF.setText(
+                    "Complete request information."
+            );
+
+            return;
+
+        }
+
+
+
+        int quantity;
+
+
+        try {
+
+            quantity =
+                    Integer.parseInt(
+                            QuantityTF.getText()
+                    );
+
+
+        } catch(NumberFormatException e) {
+
+
+            NotificationTF.setText(
+                    "Quantity must be a number."
+            );
+
+            return;
+
+        }
+
+
+
 
 
         String requestId =
-                "PR" + (int)(Math.random()*10000);
+                "PR" + System.currentTimeMillis();
+
+
 
 
 
         PartsRequest request =
                 new PartsRequest(
+
                         requestId,
+
                         selectedRide.getRideId(),
+
                         selectedRide.getRideName(),
+
                         PartNameTF.getText(),
-                        Integer.parseInt(QuantityTF.getText()),
+
+                        quantity,
+
                         SpecificationTF.getText(),
+
                         "Maintenance Technician",
+
                         "Pending"
+
                 );
+
+
 
 
 
@@ -166,27 +244,37 @@ public class PartsRequestController {
         );
 
 
+
         RequestIDTF.setText(
                 requestId
         );
 
 
+
         NotificationTF.setText(
-                "Request sent to Inventory Supervisor"
+                "Request sent to Inventory Supervisor."
         );
 
     }
 
 
 
+
+
     @FXML
     public void clearFormOA(ActionEvent actionEvent) {
 
+
         PartNameTF.clear();
+
         QuantityTF.clear();
+
         SpecificationTF.clear();
+
         ReviewTF.clear();
+
         RequestIDTF.clear();
+
         NotificationTF.clear();
 
     }

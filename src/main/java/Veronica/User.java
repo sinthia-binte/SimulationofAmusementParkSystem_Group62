@@ -5,23 +5,37 @@ import java.time.LocalDate;
 
 public abstract class User implements Serializable {
 
-    private String id,name,phoneNo,email,address, password;
+    private final String id;
+    private final String name;
     private final String gender;
-    private final LocalDate dob,doj;
+    private final String password;
 
-    public User(String name, String phoneNo, String email,
-                String address, String gender,
-                String password, LocalDate dob) {
+    private String phoneNo;
+    private String address;
+    private final String email;
+
+    private final LocalDate dob;
+    private final LocalDate doj;
+
+
+    public User(String name,
+                String gender,
+                String password,
+                String id,
+                LocalDate dob,
+                String address,
+                String phoneNo,
+                String email) {
 
         this.name = name;
-        this.phoneNo = phoneNo;
-        this.email = email;
-        this.address = address;
         this.gender = gender;
         this.password = password;
+        this.id = id;
         this.dob = dob;
+        this.address = address;
+        this.phoneNo = phoneNo;
+        this.email = email;
         this.doj = LocalDate.now();
-        this.id = generateId();
     }
 
 
@@ -29,76 +43,68 @@ public abstract class User implements Serializable {
         return id;
     }
 
+
     public String getName() {
         return name;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
 
     public String getGender() {
         return gender;
     }
 
+
     public String getPassword() {
         return password;
     }
 
-    public LocalDate getDob() {
-        return dob;
+
+    public String getPhoneNo() {
+        return phoneNo;
     }
 
-    public LocalDate getDoj() {
-        return doj;
-    }
-
-    // Setters
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+
+    public String getAddress() {
+        return address;
     }
+
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+
+    public String getEmail() {
+        return email;
     }
+
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+
+    public LocalDate getDoj() {
+        return doj;
+    }
+
 
     @Override
     public String toString() {
-        return "Id = " + id +
-                "\nName = " + name +
-                "\nPassword = " + password +
-                "\nPhone No = " + phoneNo +
-                "\nEmail = " + email +
-                "\nAddress = " + address +
-                "\nGender = " + gender +
-                "\nDate of Birth = " + dob +
-                "\nDate of Joining = " + doj;
-    }
 
-    public abstract String generateId();
+        return "ID: " + id +
+                "\nName: " + name +
+                "\nGender: " + gender +
+                "\nPassword: " + password +
+                "\nPhone: " + phoneNo +
+                "\nEmail: " + email +
+                "\nAddress: " + address +
+                "\nDOB: " + dob +
+                "\nDOJ: " + doj;
+    }
 }

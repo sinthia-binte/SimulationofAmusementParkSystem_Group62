@@ -1,6 +1,7 @@
 package Veronica.MaintenanceTechnician;
 
 import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -129,4 +130,13 @@ public class MaintenanceManualController {
 
     }
 
+    @FXML
+    public void BackToDashBoardOA(ActionEvent actionEvent) {
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
+                "Maintenance Technician Dashboard"
+        );
+    }
 }

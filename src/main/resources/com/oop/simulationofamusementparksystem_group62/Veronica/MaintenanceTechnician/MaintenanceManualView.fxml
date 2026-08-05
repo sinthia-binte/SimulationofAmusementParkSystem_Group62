@@ -30,6 +30,7 @@
         <TextField fx:id="NotificationTF" editable="false" layoutX="520" layoutY="480" prefWidth="320" />
         <Button layoutX="360" layoutY="540" onAction="#closeManualOA" prefWidth="140" text="Close Manual" />
       <TextField fx:id="ManualContentTF" editable="false" layoutX="555.0" layoutY="111.0" prefHeight="266.0" prefWidth="250" />
+      <Button layoutX="616.0" layoutY="39.0" mnemonicParsing="false" onAction="#BackToDashBoardOA" prefHeight="26.0" prefWidth="158.0" text="Back" />
     </children>
 
 </AnchorPane>

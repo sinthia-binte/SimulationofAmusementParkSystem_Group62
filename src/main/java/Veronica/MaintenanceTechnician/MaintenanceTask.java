@@ -23,7 +23,6 @@ public class MaintenanceTask implements Serializable {
                            String completionNotes,
                            String evidencePath,
                            String completedBy,
-                           String status,
                            LocalDate completionDate) {
 
         this.taskId = taskId;

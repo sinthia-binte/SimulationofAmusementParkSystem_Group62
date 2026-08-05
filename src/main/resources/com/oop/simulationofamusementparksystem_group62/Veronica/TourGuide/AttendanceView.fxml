@@ -18,8 +18,9 @@
         <Button layoutX="500" layoutY="215" onAction="#markAttendanceOA" prefWidth="150" text="Mark Attendance" />
         <Button layoutX="200" layoutY="300" onAction="#reviewAttendanceOA" prefWidth="150" text="Review Attendance" />
         <Button layoutX="34.0" layoutY="300.0" onAction="#saveAttendanceOA" prefWidth="150" text="Save Attendance" />
-      <Label fx:id="ConfirmationLabel" layoutX="65.0" layoutY="386.0" prefHeight="104.0" prefWidth="226.0" />
+      <Label fx:id="ConfirmationLabel" layoutX="65.0" layoutY="386.0" prefHeight="104.0" prefWidth="226.0" style="-fx-background-color: sky blue;" />
       <Label fx:id="ReviewLabel" layoutX="430.0" layoutY="392.0" prefHeight="125.0" prefWidth="330.0" />
+      <Button layoutX="392.0" layoutY="300.0" mnemonicParsing="false" onAction="#BackToDashboardOA" prefHeight="26.0" prefWidth="150.0" text="Back" />
 
     </children>
 

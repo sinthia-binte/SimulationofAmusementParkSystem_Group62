@@ -5,19 +5,19 @@ import java.io.Serializable;
 public class Incident implements Serializable {
 
     private int incidentId;
-    private String tourGuide, guestName, time, location, description, evidence, status;
+    private String tourGuide, guestName, time, location, description, status;
 
-    public Incident(int incidentId, String tourGuide, String guestName, String time,
-                    String location, String description, String evidence, String status) {
+
+    public Incident(int incidentId, String tourGuide, String guestName, String time, String location, String description, String status) {
         this.incidentId = incidentId;
         this.tourGuide = tourGuide;
         this.guestName = guestName;
         this.time = time;
         this.location = location;
         this.description = description;
-        this.evidence = evidence;
         this.status = status;
     }
+
 
     public int getIncidentId() {
         return incidentId;
@@ -67,14 +67,6 @@ public class Incident implements Serializable {
         this.description = description;
     }
 
-    public String getEvidence() {
-        return evidence;
-    }
-
-    public void setEvidence(String evidence) {
-        this.evidence = evidence;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -83,3 +75,4 @@ public class Incident implements Serializable {
         this.status = status;
     }
 }
+
