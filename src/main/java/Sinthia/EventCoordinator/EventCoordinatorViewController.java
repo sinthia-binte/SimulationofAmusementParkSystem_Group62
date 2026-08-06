@@ -3,7 +3,7 @@ package Sinthia.EventCoordinator;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
-public class EventCoordinatorVeiwController {
+public class EventCoordinatorViewController {
     @javafx.fxml.FXML
     private Label eventCoordinatorLabel;
 
