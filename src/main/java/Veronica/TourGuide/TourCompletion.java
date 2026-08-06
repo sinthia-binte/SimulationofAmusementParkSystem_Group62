@@ -1,28 +1,31 @@
 package Veronica.TourGuide;
 
-public class TourCompletion {
+import java.io.Serializable;
 
-    private int CompleteId,guestCount;
-    private String tourSession,attendance,during,summary,status;
+public class TourCompletion implements Serializable {
 
-    public TourCompletion(int completeId, int guestCount, String tourSession, String attendance, String during, String summary, String status) {
-        CompleteId = completeId;
+    private int completeId,guestCount;
+    private String tourSession,attendance,duration,summary,status;
+
+
+    public TourCompletion(int completeId, int guestCount, String tourSession, String attendance, String duration, String summary, String status) {
+        this.completeId = completeId;
         this.guestCount = guestCount;
         this.tourSession = tourSession;
         this.attendance = attendance;
-        this.during = during;
+        this.duration = duration;
         this.summary = summary;
         this.status = status;
     }
 
-
     public int getCompleteId() {
-        return CompleteId;
+        return completeId;
     }
 
     public void setCompleteId(int completeId) {
-        CompleteId = completeId;
+        this.completeId = completeId;
     }
+
 
     public int getGuestCount() {
         return guestCount;
@@ -32,6 +35,7 @@ public class TourCompletion {
         this.guestCount = guestCount;
     }
 
+
     public String getTourSession() {
         return tourSession;
     }
@@ -39,6 +43,7 @@ public class TourCompletion {
     public void setTourSession(String tourSession) {
         this.tourSession = tourSession;
     }
+
 
     public String getAttendance() {
         return attendance;
@@ -48,13 +53,15 @@ public class TourCompletion {
         this.attendance = attendance;
     }
 
-    public String getDuring() {
-        return during;
+
+    public String getDuration() {
+        return duration;
     }
 
-    public void setDuring(String during) {
-        this.during = during;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
+
 
     public String getSummary() {
         return summary;
@@ -64,11 +71,18 @@ public class TourCompletion {
         this.summary = summary;
     }
 
+
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+
+    @Override
+    public String toString() {
+        return tourSession;
     }
 }

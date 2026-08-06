@@ -1,13 +1,19 @@
 package Veronica.TourGuide;
 
-import javafx.beans.property.SimpleStringProperty;
+import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.ArrayList;
+
 
 public class TourScheduleController {
+
 
     @FXML
     private TableColumn<TourSchedule, String> TimeColumn;
@@ -21,45 +27,40 @@ public class TourScheduleController {
     @FXML
     private TableColumn<TourSchedule, String> TourNameColumn;
 
+
     @FXML
     private TableView<TourSchedule> ScheduleTable;
 
 
-    private ObservableList<TourSchedule> tourList;
     @FXML
     private Label DetailsLabel;
+
+
+    private ObservableList<TourSchedule> tourList;
+
 
 
     @FXML
     public void initialize() {
 
-        // Connect table columns with TourSchedule attributes
 
-        TourNameColumn.setCellValueFactory(data ->
-                new SimpleStringProperty(
-                        data.getValue().getTourName()
-                )
+        TourNameColumn.setCellValueFactory(
+                new PropertyValueFactory<>("tourName")
         );
 
 
-        DateColumn.setCellValueFactory(data ->
-                new SimpleStringProperty(
-                        data.getValue().getDate()
-                )
+        DateColumn.setCellValueFactory(
+                new PropertyValueFactory<>("date")
         );
 
 
-        TimeColumn.setCellValueFactory(data ->
-                new SimpleStringProperty(
-                        data.getValue().getTime()
-                )
+        TimeColumn.setCellValueFactory(
+                new PropertyValueFactory<>("time")
         );
 
 
-        LocationColumn.setCellValueFactory(data ->
-                new SimpleStringProperty(
-                        data.getValue().getLocation()
-                )
+        LocationColumn.setCellValueFactory(
+                new PropertyValueFactory<>("location")
         );
 
 
@@ -69,39 +70,58 @@ public class TourScheduleController {
 
 
 
+
+
     private void loadTourSchedule() {
+
 
         tourList = FXCollections.observableArrayList();
 
 
-        // Sample assigned tours
-        tourList.add(
-                new TourSchedule(
-                        1,
-                        "City History Tour",
-                        "26-07-2026",
-                        "10:00 AM",
-                        "Main Gate",
-                        "Historical attraction tour"
-                )
-        );
+
+        ArrayList<TourSession> sessions =
+                BinaryFileUtil.readList(
+                        "TourSessions.bin"
+                );
 
 
-        tourList.add(
-                new TourSchedule(
-                        2,
-                        "Nature Adventure",
-                        "28-07-2026",
-                        "09:00 AM",
-                        "Forest Area",
-                        "Guided nature exploration"
-                )
-        );
+
+        for (TourSession session : sessions) {
+
+
+            int tourId =
+                    Integer.parseInt(
+                            session.getTourguideId()
+                                    .replace("TG", "")
+                    );
+
+
+
+            TourSchedule schedule =
+                    new TourSchedule(
+
+                            tourId,
+                            session.getTitle(),
+                            session.getDate().toString(),
+                            session.getStarttime(),
+                            session.getLocation(),
+                            session.getDescription()
+
+                    );
+
+
+
+            tourList.add(schedule);
+
+        }
+
 
 
         ScheduleTable.setItems(tourList);
 
     }
+
+
 
 
 
@@ -114,29 +134,54 @@ public class TourScheduleController {
                         .getSelectedItem();
 
 
-        if(selectedTour == null){
+
+        if (selectedTour == null) {
+
 
             Alert alert =
                     new Alert(Alert.AlertType.ERROR);
+
 
             alert.setContentText(
                     "Please select a tour first."
             );
 
+
             alert.showAndWait();
 
             return;
+
         }
 
 
-        DetailsTA.setText(
+
+        DetailsLabel.setText(
+
                 "Tour ID: " + selectedTour.getTourId()
                         + "\nTour Name: " + selectedTour.getTourName()
                         + "\nDate: " + selectedTour.getDate()
                         + "\nTime: " + selectedTour.getTime()
                         + "\nLocation: " + selectedTour.getLocation()
                         + "\nDescription: " + selectedTour.getDescription()
+
         );
 
     }
+
+
+
+
+
+    @FXML
+    public void BackToDashboardOA(ActionEvent actionEvent) {
+
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/Veronica/TourGuide/TourGuideDashBoardView.fxml",
+                "Tour Guide Dashboard"
+        );
+
+    }
+
 }

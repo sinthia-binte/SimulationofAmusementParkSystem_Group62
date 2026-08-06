@@ -1,45 +1,324 @@
 package Veronica.MaintenanceTechnician;
 
+import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-public class EquipmentStatusController
-{
-    @javafx.fxml.FXML
+import java.util.ArrayList;
+
+public class EquipmentStatusController {
+
+
+    @FXML
     private TextField CurrentStatusTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField ReviewTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private ComboBox<String> RideCB;
-    @javafx.fxml.FXML
+
+    @FXML
     private ComboBox<String> StatusCB;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField LastInspectionTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField FaultHistoryTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField NotificationTF;
 
-    @javafx.fxml.FXML
+
+    public Equipment selectedEquipment;
+
+
+
+    @FXML
     public void initialize() {
-        RideCB.getItems().addAll("Ride-001", "Ride-002", "Ride-003", "Equipment-001");
-        StatusCB.getItems().addAll("Active", "Under Maintenance", "Out of Service");
+
+        StatusCB.getItems().addAll(
+                "Active",
+                "Under Maintenance",
+                "Out of Service"
+        );
+
+
+        loadEquipment();
+
+
+        RideCB.setOnAction(e -> loadEquipmentDetails());
+
     }
 
-    @javafx.fxml.FXML
-    public void loadEquipmentDetailsOA(ActionEvent actionEvent) {
+
+
+    // Event-1: Load available rides/equipment
+    private void loadEquipment() {
+
+
+        ArrayList<Equipment> equipmentList =
+                BinaryFileUtil.readObjects("Equipment.bin");
+
+
+        for(Equipment equipment : equipmentList){
+
+            RideCB.getItems().add(
+                    equipment.getEquipmentId()
+            );
+
+        }
+
     }
 
-    @javafx.fxml.FXML
-    public void clearFormOA(ActionEvent actionEvent) {
+
+
+
+
+    // Event-2 & Event-3: Retrieve equipment information
+    private void loadEquipmentDetails() {
+
+
+        String equipmentId =
+                RideCB.getValue();
+
+
+        ArrayList<Equipment> equipmentList =
+                BinaryFileUtil.readObjects("Equipment.bin");
+
+
+
+        for(Equipment equipment : equipmentList){
+
+
+            if(equipment.getEquipmentId()
+                    .equals(equipmentId)){
+
+
+                selectedEquipment = equipment;
+
+
+                CurrentStatusTF.setText(
+                        equipment.getStatus()
+                );
+
+
+                LastInspectionTF.setText(
+                        String.valueOf(
+                                equipment.getLastInspectionDate()
+                        )
+                );
+
+
+                FaultHistoryTF.setText(
+                        equipment.getFaultHistory()
+                );
+
+
+                break;
+
+            }
+
+        }
+
     }
 
-    @javafx.fxml.FXML
-    public void updateStatusOA(ActionEvent actionEvent) {
+
+
+
+    @FXML
+    public void loadEquipmentDetailsOA(ActionEvent event){
+
+        loadEquipmentDetails();
+
     }
 
-    @javafx.fxml.FXML
-    public void reviewStatusOA(ActionEvent actionEvent) {
+
+
+
+
+    // Event-7: Review before saving
+    @FXML
+    public void reviewStatusOA(ActionEvent event){
+
+
+        if(selectedEquipment == null){
+
+            ReviewTF.setText(
+                    "Please select equipment first."
+            );
+
+            return;
+
+        }
+
+
+
+        ReviewTF.setText(
+
+                "Equipment ID: "
+                        + selectedEquipment.getEquipmentId()
+
+                        + "\nCurrent Status: "
+                        + CurrentStatusTF.getText()
+
+                        + "\nNew Status: "
+                        + StatusCB.getValue()
+
+                        + "\nLast Inspection: "
+                        + LastInspectionTF.getText()
+
+                        + "\nFault History: "
+                        + FaultHistoryTF.getText()
+
+        );
+
     }
+
+
+
+
+
+    // Event-5 & Event-6: Validate and save status change
+    @FXML
+    public void updateStatusOA(ActionEvent event){
+
+
+        if(selectedEquipment == null){
+
+            NotificationTF.setText(
+                    "Select equipment first."
+            );
+
+            return;
+
+        }
+
+
+
+        if(StatusCB.getValue() == null){
+
+            NotificationTF.setText(
+                    "Select a new status."
+            );
+
+            return;
+
+        }
+
+
+
+        // Validation rule
+        if(selectedEquipment.getStatus()
+                .equals("Critical")
+                &&
+                StatusCB.getValue()
+                        .equals("Active")){
+
+
+            NotificationTF.setText(
+                    "Critical equipment cannot be activated."
+            );
+
+            return;
+
+        }
+
+
+
+
+        EquipmentStatus statusRecord =
+                new EquipmentStatus(
+
+                        selectedEquipment.getEquipmentId(),
+
+                        selectedEquipment.getEquipmentName(),
+
+                        selectedEquipment.getStatus(),
+
+                        StatusCB.getValue(),
+
+                        LastInspectionTF.getText(),
+
+                        FaultHistoryTF.getText(),
+
+                        "Maintenance Technician"
+
+                );
+
+
+
+        // Event-8 & Event-9: Save update and audit log
+        BinaryFileUtil.appendObject(
+                "EquipmentStatus.bin",
+                statusRecord
+        );
+
+
+
+        NotificationTF.setText(
+
+                "Status updated successfully."
+                        + "\nNew Status: "
+                        + StatusCB.getValue()
+
+        );
+
+
+        CurrentStatusTF.setText(
+                StatusCB.getValue()
+        );
+
+    }
+
+
+
+
+
+    @FXML
+    public void clearFormOA(ActionEvent event){
+
+
+        RideCB.getSelectionModel()
+                .clearSelection();
+
+
+        StatusCB.getSelectionModel()
+                .clearSelection();
+
+
+        CurrentStatusTF.clear();
+
+        LastInspectionTF.clear();
+
+        FaultHistoryTF.clear();
+
+        ReviewTF.clear();
+
+        NotificationTF.clear();
+
+
+        selectedEquipment = null;
+
+    }
+
+
+
+
+
+    @FXML
+    public void backToDashboardOA(ActionEvent event){
+
+
+        SceneSwitcher.switchScene(
+                event,
+                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
+                "Maintenance Technician Dashboard"
+        );
+
+    }
+
 }

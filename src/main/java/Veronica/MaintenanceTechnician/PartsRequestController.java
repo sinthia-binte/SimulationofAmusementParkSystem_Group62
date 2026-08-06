@@ -1,47 +1,282 @@
 package Veronica.MaintenanceTechnician;
 
+import Veronica.BinaryFileUtil;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-public class PartsRequestController
-{
-    @javafx.fxml.FXML
-    private TextField ReviewTF;
-    @javafx.fxml.FXML
-    private ComboBox RideCB;
-    @javafx.fxml.FXML
-    private TextField StarusTF;
-    @javafx.fxml.FXML
-    private TextField SpecificationTF;
-    @javafx.fxml.FXML
-    private TextField RequestIDTF;
-    @javafx.fxml.FXML
+import java.util.ArrayList;
+
+
+public class PartsRequestController {
+
+
+    @FXML
+    private ComboBox<String> RideCB;
+
+    @FXML
     private TextField HistoryTF;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TextField StatusTF;
+
+    @FXML
     private TextField PartNameTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField QuantityTF;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TextField SpecificationTF;
+
+    @FXML
+    private TextField ReviewTF;
+
+    @FXML
+    private TextField RequestIDTF;
+
+    @FXML
     private TextField NotificationTF;
 
-    @javafx.fxml.FXML
+
+
+    private PartsRequest selectedRide;
+
+
+
+    @FXML
     public void initialize() {
+
+        loadEquipment();
+
     }
 
-    @javafx.fxml.FXML
+
+
+
+
+    private void loadEquipment() {
+
+
+        ArrayList<PartsRequest> list =
+                BinaryFileUtil.readObjects(
+                        "Equipment.bin"
+                );
+
+
+        for(PartsRequest p : list) {
+
+
+            RideCB.getItems().add(
+                    p.getRideId()
+            );
+
+        }
+
+    }
+
+
+
+
+
+    @FXML
     public void loadEquipmentDetailsOA(ActionEvent actionEvent) {
+
+
+        String id =
+                RideCB.getValue();
+
+
+
+        ArrayList<PartsRequest> list =
+                BinaryFileUtil.readObjects(
+                        "Equipment.bin"
+                );
+
+
+
+        for(PartsRequest p : list) {
+
+
+            if(p.getRideId().equals(id)) {
+
+
+                selectedRide = p;
+
+
+                HistoryTF.setText(
+                        "Maintenance history available"
+                );
+
+
+                StatusTF.setText(
+                        p.getStatus()
+                );
+
+
+                break;
+
+            }
+
+        }
+
     }
 
-    @javafx.fxml.FXML
-    public void submitRequestOA(ActionEvent actionEvent) {
-    }
 
-    @javafx.fxml.FXML
-    public void clearFormOA(ActionEvent actionEvent) {
-    }
 
-    @javafx.fxml.FXML
+
+
+    @FXML
     public void reviewRequestOA(ActionEvent actionEvent) {
+
+
+        ReviewTF.setText(
+
+                "Part Name: "
+                        + PartNameTF.getText()
+
+                        + "\nQuantity: "
+                        + QuantityTF.getText()
+
+                        + "\nSpecification: "
+                        + SpecificationTF.getText()
+
+        );
+
     }
+
+
+
+
+
+    @FXML
+    public void submitRequestOA(ActionEvent actionEvent) {
+
+
+        if(selectedRide == null) {
+
+
+            NotificationTF.setText(
+                    "Select equipment first."
+            );
+
+            return;
+
+        }
+
+
+
+        if(PartNameTF.getText().isBlank()
+                || QuantityTF.getText().isBlank()) {
+
+
+            NotificationTF.setText(
+                    "Complete request information."
+            );
+
+            return;
+
+        }
+
+
+
+        int quantity;
+
+
+        try {
+
+            quantity =
+                    Integer.parseInt(
+                            QuantityTF.getText()
+                    );
+
+
+        } catch(NumberFormatException e) {
+
+
+            NotificationTF.setText(
+                    "Quantity must be a number."
+            );
+
+            return;
+
+        }
+
+
+
+
+
+        String requestId =
+                "PR" + System.currentTimeMillis();
+
+
+
+
+
+        PartsRequest request =
+                new PartsRequest(
+
+                        requestId,
+
+                        selectedRide.getRideId(),
+
+                        selectedRide.getRideName(),
+
+                        PartNameTF.getText(),
+
+                        quantity,
+
+                        SpecificationTF.getText(),
+
+                        "Maintenance Technician",
+
+                        "Pending"
+
+                );
+
+
+
+
+
+        BinaryFileUtil.appendObject(
+                "PartsRequest.bin",
+                request
+        );
+
+
+
+        RequestIDTF.setText(
+                requestId
+        );
+
+
+
+        NotificationTF.setText(
+                "Request sent to Inventory Supervisor."
+        );
+
+    }
+
+
+
+
+
+    @FXML
+    public void clearFormOA(ActionEvent actionEvent) {
+
+
+        PartNameTF.clear();
+
+        QuantityTF.clear();
+
+        SpecificationTF.clear();
+
+        ReviewTF.clear();
+
+        RequestIDTF.clear();
+
+        NotificationTF.clear();
+
+    }
+
 }

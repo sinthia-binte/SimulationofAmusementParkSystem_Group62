@@ -26,6 +26,7 @@
       <TextField fx:id="FaultHistoryTF" editable="false" layoutX="159.0" layoutY="248.0" prefHeight="77.0" prefWidth="290.0" />
       <TextField fx:id="ReviewTF" editable="false" layoutX="534.0" layoutY="136.0" prefHeight="160.0" prefWidth="290.0" />
       <TextField fx:id="NotificationTF" editable="false" layoutX="520.0" layoutY="397.0" prefHeight="113.0" prefWidth="290.0" />
+      <Button layoutX="665.0" layoutY="539.0" mnemonicParsing="false" onAction="#backToDashboardOA" prefHeight="26.0" prefWidth="127.0" text="Back" />
 
     </children>
 </AnchorPane>

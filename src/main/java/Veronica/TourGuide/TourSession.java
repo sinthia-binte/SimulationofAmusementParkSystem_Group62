@@ -1,20 +1,44 @@
 package Veronica.TourGuide;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class TourSession {
-    private String tourguideId,title,description,location,during ,category,meetingtime;
-    private LocalDate date,starttime,endtime;
+public class TourSession implements Serializable {
+
+    private String tourguideId;
+    private String title;
+    private String description;
+    private String location;
+    private String duration;
+    private String category;
+    private String meetingtime;
+
+    private LocalDate date;
+    private String starttime;
+    private String endtime;
+
     private float ticketPrice;
     private int maxParticipants;
 
 
-    public TourSession(String tourguideId, String title, String description, String location, String during, String category, String meetingtime, LocalDate date, LocalDate starttime, LocalDate endtime, float ticketPrice, int maxParticipants) {
+    public TourSession(String tourguideId,
+                       String title,
+                       String description,
+                       String location,
+                       String duration,
+                       String category,
+                       String meetingtime,
+                       LocalDate date,
+                       String starttime,
+                       String endtime,
+                       float ticketPrice,
+                       int maxParticipants) {
+
         this.tourguideId = tourguideId;
         this.title = title;
         this.description = description;
         this.location = location;
-        this.during = during;
+        this.duration = duration;
         this.category = category;
         this.meetingtime = meetingtime;
         this.date = date;
@@ -24,13 +48,6 @@ public class TourSession {
         this.maxParticipants = maxParticipants;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getTourguideId() {
         return tourguideId;
@@ -40,6 +57,7 @@ public class TourSession {
         this.tourguideId = tourguideId;
     }
 
+
     public String getTitle() {
         return title;
     }
@@ -47,6 +65,16 @@ public class TourSession {
     public void setTitle(String title) {
         this.title = title;
     }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     public String getLocation() {
         return location;
@@ -56,13 +84,15 @@ public class TourSession {
         this.location = location;
     }
 
-    public String getDuring() {
-        return during;
+
+    public String getDuration() {
+        return duration;
     }
 
-    public void setDuring(String during) {
-        this.during = during;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
+
 
     public String getCategory() {
         return category;
@@ -72,6 +102,7 @@ public class TourSession {
         this.category = category;
     }
 
+
     public String getMeetingtime() {
         return meetingtime;
     }
@@ -79,6 +110,7 @@ public class TourSession {
     public void setMeetingtime(String meetingtime) {
         this.meetingtime = meetingtime;
     }
+
 
     public LocalDate getDate() {
         return date;
@@ -88,21 +120,24 @@ public class TourSession {
         this.date = date;
     }
 
-    public LocalDate getStarttime() {
+
+    public String getStarttime() {
         return starttime;
     }
 
-    public void setStarttime(LocalDate starttime) {
+    public void setStarttime(String starttime) {
         this.starttime = starttime;
     }
 
-    public LocalDate getEndtime() {
+
+    public String getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(LocalDate endtime) {
+    public void setEndtime(String endtime) {
         this.endtime = endtime;
     }
+
 
     public float getTicketPrice() {
         return ticketPrice;
@@ -112,11 +147,18 @@ public class TourSession {
         this.ticketPrice = ticketPrice;
     }
 
+
     public int getMaxParticipants() {
         return maxParticipants;
     }
 
     public void setMaxParticipants(int maxParticipants) {
         this.maxParticipants = maxParticipants;
+    }
+
+
+    @Override
+    public String toString() {
+        return title;
     }
 }

@@ -29,5 +29,6 @@
         <Button layoutX="200" layoutY="560" onAction="#reviewInspectionOA" prefWidth="120" text="Review" />
         <Button layoutX="350" layoutY="560" onAction="#submitInspectionOA" prefWidth="160" text="Submit Inspection" />
       <Label fx:id="AlertmessageLabel" layoutX="630.0" layoutY="153.0" prefHeight="110.0" prefWidth="184.0" />
+      <Button layoutX="43.0" layoutY="559.0" mnemonicParsing="false" onAction="#BACKOA" prefHeight="26.0" prefWidth="120.0" text="Back" />
     </children>
 </AnchorPane>

@@ -1,32 +1,142 @@
 package Veronica.MaintenanceTechnician;
-import javafx.event.ActionEvent;
 
+import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class MaintenanceManualController
-{
-    @javafx.fxml.FXML
+import java.util.ArrayList;
+
+public class MaintenanceManualController {
+
+    @FXML
     private TextField SelectedEquipmentTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField EquipmentSearchTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField NotificationTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField ManualContentTF;
 
-    @javafx.fxml.FXML
+
+    private MaintenanceManual selectedManual;
+
+
+    @FXML
     public void initialize() {
+
     }
 
-    @javafx.fxml.FXML
-    public void openManualOA(ActionEvent actionEvent) {
-    }
 
-    @javafx.fxml.FXML
+    @FXML
     public void searchManualOA(ActionEvent actionEvent) {
+
+        String search = EquipmentSearchTF.getText();
+
+
+        ArrayList<MaintenanceManual> manuals =
+                BinaryFileUtil.readObjects("MaintenanceManual.bin");
+
+
+        for(MaintenanceManual m : manuals) {
+
+            if(m.getEquipmentId().equals(search)
+                    || m.getEquipmentName().equalsIgnoreCase(search)) {
+
+
+                selectedManual = m;
+
+
+                SelectedEquipmentTF.setText(
+                        m.getEquipmentName()
+                );
+
+
+                NotificationTF.setText(
+                        "Manual Found"
+                );
+
+
+                return;
+
+            }
+
+        }
+
+
+        NotificationTF.setText(
+                "Manual Not Found"
+        );
+
     }
 
-    @javafx.fxml.FXML
+
+
+    @FXML
+    public void openManualOA(ActionEvent actionEvent) {
+
+
+        if(selectedManual == null) {
+
+            NotificationTF.setText(
+                    "Search equipment first"
+            );
+
+            return;
+
+        }
+
+
+        if(selectedManual.getManualContent().isEmpty()) {
+
+            NotificationTF.setText(
+                    "Manual file unavailable"
+            );
+
+            return;
+
+        }
+
+
+        ManualContentTF.setText(
+                selectedManual.getManualContent()
+        );
+
+
+        NotificationTF.setText(
+                "Manual Opened"
+        );
+
+    }
+
+
+
+    @FXML
     public void closeManualOA(ActionEvent actionEvent) {
+
+
+        ManualContentTF.clear();
+
+        SelectedEquipmentTF.clear();
+
+        NotificationTF.setText(
+                "Manual Closed"
+        );
+
+
+    }
+
+    @FXML
+    public void BackToDashBoardOA(ActionEvent actionEvent) {
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
+                "Maintenance Technician Dashboard"
+        );
     }
 }

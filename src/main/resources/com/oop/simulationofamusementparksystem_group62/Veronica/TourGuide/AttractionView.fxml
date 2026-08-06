@@ -1,93 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600"
-            prefWidth="900"
-            xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Veronica.TourGuide.AttractionController">
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.TourGuide.AttractionController">
 
     <children>
-        <Label layoutX="280"
-               layoutY="30"
-               text="Attraction Information"
-               style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+        <Label layoutX="280" layoutY="30" style="-fx-font-size:24px; -fx-font-weight:bold;" text="Attraction Information" />
 
-        <Label layoutX="50"
-               layoutY="90"
-               text="Search Attraction"/>
+        <Label layoutX="50" layoutY="90" text="Search Attraction" />
 
-        <TextField fx:id="SearchTF"
-                   layoutX="170"
-                   layoutY="85"
-                   prefWidth="250"
-                   promptText="Enter attraction name"/>
+        <TextField fx:id="SearchTF" layoutX="170" layoutY="85" prefWidth="250" promptText="Enter attraction name" />
 
-        <Button text="Search"
-                layoutX="450"
-                layoutY="85"
-                prefWidth="120"
-                onAction="#searchAttractionOA"/>
+        <Button layoutX="450" layoutY="85" onAction="#searchAttractionOA" prefWidth="120" text="Search" />
 
-        <Label layoutX="380"
-               layoutY="150"
-               text="Attraction Details"
-               style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+        <Label layoutX="380" layoutY="150" style="-fx-font-size:18px; -fx-font-weight:bold;" text="Attraction Details" />
 
-        <Label layoutX="380"
-               layoutY="190"
-               text="Attraction Name"/>
+        <Label layoutX="380" layoutY="190" text="Attraction Name" />
 
-        <TextField fx:id="AttractionNameTF"
-                   layoutX="500"
-                   layoutY="185"
-                   prefWidth="300"
-                   editable="false"/>
+        <TextField fx:id="AttractionNameTF" editable="false" layoutX="500" layoutY="185" prefWidth="300" />
 
-        <Label layoutX="380"
-               layoutY="230"
-               text="Location"/>
+        <Label layoutX="380" layoutY="230" text="Location" />
 
-        <TextField fx:id="LocationTF"
-                   layoutX="500"
-                   layoutY="225"
-                   prefWidth="300"
-                   editable="false"/>
+        <TextField fx:id="LocationTF" editable="false" layoutX="500" layoutY="225" prefWidth="300" />
 
-        <Label layoutX="380"
-               layoutY="270"
-               text="Visiting Time"/>
+        <Label layoutX="380" layoutY="270" text="Visiting Time" />
 
-        <TextField fx:id="VisitingTimeTF"
-                   layoutX="500"
-                   layoutY="265"
-                   prefWidth="300"
-                   editable="false"/>
+        <TextField fx:id="VisitingTimeTF" editable="false" layoutX="500" layoutY="265" prefWidth="300" />
 
-        <Label layoutX="380"
-               layoutY="310"
-               text="Description"/>
+        <Label layoutX="380" layoutY="310" text="Description" />
 
-        <TextArea fx:id="DescriptionTA"
-                  layoutX="500"
-                  layoutY="305"
-                  prefWidth="300"
-                  prefHeight="120"
-                  editable="false"/>
+        <TextArea fx:id="DescriptionTA" editable="false" layoutX="500" layoutY="305" prefHeight="120" prefWidth="300" />
 
-        <Button text="View Attraction"
-                layoutX="50"
-                layoutY="480"
-                prefWidth="150"
-                onAction="#viewAttractionOA"/>
+        <Button layoutX="50" layoutY="480" onAction="#viewAttractionOA" prefWidth="150" text="View Attraction" />
 
-        <Button text="Back to Dashboard"
-                layoutX="650"
-                layoutY="550"
-                prefWidth="150"
-                onAction="#backToDashboardOA"/>
+        <Button layoutX="650" layoutY="550" onAction="#BackToDashboardOA" prefWidth="150" text="Back to Dashboard" />
+      <Label fx:id="ViewAttractionLabel" layoutX="59.0" layoutY="161.0" prefHeight="218.0" prefWidth="250.0" />
     </children>
 
 </AnchorPane>

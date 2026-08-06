@@ -1,34 +1,215 @@
 package Veronica.MaintenanceTechnician;
 
+import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-public class MaintenanceRecordController
-{
-    @javafx.fxml.FXML
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+
+public class MaintenanceRecordController {
+
+
+    @FXML
     private TextField IssuesFixedTF;
-    @javafx.fxml.FXML
-    private ComboBox rideCB;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> rideCB;
+
+    @FXML
     private TextField WorkDescriptionTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField partsField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label messageLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField historyTF;
 
-    @javafx.fxml.FXML
+
+
+    private MaintenanceTask selectedTask;
+
+
+
+    @FXML
     public void initialize() {
+
+        loadCompletedTasks();
+
     }
 
-    @javafx.fxml.FXML
+
+
+
+
+    private void loadCompletedTasks() {
+
+
+        ArrayList<MaintenanceTask> tasks =
+                BinaryFileUtil.readObjects(
+                        "CompletedMaintenanceTask.bin"
+                );
+
+
+        for(MaintenanceTask task : tasks){
+
+            rideCB.getItems().add(
+                    task.getEquipmentId()
+            );
+
+        }
+
+    }
+
+
+
+
+
+    @FXML
     public void reviewMaintenanceOA(ActionEvent actionEvent) {
+
+
+        String equipmentId =
+                rideCB.getValue();
+
+
+
+        ArrayList<MaintenanceTask> tasks =
+                BinaryFileUtil.readObjects(
+                        "CompletedMaintenanceTask.bin"
+                );
+
+
+
+        for(MaintenanceTask task : tasks){
+
+
+            if(task.getEquipmentId().equals(equipmentId)){
+
+
+                selectedTask = task;
+
+
+                WorkDescriptionTF.setText(
+                        task.getWorkDone()
+                );
+
+
+                partsField.setText(
+                        task.getPartsUsed()
+                );
+
+
+                IssuesFixedTF.setText(
+                        task.getCompletionNotes()
+                );
+
+
+                historyTF.setText(
+
+                        "Equipment ID: "
+                                + task.getEquipmentId()
+                                + "\nStatus: "
+                                + task.getCurrentStatus()
+                                + "\nDate: "
+                                + task.getCompletionDate()
+
+                );
+
+
+                break;
+
+            }
+
+        }
+
+
     }
 
-    @javafx.fxml.FXML
+
+
+
+
+    @FXML
     public void saveMaintenanceOA(ActionEvent actionEvent) {
+
+
+        if(selectedTask == null){
+
+
+            messageLabel.setText(
+                    "Select a maintenance record first."
+            );
+
+
+            return;
+
+        }
+
+
+
+        MaintenanceTask record =
+                new MaintenanceTask(
+
+                        selectedTask.getTaskId(),
+
+                        selectedTask.getEquipmentId(),
+
+                        selectedTask.getTaskDescription(),
+
+                        selectedTask.getLocation(),
+
+                        "Completed",
+
+                        WorkDescriptionTF.getText(),
+
+                        partsField.getText(),
+
+                        IssuesFixedTF.getText(),
+
+                        "Maintenance Technician",
+
+                        "Saved",
+
+                        LocalDate.now()
+
+                );
+
+
+
+        BinaryFileUtil.appendObject(
+                "MaintenanceRecord.bin",
+                record
+        );
+
+
+
+        messageLabel.setText(
+                "Maintenance record saved successfully."
+        );
+
     }
+
+
+
+
+
+    @FXML
+    public void BackOA(ActionEvent actionEvent) {
+
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
+                "Maintenance Technician Dashboard"
+        );
+
+    }
+
 }

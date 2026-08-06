@@ -1,115 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0"
-            xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Veronica.TourGuide.TourSessionViewController">
-
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.TourGuide.TourSessionViewController">
     <children>
 
-        <Label layoutX="300.0" layoutY="20.0"
-               text="Create Tour Session"
-               style="-fx-font-size:22px; -fx-font-weight:bold;" />
-
-
+        <Label layoutX="300.0" layoutY="20.0" style="-fx-font-size:22px; -fx-font-weight:bold;" text="Create Tour Session" />
 
         <Label layoutX="40.0" layoutY="70.0" text="Title" />
-        <TextField fx:id="TitleTF"
-                   layoutX="150.0"
-                   layoutY="65.0"
-                   prefWidth="250.0" />
-
+        <TextField fx:id="TitleTF" layoutX="150.0" layoutY="65.0" prefWidth="250.0" />
         <Label layoutX="40.0" layoutY="115.0" text="Description" />
-        <TextArea fx:id="DescriptionTF"
-                  layoutX="150.0"
-                  layoutY="110.0"
-                  prefWidth="250.0"
-                  prefHeight="80.0" />
-
+        <TextArea fx:id="DescriptionTF" layoutX="150.0" layoutY="110.0" prefHeight="80.0" prefWidth="250.0" />
         <Label layoutX="40.0" layoutY="210.0" text="Location" />
-        <TextField fx:id="LocationTF"
-                   layoutX="150.0"
-                   layoutY="205.0"
-                   prefWidth="250.0" />
+        <TextField fx:id="LocationTF" layoutX="150.0" layoutY="205.0" prefWidth="250.0" />
 
         <Label layoutX="40.0" layoutY="255.0" text="Category" />
-        <ComboBox fx:id="CategoryCB"
-                  layoutX="150.0"
-                  layoutY="250.0"
-                  prefWidth="250.0" />
+        <ComboBox fx:id="CategoryCB" layoutX="150.0" layoutY="250.0" prefWidth="250.0" />
 
         <Label layoutX="40.0" layoutY="300.0" text="Duration" />
-        <ComboBox fx:id="DurationCB"
-                  layoutX="150.0"
-                  layoutY="295.0"
-                  prefWidth="250.0" />
+        <ComboBox fx:id="DurationCB" layoutX="150.0" layoutY="295.0" prefWidth="250.0" />
 
 
         <Label layoutX="470.0" layoutY="70.0" text="Date" />
-        <DatePicker fx:id="DateDP"
-                    layoutX="580.0"
-                    layoutY="65.0"
-                    prefWidth="220.0" />
+        <DatePicker fx:id="DateDP" layoutX="580.0" layoutY="65.0" prefWidth="220.0" />
 
         <Label layoutX="470.0" layoutY="115.0" text="Start Time" />
-        <TextField fx:id="StartTimeTF"
-                   layoutX="580.0"
-                   layoutY="110.0"
-                   prefWidth="220.0" />
+        <TextField fx:id="StartTimeTF" layoutX="580.0" layoutY="110.0" prefWidth="220.0" />
 
         <Label layoutX="470.0" layoutY="160.0" text="End Time" />
-        <TextField fx:id="EndTimeTF"
-                   layoutX="580.0"
-                   layoutY="155.0"
-                   prefWidth="220.0" />
+        <TextField fx:id="EndTimeTF" layoutX="580.0" layoutY="155.0" prefWidth="220.0" />
 
         <Label layoutX="470.0" layoutY="205.0" text="Meeting Point" />
-        <TextField fx:id="MeetingPointTF"
-                   layoutX="580.0"
-                   layoutY="200.0"
-                   prefWidth="220.0" />
+        <TextField fx:id="MeetingPointTF" layoutX="580.0" layoutY="200.0" prefWidth="220.0" />
 
 
 
         <Label layoutX="470.0" layoutY="250.0" text="Ticket Price" />
-        <TextField fx:id="PriceTF"
-                   layoutX="580.0"
-                   layoutY="245.0"
-                   prefWidth="220.0" />
+        <TextField fx:id="PriceTF" layoutX="580.0" layoutY="245.0" prefWidth="220.0" />
 
         <Label layoutX="470.0" layoutY="295.0" text="Max Participants" />
-        <TextField fx:id="CapacityTF"
-                   layoutX="580.0"
-                   layoutY="290.0"
-                   prefWidth="220.0" />
+        <TextField fx:id="CapacityTF" layoutX="580.0" layoutY="290.0" prefWidth="220.0" />
 
 
-        <Button layoutX="280.0"
-                layoutY="355.0"
-                mnemonicParsing="false"
-                text="Preview"
-                onAction="#previewButtonOA"/>
+        <Button layoutX="280.0" layoutY="355.0" mnemonicParsing="false" onAction="#previewButtonOA" text="Preview" />
 
-        <Button layoutX="420.0"
-                layoutY="355.0"
-                mnemonicParsing="false"
-                text="Save Tour"
-                onAction="#saveTourButtonOA"/>
+        <Button layoutX="420.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveTourButtonOA" text="Save Tour" />
 
 
 
         <Label layoutX="40.0" layoutY="410.0" text="Tour Preview" />
 
-        <TextArea fx:id="PreviewTA"
-                  layoutX="40.0"
-                  layoutY="435.0"
-                  prefWidth="760.0"
-                  prefHeight="220.0"
-                  editable="false"/>
+        <TextArea fx:id="PreviewTA" editable="false" layoutX="40.0" layoutY="435.0" prefHeight="220.0" prefWidth="760.0" />
+      <Button layoutX="616.0" layoutY="354.0" mnemonicParsing="false" onAction="#BackToDashboardOA" prefHeight="26.0" prefWidth="195.0" text="Back To DashBoard" />
 
     </children>
 </AnchorPane>

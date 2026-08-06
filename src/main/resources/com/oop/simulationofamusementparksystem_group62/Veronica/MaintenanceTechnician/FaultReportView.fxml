@@ -31,5 +31,6 @@
         <Button layoutX="180" layoutY="580" onAction="#reviewReportOA" prefWidth="140" text="Review Report" />
         <Button layoutX="350" layoutY="580" onAction="#submitReportOA" prefWidth="140" text="Submit Report" />
         <Button layoutX="520" layoutY="580" onAction="#clearFormOA" prefWidth="100" text="Clear" />
+      <Button layoutX="699.0" layoutY="580.0" mnemonicParsing="false" onAction="#BackToDashBoardOA" prefHeight="26.0" prefWidth="122.0" text="Back" />
     </children>
 </AnchorPane>

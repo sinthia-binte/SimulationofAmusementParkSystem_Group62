@@ -1,24 +1,34 @@
 package Veronica.MaintenanceTechnician;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class PartsRequest {
+public class PartsRequest implements Serializable {
 
-    private String requestId, rideId, partName, specification, inventoryStatus, requestedBy, status;
+    private String requestId, rideId, rideName, partName, specification, requestedBy, status;
     private int quantity;
     private LocalDate requestDate;
 
 
-    public PartsRequest(String requestId, String rideId, String partName, String specification, String inventoryStatus, String requestedBy, String status, int quantity, LocalDate requestDate) {
+    public PartsRequest(String requestId,
+                        String rideId,
+                        String rideName,
+                        String partName,
+                        int quantity,
+                        String specification,
+                        String requestedBy,
+                        String status) {
+
         this.requestId = requestId;
         this.rideId = rideId;
+        this.rideName = rideName;
         this.partName = partName;
+        this.quantity = quantity;
         this.specification = specification;
-        this.inventoryStatus = inventoryStatus;
         this.requestedBy = requestedBy;
         this.status = status;
-        this.quantity = quantity;
-        this.requestDate = requestDate;
+        this.requestDate = LocalDate.now();
+
     }
 
 
@@ -26,71 +36,56 @@ public class PartsRequest {
         return requestId;
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
 
     public String getRideId() {
         return rideId;
     }
 
-    public void setRideId(String rideId) {
-        this.rideId = rideId;
+
+    public String getRideName() {
+        return rideName;
     }
+
 
     public String getPartName() {
         return partName;
     }
 
-    public void setPartName(String partName) {
-        this.partName = partName;
-    }
-
-    public String getSpecification() {
-        return specification;
-    }
-
-    public void setSpecification(String specification) {
-        this.specification = specification;
-    }
-
-    public String getInventoryStatus() {
-        return inventoryStatus;
-    }
-
-    public void setInventoryStatus(String inventoryStatus) {
-        this.inventoryStatus = inventoryStatus;
-    }
-
-    public String getRequestedBy() {
-        return requestedBy;
-    }
-
-    public void setRequestedBy(String requestedBy) {
-        this.requestedBy = requestedBy;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+
+    public String getSpecification() {
+        return specification;
     }
+
+
+    public String getRequestedBy() {
+        return requestedBy;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
 
     public LocalDate getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(LocalDate requestDate) {
-        this.requestDate = requestDate;
+
+    public String toString() {
+
+        return "Request ID: " + requestId +
+                "\nRide: " + rideName +
+                "\nPart: " + partName +
+                "\nQuantity: " + quantity +
+                "\nSpecification: " + specification +
+                "\nStatus: " + status +
+                "\nDate: " + requestDate;
+
     }
 }

@@ -1,62 +1,229 @@
 package Veronica.TourGuide;
 
+import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-public class TourSessionViewController
-{
+import java.util.ArrayList;
 
-    @javafx.fxml.FXML
+
+public class TourSessionViewController {
+
+
+    @FXML
     private TextField MeetingPointTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private ComboBox<String> CategoryCB;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField StartTimeTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextArea PreviewTA;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField TitleTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField CapacityTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private ComboBox<String> DurationCB;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField PriceTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker DateDP;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextArea DescriptionTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField EndTimeTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField LocationTF;
 
-    @javafx.fxml.FXML
+
+
+    @FXML
     public void initialize() {
+
+
         CategoryCB.getItems().addAll(
-                "Adventure", "Historical",  "Nature", "City", "Food");
+                "Adventure",
+                "Historical",
+                "Nature",
+                "City",
+                "Food"
+        );
 
-        DurationCB.getItems().addAll("1 Hour", "2 Hours", "Half Day", "Full Day");
+
+        DurationCB.getItems().addAll(
+                "1 Hour",
+                "2 Hours",
+                "Half Day",
+                "Full Day"
+        );
+
     }
 
 
 
-    @Deprecated
-    public void save(ActionEvent actionEvent) {
 
 
-    }
-
-
-
-    @javafx.fxml.FXML
+    @FXML
     public void saveTourButtonOA(ActionEvent actionEvent) {
+
+
+        if (TitleTF.getText().isBlank()
+                || DescriptionTF.getText().isBlank()
+                || LocationTF.getText().isBlank()
+                || DateDP.getValue() == null
+                || CategoryCB.getValue() == null
+                || DurationCB.getValue() == null) {
+
+
+            PreviewTA.setText(
+                    "Please complete all required fields."
+            );
+
+            return;
+        }
+
+
+
+        float price;
+
+        int capacity;
+
+
+        try {
+
+            price = Float.parseFloat(
+                    PriceTF.getText()
+            );
+
+
+            capacity = Integer.parseInt(
+                    CapacityTF.getText()
+            );
+
+
+        } catch (NumberFormatException e) {
+
+
+            PreviewTA.setText(
+                    "Price and capacity must be numbers."
+            );
+
+            return;
+        }
+
+
+
+
+        ArrayList<TourSession> tourList =
+                BinaryFileUtil.readList(
+                        "TourSessions.bin"
+                );
+
+
+
+        String tourGuideId =
+                "TG" + (tourList.size() + 1);
+
+
+
+
+        TourSession tour =
+                new TourSession(
+
+                        tourGuideId,
+                        TitleTF.getText(),
+                        DescriptionTF.getText(),
+                        LocationTF.getText(),
+                        DurationCB.getValue(),
+                        CategoryCB.getValue(),
+                        MeetingPointTF.getText(),
+                        DateDP.getValue(),
+                        StartTimeTF.getText(),
+                        EndTimeTF.getText(),
+                        price,
+                        capacity
+
+                );
+
+
+
+
+        tourList.add(tour);
+
+
+
+        BinaryFileUtil.saveList(
+                "TourSessions.bin",
+                tourList
+        );
+
+
+
+
+        PreviewTA.setText(
+                "Tour saved successfully!"
+                        + "\nTour ID: " + tourGuideId
+        );
+
     }
 
-    @javafx.fxml.FXML
+
+
+
+
+
+
+    @FXML
     public void previewButtonOA(ActionEvent actionEvent) {
+
+
+        PreviewTA.setText(
+
+                "Tour Title: " + TitleTF.getText()
+                        + "\nCategory: " + CategoryCB.getValue()
+                        + "\nDate: " + DateDP.getValue()
+                        + "\nStart Time: " + StartTimeTF.getText()
+                        + "\nEnd Time: " + EndTimeTF.getText()
+                        + "\nDuration: " + DurationCB.getValue()
+                        + "\nLocation: " + LocationTF.getText()
+                        + "\nMeeting Point: " + MeetingPointTF.getText()
+                        + "\nCapacity: " + CapacityTF.getText()
+                        + "\nPrice: " + PriceTF.getText()
+                        + "\nDescription: " + DescriptionTF.getText()
+
+        );
+
     }
+
+
+
+
+
+
+
+    @FXML
+    public void BackToDashboardOA(ActionEvent actionEvent) {
+
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/Veronica/TourGuide/TourGuideDashBoardView.fxml",
+                "Tour Guide Dashboard"
+        );
+
+    }
+
 }
