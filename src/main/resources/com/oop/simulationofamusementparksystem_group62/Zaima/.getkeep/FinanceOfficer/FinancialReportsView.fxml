@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.FinanceOfficer.FinancialReportsViewController">
+   <children>
+      <Label fx:id="FinancialReportsLabel" layoutX="206.0" layoutY="14.0" text="Financial Reports" underline="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="StartDateDP" layoutX="85.0" layoutY="61.0" />
+      <DatePicker fx:id="EndDateDP" layoutX="343.0" layoutY="61.0" />
+      <Button layoutX="17.0" layoutY="365.0" mnemonicParsing="false" onAction="#ExportOA" prefHeight="26.0" prefWidth="175.0" text="Export" />
+      <Button layoutX="403.0" layoutY="365.0" mnemonicParsing="false" onAction="#GenerateOA" prefHeight="26.0" prefWidth="166.0" text="Generate" />
+      <TableView layoutX="7.0" layoutY="154.0" prefHeight="200.0" prefWidth="581.0">
+        <columns>
+          <TableColumn fx:id="IncomeTC" prefWidth="166.4000244140625" text="Income" />
+          <TableColumn fx:id="ExpenseTC" prefWidth="192.0" text="Expense" />
+            <TableColumn fx:id="ProfitTC" prefWidth="198.4000244140625" text="Profit" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="65.0" text="Start Date" />
+      <Label layoutX="273.0" layoutY="65.0" text="End Date" />
+      <ComboBox fx:id="ReportTypeCB" layoutX="340.0" layoutY="104.0" prefHeight="26.0" prefWidth="182.0" />
+      <Label layoutX="256.0" layoutY="108.0" text="Report Type" />
+   </children>
+</AnchorPane>

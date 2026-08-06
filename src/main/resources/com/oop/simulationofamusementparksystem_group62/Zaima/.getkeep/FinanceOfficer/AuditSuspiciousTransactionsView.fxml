@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="488.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.FinanceOfficer.AuditSuspiciousTransactionsViewController">
+   <children>
+      <Label fx:id="AuditSuspiciousTransactionsLabel" layoutX="201.0" layoutY="21.0" text="Audit Suspicious Transactions" underline="true">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="409.0" layoutY="346.0" mnemonicParsing="false" onAction="#RejectOA" prefHeight="26.0" prefWidth="228.0" text="Reject" />
+      <Button layoutX="292.0" layoutY="346.0" mnemonicParsing="false" onAction="#FlagOA" prefHeight="26.0" prefWidth="92.0" text="Flag" />
+      <Button layoutX="42.0" layoutY="346.0" mnemonicParsing="false" onAction="#ApproveOA" prefHeight="26.0" prefWidth="228.0" text="Approve" />
+      <TableView layoutX="23.0" layoutY="81.0" prefHeight="248.0" prefWidth="613.0">
+        <columns>
+          <TableColumn fx:id="TransactionIDTC" prefWidth="125.60004234313965" text="Transaction ID" />
+          <TableColumn fx:id="CustomerTC" prefWidth="143.99993896484375" text="Customer" />
+            <TableColumn fx:id="AmountTC" prefWidth="121.60003662109375" text="Amount" />
+            <TableColumn fx:id="StatusTC" prefWidth="84.0" text="Status" />
+            <TableColumn fx:id="RiskLevelTC" prefWidth="136.80001831054688" text="Risk Level" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="ReviewNotesTA" layoutX="270.0" layoutY="389.0" prefHeight="122.0" prefWidth="371.0" />
+      <Label layoutX="116.0" layoutY="417.0" prefHeight="39.0" prefWidth="114.0" text="Review Notes" />
+   </children>
+</AnchorPane>

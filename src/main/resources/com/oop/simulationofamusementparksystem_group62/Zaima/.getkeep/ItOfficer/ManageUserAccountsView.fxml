@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Zaima.ItOfficer.ManageUserAccountsViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="582.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.ItOfficer.ManageUserAccountsViewController">
+   <children>
+      <Label fx:id="ManageUserAccountsLabel" layoutX="252.0" layoutY="14.0" prefHeight="26.0" prefWidth="205.0" text="Manage User Accounts" textFill="#6d09e0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UserNameTF" layoutX="525.0" layoutY="48.0" />
+      <TableView layoutX="14.0" layoutY="209.0" prefHeight="288.0" prefWidth="689.0">
+        <columns>
+          <TableColumn fx:id="UserIDTC" prefWidth="105.60000801086426" text="UserID" />
+            <TableColumn fx:id="RoleTC" prefWidth="88.80007934570312" text="Role" />
+            <TableColumn fx:id="StatusTC" prefWidth="123.199951171875" text="Status" />
+            <TableColumn fx:id="EmailTC" prefWidth="155.199951171875" text="Email" />
+            <TableColumn fx:id="UsernameTC" prefWidth="122.4000244140625" text="Username" />
+          <TableColumn fx:id="NameTC" prefWidth="94.40001678466797" text="Name" />
+        </columns>
+      </TableView>
+      <TextField fx:id="EmailTF" layoutX="525.0" layoutY="83.0" />
+      <TextField fx:id="NameTF" layoutX="107.0" layoutY="57.0" />
+      <TextField fx:id="SearchUserTF" layoutX="107.0" layoutY="92.0" />
+      <ComboBox fx:id="StatusCB" layoutX="524.0" layoutY="118.0" prefWidth="150.0" />
+      <ComboBox fx:id="RoleCB" layoutX="107.0" layoutY="127.0" prefWidth="150.0" />
+      <Button layoutX="28.0" layoutY="174.0" mnemonicParsing="false" onAction="#CreateOA" prefHeight="26.0" prefWidth="86.0" text="Create" />
+      <Button layoutX="144.0" layoutY="174.0" mnemonicParsing="false" onAction="#UpdateOA" prefHeight="26.0" prefWidth="130.0" text="Update" />
+      <Button layoutX="283.0" layoutY="174.0" mnemonicParsing="false" onAction="#ActivateOA" prefHeight="26.0" prefWidth="118.0" text="Activate" />
+      <Button layoutX="418.0" layoutY="174.0" mnemonicParsing="false" onAction="#DeactivateOA" prefHeight="26.0" prefWidth="118.0" text="Deactivate" />
+      <Button layoutX="544.0" layoutY="174.0" mnemonicParsing="false" onAction="#ResetPasswordOA" prefHeight="26.0" prefWidth="130.0" text="Reset Password" />
+      <Button layoutX="642.0" layoutY="506.0" mnemonicParsing="false" onAction="#ClearOA" text="Clear" />
+      <Label layoutX="59.0" layoutY="135.0" text="Role" />
+      <Label layoutX="469.0" layoutY="118.0" text="Status" />
+      <Label layoutX="55.0" layoutY="61.0" text="Name" />
+      <Label layoutX="459.0" layoutY="52.0" text="Username" />
+      <Label layoutX="470.0" layoutY="87.0" text="Email" />
+      <Label layoutX="28.0" layoutY="100.0" text="Search User" />
+   </children>
 </AnchorPane>

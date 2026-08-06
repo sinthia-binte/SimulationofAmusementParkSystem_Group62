@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.ItOfficer.RideandTicketMonitoringViewController ">
+   <children>
+      <Label fx:id="RideandTicketMonitoringLabel" layoutX="171.0" layoutY="14.0" prefHeight="42.0" prefWidth="233.0" text="Ride and Ticket Monitoring " underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="6.0" layoutY="69.0" prefHeight="234.0" prefWidth="588.0">
+        <columns>
+          <TableColumn fx:id="RideTC" prefWidth="188.800048828125" text="Ride " />
+          <TableColumn fx:id="RideStatusTC" prefWidth="118.39996337890625" text="Ride Status" />
+            <TableColumn fx:id="ScannerTC" prefWidth="116.79998779296875" text="Scanner" />
+            <TableColumn fx:id="ConnectionTC" prefWidth="164.0" text="Connection" />
+        </columns>
+      </TableView>
+      <Button layoutX="5.0" layoutY="316.0" mnemonicParsing="false" onAction="#RefreshOA" prefHeight="26.0" prefWidth="117.0" text="Refresh" />
+      <Button layoutX="134.0" layoutY="316.0" mnemonicParsing="false" onAction="#ViewDetailsOA" prefHeight="26.0" prefWidth="118.0" text="View Details" />
+      <TextArea fx:id="MonitoringLogsTA" layoutX="388.0" layoutY="316.0" prefHeight="51.0" prefWidth="197.0" />
+      <Label layoutX="288.0" layoutY="333.0" text="Monitoring Logs" />
+   </children>
+</AnchorPane>

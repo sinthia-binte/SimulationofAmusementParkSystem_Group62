@@ -4,38 +4,71 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
 public class ItOfficerViewController {
-    @javafx.fxml.FXML
-    private Label ITOfficerLabel;
 
     @javafx.fxml.FXML
+    private Label FinanceOfficerLabel;
+
+    @Deprecated
     public void BackupSystemDataOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void SystemPerformanceOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void SystemReportsOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void RideandTicketMonitoringOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void SystemSecurityOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void SoftwareUpdatesOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ResetPasswordOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ManageUserAccountsOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void EmployeeSalariesOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BudgetPlanningOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void AuditSuspiciousTransactionsOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void FinancialReportsOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void DailyRevenueOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void ExpenseTrackingOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void VerifyOnlinePaymentsOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void CustomerTransactionandPaymentsOA(ActionEvent actionEvent) {
     }
 }

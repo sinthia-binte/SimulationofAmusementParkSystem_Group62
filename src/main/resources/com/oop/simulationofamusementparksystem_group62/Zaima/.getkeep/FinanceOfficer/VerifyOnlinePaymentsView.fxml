@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.FinanceOfficer.VerifyOnlinePaymentsViewController">
+   <children>
+      <Label fx:id="VerifyOnlinePaymentsLabel" layoutX="192.0" layoutY="14.0" text="Verify Online Payments">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="9.0" layoutY="84.0" prefHeight="240.0" prefWidth="590.0">
+        <columns>
+          <TableColumn fx:id="TransactionIDTC" prefWidth="132.0" text="Transaction ID" />
+          <TableColumn fx:id="CustomerTC" prefWidth="90.4000244140625" text="Customer" />
+            <TableColumn fx:id="BankTC" prefWidth="96.79998779296875" text="Bank" />
+            <TableColumn fx:id="AmountTC" prefWidth="120.79998779296875" text="Amount" />
+            <TableColumn fx:id="StatusTC" prefWidth="150.39996337890625" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="29.0" layoutY="360.0" mnemonicParsing="false" onAction="#VerifyOA" prefHeight="26.0" prefWidth="138.0" text="Verify" />
+      <Button layoutX="179.0" layoutY="360.0" mnemonicParsing="false" onAction="#RejectOA" prefHeight="26.0" prefWidth="162.0" text="Reject" />
+      <TextField fx:id="ReferenceCodeTF" layoutX="389.0" layoutY="334.0" />
+      <Label layoutX="284.0" layoutY="338.0" text="Reference Code" />
+   </children>
+</AnchorPane>
