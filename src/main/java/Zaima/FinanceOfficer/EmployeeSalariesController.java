@@ -1,5 +1,10 @@
 package Zaima.FinanceOfficer;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+
 public class EmployeeSalariesController {
     @javafx.fxml.FXML
     private TableColumn DeductionTC;

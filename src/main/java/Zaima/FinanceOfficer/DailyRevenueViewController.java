@@ -1,5 +1,11 @@
 package Zaima.FinanceOfficer;
 
+import javafx.event.ActionEvent;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+
 public class DailyRevenueViewController {
     @javafx.fxml.FXML
     private TableColumn FoodIncomeTC;
