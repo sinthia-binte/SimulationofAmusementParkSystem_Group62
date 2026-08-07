@@ -34,7 +34,4 @@ public class TicketUpgrade {
                 ", priceDiff=" + priceDiff +
                 '}';
     }
-
-    public void verifyEligibility() {}
-    public void processUpgrade() {}
 }

@@ -23,12 +23,4 @@ public class TicketSeller {
                 '}';
     }
 
-    public void sellTicket() {}
-    public void processGroupBooking() {}
-    public void processRefund() {}
-    public void applyPromoCode() {}
-    public void checkInventory() {}
-    public void viewTransactions() {}
-    public void generateEODReport() {}
-    public void upgradeTicket() {}
 }

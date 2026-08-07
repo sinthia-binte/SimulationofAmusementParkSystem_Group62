@@ -53,8 +53,4 @@ public class SellTicket {
                 ", visitDate=" + visitDate +
                 '}';
     }
-
-    public void validateDetails() {}
-    public void generateTicket() {}
-    public void printConfirmation() {}
 }

@@ -41,7 +41,4 @@ public class Refund {
                 '}';
     }
 
-    public void verifyEligibility() {}
-    public void calculateRefund() {}
-    public void processRefund() {}
 }

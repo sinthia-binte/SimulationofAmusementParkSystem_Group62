@@ -1,31 +1,46 @@
 package Mubin.TicketSeller;
 
+
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 
+
 public class InventoryViewController {
-    @javafx.fxml.FXML
-    private ComboBox ticketTypeComboBox;
-    @javafx.fxml.FXML
-    private Label soldLabel;
-    @javafx.fxml.FXML
-    private Label reservedLabel;
-    @javafx.fxml.FXML
-    private Label availableLabel;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> ticketTypeComboBox;
+
+    @FXML
     private DatePicker dateDP;
 
-    @javafx.fxml.FXML
-    public void viewInventoryButtonOA(ActionEvent actionEvent) {
+    @FXML
+    private Label availableLabel;
+
+    @FXML
+    private Label soldLabel;
+
+    @FXML
+    private Label reservedLabel;
+
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void viewInventoryButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

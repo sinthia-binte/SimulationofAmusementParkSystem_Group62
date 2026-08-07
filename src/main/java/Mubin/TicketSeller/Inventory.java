@@ -40,8 +40,4 @@ public class Inventory {
                 ", remainingQty=" + remainingQty +
                 '}';
     }
-
-    public void checkAvailability() {}
-    public void updateInventory() {}
-    public void flagLowStock() {}
 }

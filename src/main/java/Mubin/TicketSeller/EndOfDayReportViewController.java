@@ -1,43 +1,43 @@
 package Mubin.TicketSeller;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
 public class EndOfDayReportViewController {
-    @javafx.fxml.FXML
-    private Label totalRevenueLabel;
-    @javafx.fxml.FXML
-    private TextField cashCountTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker dateDP;
 
-    @Deprecated
-    public void generateSummaryEOD(ActionEvent actionEvent) {
+    @FXML
+    private Label totalRevenueLabel;
+
+    @FXML
+    private TextField cashCountTF;
+
+    @FXML
+    public void initialize() {
     }
 
-    @Deprecated
-    public void backToDashboardEOD(ActionEvent actionEvent) {
+    @FXML
+    public void viewRevenueButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void submitReportEOD(ActionEvent actionEvent) {
+    @FXML
+    public void submitReportButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void viewRevenueButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
     }
 
-    @javafx.fxml.FXML
-    public void submitReportButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }
