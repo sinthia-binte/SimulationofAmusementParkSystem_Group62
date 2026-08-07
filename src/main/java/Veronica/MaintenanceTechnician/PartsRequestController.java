@@ -18,9 +18,6 @@ public class PartsRequestController {
     private TextField HistoryTF;
 
     @FXML
-    private TextField StatusTF;
-
-    @FXML
     private TextField PartNameTF;
 
     @FXML
@@ -43,6 +40,8 @@ public class PartsRequestController {
     private PartsRequest selectedRide;
 
     ArrayList<PartsRequest> list = BinaryFileUtil.readObjects("MaintenanceTask.bin");
+    @FXML
+    private TextField StarusTF;
 
 
     @FXML
@@ -69,7 +68,7 @@ public class PartsRequestController {
             if(p.getRideId().equals(id)) {
                 selectedRide = p;
                 HistoryTF.setText("Maintenance history available");
-                StatusTF.setText(p.getStatus());
+                StarusTF.setText(p.getStatus());
                 break;
 
             }
@@ -138,4 +137,7 @@ public class PartsRequestController {
 
     }
 
+    @FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

@@ -26,21 +26,17 @@ public class MaintenanceTaskController {
     private TextField CurrentStatusTF;
 
     @FXML
-    private TextArea WorkDoneTF;
-
-    @FXML
-    private TextArea PartsUsedTF;
-
-    @FXML
-    private TextArea CompletionNotesTF;
-
-    @FXML
-    private TextArea ReviewTF;
-
-    @FXML
     private TextField NotificationTF;
 
     private MaintenanceTask selectedTask;
+    @FXML
+    private TextField CompletionNotesTF;
+    @FXML
+    private TextField ReviewTF;
+    @FXML
+    private TextField PartsUsedTF;
+    @FXML
+    private TextField WorkDoneTF;
 
     @FXML
     public void initialize() {
