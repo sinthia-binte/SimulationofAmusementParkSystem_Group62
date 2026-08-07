@@ -29,6 +29,7 @@ public class TicketSellerDashboardViewController {
 
     @Deprecated
     public void logOutButtonOA(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
@@ -38,4 +39,5 @@ public class TicketSellerDashboardViewController {
     @javafx.fxml.FXML
     public void applyPromoCodeButtonOA(ActionEvent actionEvent) {
     }
+
 }
