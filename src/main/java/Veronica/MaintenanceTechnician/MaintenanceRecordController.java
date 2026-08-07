@@ -30,99 +30,33 @@ public class MaintenanceRecordController {
 
     @FXML
     private TextField historyTF;
-
-
-
     private MaintenanceTask selectedTask;
-
-
 
     @FXML
     public void initialize() {
 
-        loadCompletedTasks();
-
     }
-
-
-
-
-
-    private void loadCompletedTasks() {
-
-
-        ArrayList<MaintenanceTask> tasks =
-                BinaryFileUtil.readObjects(
-                        "CompletedMaintenanceTask.bin"
-                );
-
-
-        for(MaintenanceTask task : tasks){
-
-            rideCB.getItems().add(
-                    task.getEquipmentId()
-            );
-
-        }
-
-    }
-
-
-
-
-
     @FXML
     public void reviewMaintenanceOA(ActionEvent actionEvent) {
+        ArrayList<MaintenanceTask> tasks = null;
+        for (MaintenanceTask task : tasks) {
+            rideCB.getItems().add(task.getEquipmentId());
 
-
-        String equipmentId =
-                rideCB.getValue();
-
-
-
-        ArrayList<MaintenanceTask> tasks =
-                BinaryFileUtil.readObjects(
-                        "CompletedMaintenanceTask.bin"
-                );
-
-
-
-        for(MaintenanceTask task : tasks){
-
-
-            if(task.getEquipmentId().equals(equipmentId)){
-
-
+        }
+        String equipmentId = rideCB.getValue();
+        tasks = BinaryFileUtil.readObjects("CompletedMaintenanceTask.bin");
+        for (MaintenanceTask task : tasks) {
+            if (task.getEquipmentId().equals(equipmentId)) {
                 selectedTask = task;
-
-
-                WorkDescriptionTF.setText(
-                        task.getWorkDone()
-                );
-
-
-                partsField.setText(
-                        task.getPartsUsed()
-                );
-
-
-                IssuesFixedTF.setText(
-                        task.getCompletionNotes()
-                );
-
-
-                historyTF.setText(
-
-                        "Equipment ID: "
-                                + task.getEquipmentId()
-                                + "\nStatus: "
-                                + task.getCurrentStatus()
-                                + "\nDate: "
-                                + task.getCompletionDate()
-
-                );
-
-
+                WorkDescriptionTF.setText(task.getWorkDone());
+                partsField.setText(task.getPartsUsed());
+                IssuesFixedTF.setText(task.getCompletionNotes());
+                historyTF.setText("Equipment ID: "
+                        + task.getEquipmentId()
+                        + "\nStatus: "
+                        + task.getCurrentStatus()
+                        + "\nDate: "
+                        + task.getCompletionDate());
                 break;
 
             }
@@ -132,83 +66,35 @@ public class MaintenanceRecordController {
 
     }
 
-
-
-
-
     @FXML
     public void saveMaintenanceOA(ActionEvent actionEvent) {
-
-
         if(selectedTask == null){
-
-
-            messageLabel.setText(
-                    "Select a maintenance record first."
-            );
-
-
+            messageLabel.setText("Select a maintenance record first.");
             return;
 
         }
 
+        MaintenanceTask record = new MaintenanceTask(
+                selectedTask.getTaskId(),
+                selectedTask.getEquipmentId(),
+                selectedTask.getTaskDescription(),
+                selectedTask.getLocation(),
+                "Completed",
+                WorkDescriptionTF.getText(),
+                partsField.getText(),
+                IssuesFixedTF.getText(),
+                "Maintenance Technician",
+                "Saved",
+                LocalDate.now());
 
-
-        MaintenanceTask record =
-                new MaintenanceTask(
-
-                        selectedTask.getTaskId(),
-
-                        selectedTask.getEquipmentId(),
-
-                        selectedTask.getTaskDescription(),
-
-                        selectedTask.getLocation(),
-
-                        "Completed",
-
-                        WorkDescriptionTF.getText(),
-
-                        partsField.getText(),
-
-                        IssuesFixedTF.getText(),
-
-                        "Maintenance Technician",
-
-                        "Saved",
-
-                        LocalDate.now()
-
-                );
-
-
-
-        BinaryFileUtil.appendObject(
-                "MaintenanceRecord.bin",
-                record
-        );
-
-
-
-        messageLabel.setText(
-                "Maintenance record saved successfully."
-        );
+        BinaryFileUtil.appendObject("MaintenanceRecord.bin", record);
+        messageLabel.setText("Maintenance record saved successfully.");
 
     }
 
-
-
-
-
     @FXML
     public void BackOA(ActionEvent actionEvent) {
-
-
-        SceneSwitcher.switchScene(
-                actionEvent,
-                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
-                "Maintenance Technician Dashboard"
-        );
+        SceneSwitcher.switchScene(actionEvent, "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
 
     }
 

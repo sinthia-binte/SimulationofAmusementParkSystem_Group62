@@ -52,34 +52,15 @@ public class TourSessionViewController {
 
     @FXML
     public void initialize() {
-
-
-        CategoryCB.getItems().addAll(
-                "Adventure",
-                "Historical",
-                "Nature",
-                "City",
-                "Food"
-        );
-
-
-        DurationCB.getItems().addAll(
-                "1 Hour",
-                "2 Hours",
-                "Half Day",
-                "Full Day"
-        );
+        CategoryCB.getItems().addAll("Adventure", "Historical", "Nature", "City", "Food");
+        DurationCB.getItems().addAll("1 Hour", "2 Hours", "Half Day", "Full Day");
 
     }
 
 
 
-
-
     @FXML
-    public void saveTourButtonOA(ActionEvent actionEvent) {
-
-
+    public void saveTourButtonOA(ActionEvent event) {
         if (TitleTF.getText().isBlank()
                 || DescriptionTF.getText().isBlank()
                 || LocationTF.getText().isBlank()
@@ -87,73 +68,50 @@ public class TourSessionViewController {
                 || CategoryCB.getValue() == null
                 || DurationCB.getValue() == null) {
 
-
-            PreviewTA.setText(
-                    "Please complete all required fields."
-            );
-
+            PreviewTA.setText("Please complete all required fields.");
             return;
         }
-
-
 
         float price;
-
         int capacity;
 
-
         try {
-
-            price = Float.parseFloat(
-                    PriceTF.getText()
-            );
+            price = Float.parseFloat(PriceTF.getText());
+            capacity = Integer.parseInt(CapacityTF.getText());
 
 
-            capacity = Integer.parseInt(
-                    CapacityTF.getText()
-            );
-
-
-        } catch (NumberFormatException e) {
-
-
-            PreviewTA.setText(
-                    "Price and capacity must be numbers."
-            );
-
+        } catch (Exception e) {
+            PreviewTA.setText("Price and capacity must be numbers.");
             return;
         }
+        ArrayList<TourSession> tourList = BinaryFileUtil.readList("TourSessions.bin");
 
 
 
-
-        ArrayList<TourSession> tourList =
-                BinaryFileUtil.readList(
-                        "TourSessions.bin"
-                );
-
-
-
-        String tourGuideId =
-                "TG" + (tourList.size() + 1);
+        String tourSessionId =
+                "TS" + (tourList.size() + 1);
 
 
 
 
         TourSession tour =
                 new TourSession(
-
-                        tourGuideId,
-                        TitleTF.getText(),
-                        DescriptionTF.getText(),
-                        LocationTF.getText(),
+                        tourSessionId,
+                        TitleTF.getText(), DescriptionTF.getText(), LocationTF.getText(),
                         DurationCB.getValue(),
+
                         CategoryCB.getValue(),
+
                         MeetingPointTF.getText(),
-                        DateDP.getValue(),
+
                         StartTimeTF.getText(),
+
                         EndTimeTF.getText(),
+
+                        DateDP.getValue(),
+
                         price,
+
                         capacity
 
                 );
@@ -172,10 +130,10 @@ public class TourSessionViewController {
 
 
 
-
         PreviewTA.setText(
                 "Tour saved successfully!"
-                        + "\nTour ID: " + tourGuideId
+                        + "\nTour ID: "
+                        + tourSessionId
         );
 
     }
@@ -183,27 +141,44 @@ public class TourSessionViewController {
 
 
 
-
-
-
     @FXML
-    public void previewButtonOA(ActionEvent actionEvent) {
+    public void previewButtonOA(ActionEvent event) {
 
 
         PreviewTA.setText(
 
-                "Tour Title: " + TitleTF.getText()
-                        + "\nCategory: " + CategoryCB.getValue()
-                        + "\nDate: " + DateDP.getValue()
-                        + "\nStart Time: " + StartTimeTF.getText()
-                        + "\nEnd Time: " + EndTimeTF.getText()
-                        + "\nDuration: " + DurationCB.getValue()
-                        + "\nLocation: " + LocationTF.getText()
-                        + "\nMeeting Point: " + MeetingPointTF.getText()
-                        + "\nCapacity: " + CapacityTF.getText()
-                        + "\nPrice: " + PriceTF.getText()
-                        + "\nDescription: " + DescriptionTF.getText()
+                "Tour Title: "
+                        + TitleTF.getText()
 
+                        + "\nCategory: "
+                        + CategoryCB.getValue()
+
+                        + "\nDate: "
+                        + DateDP.getValue()
+
+                        + "\nStart Time: "
+                        + StartTimeTF.getText()
+
+                        + "\nEnd Time: "
+                        + EndTimeTF.getText()
+
+                        + "\nDuration: "
+                        + DurationCB.getValue()
+
+                        + "\nLocation: "
+                        + LocationTF.getText()
+
+                        + "\nMeeting Point: "
+                        + MeetingPointTF.getText()
+
+                        + "\nCapacity: "
+                        + CapacityTF.getText()
+
+                        + "\nPrice: "
+                        + PriceTF.getText()
+
+                        + "\nDescription: "
+                        + DescriptionTF.getText()
         );
 
     }
@@ -212,14 +187,52 @@ public class TourSessionViewController {
 
 
 
+    @Deprecated
+    public void clearButtonOA(ActionEvent event) {
+
+
+        TitleTF.clear();
+
+        DescriptionTF.clear();
+
+        LocationTF.clear();
+
+        MeetingPointTF.clear();
+
+        StartTimeTF.clear();
+
+        EndTimeTF.clear();
+
+        PriceTF.clear();
+
+        CapacityTF.clear();
+
+
+        CategoryCB.getSelectionModel()
+                .clearSelection();
+
+
+        DurationCB.getSelectionModel()
+                .clearSelection();
+
+
+        DateDP.setValue(null);
+
+
+        PreviewTA.clear();
+
+    }
+
+
+
 
 
     @FXML
-    public void BackToDashboardOA(ActionEvent actionEvent) {
+    public void BackToDashboardOA(ActionEvent event) {
 
 
         SceneSwitcher.switchScene(
-                actionEvent,
+                event,
                 "/Veronica/TourGuide/TourGuideDashBoardView.fxml",
                 "Tour Guide Dashboard"
         );

@@ -52,63 +52,31 @@ public class MaintenanceTechnicianDashboardController {
     @FXML
     public void initialize(){
 
-        taskIdTC.setCellValueFactory(
-                new PropertyValueFactory<>("taskId")
-        );
+        taskIdTC.setCellValueFactory(new PropertyValueFactory<>("taskId"));
+        locationTC.setCellValueFactory(new PropertyValueFactory<>("location"));
+        priorityTC.setCellValueFactory(new PropertyValueFactory<>("priority"));
+        statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        locationTC.setCellValueFactory(
-                new PropertyValueFactory<>("location")
-        );
-
-        priorityTC.setCellValueFactory(
-                new PropertyValueFactory<>("priority")
-        );
-
-        statusTC.setCellValueFactory(
-                new PropertyValueFactory<>("status")
-        );
-
-
-        loadTasks();
 
     }
 
+    @FXML
+    public void openAssignedTasksOA(ActionEvent event){
 
-
-
-
-    public void loadTasks(){
-
-
-        ArrayList<MaintenanceTask> tasks =
-                BinaryFileUtil.readList("MaintenanceTask.bin");
-
-
-        ObservableList<MaintenanceTask> list =
-                FXCollections.observableArrayList();
-
-
+        ArrayList<MaintenanceTask> tasks = BinaryFileUtil.readList("MaintenanceTask.bin");
+        ObservableList<MaintenanceTask> list = FXCollections.observableArrayList();
 
         int pending = 0;
         int progress = 0;
         int completed = 0;
 
-
-
         for(MaintenanceTask task : tasks){
-
-
             list.add(task);
-
-
             if(task.getStatus().equals("Pending")){
-
                 pending++;
 
             }
-
             else if(task.getStatus().equals("In Progress")){
-
                 progress++;
 
             }
@@ -120,172 +88,61 @@ public class MaintenanceTechnicianDashboardController {
             }
 
         }
-
-
-
         taskTableTV.setItems(list);
-
-
-
-        pendingTaskLabel.setText(
-                String.valueOf(pending)
-        );
-
-
-        progressTaskLabel.setText(
-                String.valueOf(progress)
-        );
-
-
-        completedTaskLabel.setText(
-                String.valueOf(completed)
-        );
-
-
-        alertTA.setText(
-                "Tasks loaded successfully."
-        );
-
+        pendingTaskLabel.setText(String.valueOf(pending));
+        progressTaskLabel.setText(String.valueOf(progress));
+        completedTaskLabel.setText(String.valueOf(completed));
+        alertTA.setText("Tasks loaded successfully.");
     }
-
-
-
-
-
-
-    @FXML
-    public void openAssignedTasksOA(ActionEvent event){
-
-        loadTasks();
-
-    }
-
-
-
-
 
     @FXML
     public void openRideInspectionOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(
-                event,
-                "RideInspection.fxml",
-                "Ride Inspection"
-        );
+        SceneSwitcher.switchScene(event, "RideInspection.fxml", "Ride Inspection");
 
     }
-
-
-
-
-
 
     @FXML
     public void openMaintenanceRecordOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(
-                event,
-                "MaintenanceRecord.fxml",
-                "Record Maintenance"
-        );
+        SceneSwitcher.switchScene(event, "MaintenanceRecord.fxml", "Record Maintenance");
 
     }
-
-
-
-
-
 
     @FXML
     public void openReportFaultOA(ActionEvent event){
-
-        SceneSwitcher.switchScene(
-                event,
-                "ReportFault.fxml",
-                "Report Fault"
-        );
+        SceneSwitcher.switchScene(event, "ReportFault.fxml", "Report Fault");
 
     }
-
-
-
-
-
-    // Goal 5
-
     @FXML
     public void openPartsRequestOA(ActionEvent event){
-
-        SceneSwitcher.switchScene(
-                event,
-                "PartsRequest.fxml",
-                "Request Parts"
-        );
+        SceneSwitcher.switchScene(event, "PartsRequest.fxml", "Request Parts");
 
     }
-
-
-
-
-
-    // Goal 6
-
     @FXML
     public void openUpdateStatusOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(
-                event,
-                "UpdateStatus.fxml",
-                "Update Status"
-        );
+        SceneSwitcher.switchScene(event, "UpdateStatus.fxml", "Update Status");
 
     }
 
-
-
-
-
-    // Goal 7
 
     @FXML
     public void openManualOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(
-                event,
-                "RepairManual.fxml",
-                "Repair Manuals"
-        );
+        SceneSwitcher.switchScene(event, "RepairManual.fxml", "Repair Manuals");
 
     }
-
-
-
-
-
-
     @FXML
     public void openCompleteTaskOA(ActionEvent event){
-
-        SceneSwitcher.switchScene(
-                event,
-                "CompleteTask.fxml",
-                "Complete Task"
-        );
+        SceneSwitcher.switchScene(event, "CompleteTask.fxml", "Complete Task");
 
     }
-
-
-
-
 
     @FXML
     public void logoutOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(
-                event,
-                "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml",
-                "Login"
-        );
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml","log out");
 
     }
 

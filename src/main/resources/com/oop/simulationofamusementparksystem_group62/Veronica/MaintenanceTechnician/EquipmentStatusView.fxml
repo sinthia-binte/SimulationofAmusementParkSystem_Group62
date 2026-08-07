@@ -7,26 +7,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.MaintenanceTechnician.EquipmentStatusController">
+
     <children>
-        <Label layoutX="290" layoutY="20" style="-fx-font-size:22px; -fx-font-weight:bold;" text="Update Equipment Status" />
-        <Label layoutX="40" layoutY="80" text="Ride / Equipment ID" />
-        <ComboBox fx:id="RideCB" layoutX="180" layoutY="75" onAction="#loadEquipmentDetailsOA" prefWidth="220" />
-        <Label layoutX="40" layoutY="130" text="Current Status" />
-        <TextField fx:id="CurrentStatusTF" editable="false" layoutX="180" layoutY="125" prefWidth="220" />
-        <Label layoutX="40" layoutY="180" text="Last Inspection" />
-        <TextField fx:id="LastInspectionTF" editable="false" layoutX="180" layoutY="175" prefWidth="220" />
-        <Label layoutX="40" layoutY="230" text="Fault History" />
-        <Label layoutX="40" layoutY="370" text="New Status" />
-        <ComboBox fx:id="StatusCB" layoutX="180" layoutY="365" prefWidth="220" />
-        <Label layoutX="520" layoutY="80" text="Review" />
-        <Label layoutX="520" layoutY="350" text="Notification" />
-        <Button layoutX="180" layoutY="540" onAction="#reviewStatusOA" prefWidth="140" text="Review" />
-        <Button layoutX="340" layoutY="540" onAction="#updateStatusOA" prefWidth="140" text="Update Status" />
-        <Button layoutX="500" layoutY="540" onAction="#clearFormOA" prefWidth="140" text="Clear" />
-      <TextField fx:id="FaultHistoryTF" editable="false" layoutX="159.0" layoutY="248.0" prefHeight="77.0" prefWidth="290.0" />
-      <TextField fx:id="ReviewTF" editable="false" layoutX="534.0" layoutY="136.0" prefHeight="160.0" prefWidth="290.0" />
-      <TextField fx:id="NotificationTF" editable="false" layoutX="520.0" layoutY="397.0" prefHeight="113.0" prefWidth="290.0" />
-      <Button layoutX="665.0" layoutY="539.0" mnemonicParsing="false" onAction="#backToDashboardOA" prefHeight="26.0" prefWidth="127.0" text="Back" />
+
+        <Label layoutX="290.0" layoutY="20.0" style="-fx-font-size:22px; -fx-font-weight:bold;" text="Update Equipment Status" />
+
+        <Label layoutX="40.0" layoutY="80.0" text="Ride / Equipment ID" />
+
+        <ComboBox fx:id="RideCB" layoutX="180.0" layoutY="75.0" onAction="#loadEquipmentDetailsOA" prefWidth="220.0" />
+
+        <Label layoutX="40.0" layoutY="130.0" text="Current Status" />
+
+        <TextField fx:id="CurrentStatusTF" editable="false" layoutX="180.0" layoutY="125.0" prefWidth="220.0" />
+
+        <Label layoutX="40.0" layoutY="180.0" text="Last Inspection" />
+
+        <TextField fx:id="LastInspectionTF" editable="false" layoutX="180.0" layoutY="175.0" prefWidth="220.0" />
+
+        <Label layoutX="40.0" layoutY="230.0" text="Fault History" />
+
+        <TextField fx:id="FaultHistoryTF" editable="false" layoutX="180.0" layoutY="225.0" prefWidth="220.0" />
+
+        <Label layoutX="40.0" layoutY="370.0" text="New Status" />
+
+        <ComboBox fx:id="StatusCB" layoutX="180.0" layoutY="365.0" prefWidth="220.0" />
+
+        <Label layoutX="520.0" layoutY="80.0" text="Review" />
+
+        <Label layoutX="520.0" layoutY="320.0" text="Notification" />
+
+        <Button layoutX="180.0" layoutY="540.0" onAction="#reviewStatusOA" prefWidth="140.0" text="Review" />
+
+        <Button layoutX="340.0" layoutY="540.0" onAction="#updateStatusOA" prefWidth="140.0" text="Update Status" />
+
+        <Button layoutX="500.0" layoutY="540.0" onAction="#clearFormOA" prefWidth="140.0" text="Clear" />
+
+        <Button layoutX="660.0" layoutY="540.0" onAction="#backToDashboardOA" prefWidth="140.0" text="Back" />
+      <TextField fx:id="ReviewTF" layoutX="570.0" layoutY="75.0" prefHeight="26.0" prefWidth="251.0" />
+      <TextField fx:id="NotificationTF" layoutX="593.0" layoutY="315.0" prefHeight="26.0" prefWidth="251.0" />
 
     </children>
+
 </AnchorPane>

@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 public class Attendance implements Serializable {
 
-    private String guestName;
-    private String tourSession;
-    private String status;
+    private String guestName,tourSession, status;
 
 
     public Attendance(String guestName,

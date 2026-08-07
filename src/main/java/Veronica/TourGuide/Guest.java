@@ -1,11 +1,10 @@
 package Veronica.TourGuide;
 
-public class Guest {
+import java.io.Serializable;
 
-    private String guestName;
-    private String contact;
-    private String email;
-    private String address;
+public class Guest implements Serializable {
+
+    private String guestName,contact,email,address;
 
 
     public Guest(String guestName, String contact, String email, String address) {

@@ -21,7 +21,7 @@ public class MaintenanceManualController {
 
     @FXML
     private TextField ManualContentTF;
-
+    ArrayList<MaintenanceManual> manuals = BinaryFileUtil.readObjects("MaintenanceManual.bin");
 
     private MaintenanceManual selectedManual;
 
@@ -34,82 +34,35 @@ public class MaintenanceManualController {
 
     @FXML
     public void searchManualOA(ActionEvent actionEvent) {
-
         String search = EquipmentSearchTF.getText();
 
-
-        ArrayList<MaintenanceManual> manuals =
-                BinaryFileUtil.readObjects("MaintenanceManual.bin");
-
-
         for(MaintenanceManual m : manuals) {
-
-            if(m.getEquipmentId().equals(search)
-                    || m.getEquipmentName().equalsIgnoreCase(search)) {
-
-
+            if(m.getEquipmentId().equals(search) || m.getEquipmentName().equalsIgnoreCase(search)) {
                 selectedManual = m;
-
-
-                SelectedEquipmentTF.setText(
-                        m.getEquipmentName()
-                );
-
-
-                NotificationTF.setText(
-                        "Manual Found"
-                );
-
-
+                SelectedEquipmentTF.setText(m.getEquipmentName());
+                NotificationTF.setText("Manual Found");
                 return;
-
             }
 
-        }
-
-
-        NotificationTF.setText(
-                "Manual Not Found"
-        );
-
+            NotificationTF.setText("Manual Not Found");
+            }
     }
 
 
 
     @FXML
     public void openManualOA(ActionEvent actionEvent) {
-
-
         if(selectedManual == null) {
-
-            NotificationTF.setText(
-                    "Search equipment first"
-            );
-
+            NotificationTF.setText("Search equipment first");
             return;
 
         }
-
-
         if(selectedManual.getManualContent().isEmpty()) {
-
-            NotificationTF.setText(
-                    "Manual file unavailable"
-            );
-
+            NotificationTF.setText("Manual file unavailable");
             return;
 
-        }
-
-
-        ManualContentTF.setText(
-                selectedManual.getManualContent()
-        );
-
-
-        NotificationTF.setText(
-                "Manual Opened"
-        );
+        }ManualContentTF.setText(selectedManual.getManualContent());
+        NotificationTF.setText("Manual Opened");
 
     }
 
@@ -117,26 +70,15 @@ public class MaintenanceManualController {
 
     @FXML
     public void closeManualOA(ActionEvent actionEvent) {
-
-
         ManualContentTF.clear();
-
         SelectedEquipmentTF.clear();
-
-        NotificationTF.setText(
-                "Manual Closed"
-        );
+        NotificationTF.setText("Manual Closed");
 
 
     }
 
     @FXML
     public void BackToDashBoardOA(ActionEvent actionEvent) {
-
-        SceneSwitcher.switchScene(
-                actionEvent,
-                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
-                "Maintenance Technician Dashboard"
-        );
+        SceneSwitcher.switchScene(actionEvent, "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
     }
 }
