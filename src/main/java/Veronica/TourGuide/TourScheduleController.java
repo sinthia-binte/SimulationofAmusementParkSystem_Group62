@@ -26,12 +26,12 @@ public class TourScheduleController {
 
     @FXML
     private TableColumn<TourSchedule, String> TourNameColumn;
-    @FXML
-    private TableView<TourSchedule> ScheduleTable;
 
     @FXML
     private Label DetailsLabel;
     private ObservableList<TourSchedule> tourList;
+    @FXML
+    private TableView<TourSchedule> ScheduleTableView;
 
     @FXML
     public void initialize() {
@@ -60,39 +60,20 @@ public class TourScheduleController {
             id++;
 
         }
-        ScheduleTable.setItems(tourList);
-        TourSchedule selectedTour = ScheduleTable.getSelectionModel().getSelectedItem();
-        if (selectedTour == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please select a tour first.");
-            alert.showAndWait();
+        ScheduleTableView.setItems(tourList);
+        if (tourList.isEmpty()) {
+            DetailsLabel.setText("No tours available.");
             return;
-
         }
-
-
-
+        TourSchedule selectedTour = tourList.get(0);
         DetailsLabel.setText(
+                "Tour ID: " + selectedTour.getTourId()
+                        + "\nTour Name: " + selectedTour.getTourName()
+                        + "\nDate: " + selectedTour.getDate()
+                        + "\nTime: " + selectedTour.getTime()
+                        + "\nLocation: " + selectedTour.getLocation()
+                        + "\nDescription: " + selectedTour.getDescription());
 
-                "Tour ID: "
-                        + selectedTour.getTourId()
-
-                        + "\nTour Name: "
-                        + selectedTour.getTourName()
-
-                        + "\nDate: "
-                        + selectedTour.getDate()
-
-                        + "\nTime: "
-                        + selectedTour.getTime()
-
-                        + "\nLocation: "
-                        + selectedTour.getLocation()
-
-                        + "\nDescription: "
-                        + selectedTour.getDescription()
-
-        );
 
     }
 
@@ -101,17 +82,7 @@ public class TourScheduleController {
 
     @FXML
     public void BackToDashboardOA(ActionEvent actionEvent) {
-
-
-        SceneSwitcher.switchScene(
-
-                actionEvent,
-
-                "/Veronica/TourGuide/TourGuideDashBoardView.fxml",
-
-                "Tour Guide Dashboard"
-
-        );
+        SceneSwitcher.switchScene(actionEvent, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
 
     }
 

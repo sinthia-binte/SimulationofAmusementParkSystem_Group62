@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.security.KeyStore;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class RideInspectionController {
     private ArrayList<RideInspection> rides;
 
     private RideInspection selectedRide;
-    ArrayList<RideInspection> list = BinaryFileUtil.readObjects("RideInspection.bin");
+    ArrayList<RideInspection> list = BinaryFileUtil.readObjects("MaintenanceTask.bin");
 
     @FXML
     public void initialize() {
@@ -56,7 +57,7 @@ public class RideInspectionController {
             RideCB.getItems().add(ride.getRideName());
 
         }
-        rides = BinaryFileUtil.readObjects("Rides.bin");
+        rides = BinaryFileUtil.readObjects("MaintenanceTask.bin");
         String name = RideCB.getValue();
         if(name == null){
             return;

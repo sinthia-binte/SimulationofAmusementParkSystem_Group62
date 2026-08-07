@@ -47,7 +47,7 @@ public class FaultReportController {
     public void initialize() {
 
         SeverityCB.getItems().addAll("Low", "Medium", "High", "Critical");
-        reports = BinaryFileUtil.readObjects("FaultReport.bin");
+        reports = BinaryFileUtil.readObjects("MaintenanceTask.bin");
         loadRide();
     }
 
@@ -116,7 +116,7 @@ public class FaultReportController {
                         ObservedIssueTA.getText(),
                         "Maintenance Technician");
 
-        BinaryFileUtil.appendObject("FaultReport.bin", report);
+        BinaryFileUtil.appendObject("MaintenanceTask.bin", report);
         FaultReportIDTF.setText(id);
         NotificationTA.setText("Fault report sent to Supervisor\nSeverity: " + SeverityCB.getValue());
     }

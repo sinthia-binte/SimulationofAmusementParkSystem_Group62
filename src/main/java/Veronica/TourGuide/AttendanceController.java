@@ -85,7 +85,7 @@ public class AttendanceController {
     @FXML
     public void saveAttendanceOA(ActionEvent event) {
         ArrayList<Attendance> list = new ArrayList<>(attendanceList);
-        BinaryFileUtil.saveList("attendance.bin", list);ConfirmationLabel.setText("Attendance saved successfully.");
+        BinaryFileUtil.saveList("TourGuide.bin", list);ConfirmationLabel.setText("Attendance saved successfully.");
     }
 
 

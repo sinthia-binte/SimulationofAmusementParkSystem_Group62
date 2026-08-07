@@ -42,7 +42,7 @@ public class PartsRequestController {
 
     private PartsRequest selectedRide;
 
-    ArrayList<PartsRequest> list = BinaryFileUtil.readObjects("Equipment.bin");
+    ArrayList<PartsRequest> list = BinaryFileUtil.readObjects("MaintenanceTask.bin");
 
 
     @FXML

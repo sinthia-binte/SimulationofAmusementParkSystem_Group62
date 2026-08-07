@@ -28,7 +28,7 @@ public class EquipmentStatusController {
 
     private EquipmentStatus selectedEquipment;
 
-    ArrayList<EquipmentStatus> equipmentList = BinaryFileUtil.readObjects("Equipment.bin");
+    ArrayList<EquipmentStatus> equipmentList = BinaryFileUtil.readObjects("MaintenanceTask.bin");
     @FXML
     private TextField ReviewTF;
     @FXML

@@ -84,57 +84,24 @@ public class TourSessionViewController {
             PreviewTA.setText("Price and capacity must be numbers.");
             return;
         }
-        ArrayList<TourSession> tourList = BinaryFileUtil.readList("TourSessions.bin");
+        ArrayList<TourSession> tourList = BinaryFileUtil.readList("TourGuide.bin");
 
+        String tourSessionId = "TS" + (tourList.size() + 1);
 
-
-        String tourSessionId =
-                "TS" + (tourList.size() + 1);
-
-
-
-
-        TourSession tour =
-                new TourSession(
-                        tourSessionId,
+        TourSession tour = new TourSession(tourSessionId,
                         TitleTF.getText(), DescriptionTF.getText(), LocationTF.getText(),
                         DurationCB.getValue(),
-
                         CategoryCB.getValue(),
-
                         MeetingPointTF.getText(),
-
                         StartTimeTF.getText(),
-
                         EndTimeTF.getText(),
-
                         DateDP.getValue(),
-
                         price,
-
-                        capacity
-
-                );
-
-
-
+                        capacity);
 
         tourList.add(tour);
-
-
-
-        BinaryFileUtil.saveList(
-                "TourSessions.bin",
-                tourList
-        );
-
-
-
-        PreviewTA.setText(
-                "Tour saved successfully!"
-                        + "\nTour ID: "
-                        + tourSessionId
-        );
+        BinaryFileUtil.saveList("TourGuide.bin", tourList);
+        PreviewTA.setText("Tour saved successfully!" + "\nTour ID: " + tourSessionId);
 
     }
 
@@ -185,57 +152,9 @@ public class TourSessionViewController {
 
 
 
-
-
-    @Deprecated
-    public void clearButtonOA(ActionEvent event) {
-
-
-        TitleTF.clear();
-
-        DescriptionTF.clear();
-
-        LocationTF.clear();
-
-        MeetingPointTF.clear();
-
-        StartTimeTF.clear();
-
-        EndTimeTF.clear();
-
-        PriceTF.clear();
-
-        CapacityTF.clear();
-
-
-        CategoryCB.getSelectionModel()
-                .clearSelection();
-
-
-        DurationCB.getSelectionModel()
-                .clearSelection();
-
-
-        DateDP.setValue(null);
-
-
-        PreviewTA.clear();
-
-    }
-
-
-
-
-
     @FXML
     public void BackToDashboardOA(ActionEvent event) {
-
-
-        SceneSwitcher.switchScene(
-                event,
-                "/Veronica/TourGuide/TourGuideDashBoardView.fxml",
-                "Tour Guide Dashboard"
-        );
+        SceneSwitcher.switchScene(event, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
 
     }
 

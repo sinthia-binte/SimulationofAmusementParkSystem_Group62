@@ -44,7 +44,7 @@ public class MaintenanceRecordController {
 
         }
         String equipmentId = rideCB.getValue();
-        tasks = BinaryFileUtil.readObjects("CompletedMaintenanceTask.bin");
+        tasks = BinaryFileUtil.readObjects("MaintenanceTask.bin");
         for (MaintenanceTask task : tasks) {
             if (task.getEquipmentId().equals(equipmentId)) {
                 selectedTask = task;
