@@ -49,8 +49,4 @@ public class PromoCode {
                 '}';
     }
 
-    public void validateFormat() {}
-    public void verifyCode() {}
-    public void applyDiscount() {}
-    public void markUsed() {}
 }

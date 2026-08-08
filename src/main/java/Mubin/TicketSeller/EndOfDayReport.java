@@ -43,7 +43,4 @@ public class EndOfDayReport {
                 '}';
     }
 
-    public void calculateTotals() {}
-    public void reconcileCash() {}
-    public void submitReport() {}
 }

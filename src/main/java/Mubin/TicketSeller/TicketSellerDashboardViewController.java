@@ -1,41 +1,59 @@
 package Mubin.TicketSeller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import Mubin.SceneSwitcher;
 
 public class TicketSellerDashboardViewController {
-    @javafx.fxml.FXML
-    public void sellTicketButtonOA(ActionEvent actionEvent) {
+
+
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void updateTicketButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void sellTicketButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "SellTicket.fxml", "Sell Ticket");
     }
 
-    @javafx.fxml.FXML
-    public void processGroupBookingButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void updateTicketButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "UpdateTicket.fxml", "Upgrade Ticket");
     }
 
-    @javafx.fxml.FXML
-    public void viewTransactionButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void applyPromoCodeButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ApplyPromoCode.fxml", "Apply Promo Code");
     }
 
-    @javafx.fxml.FXML
-    public void checkInventoryButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void processGroupBookingButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ProcessGroupBooking.fxml", "Process Group Booking");
     }
 
-    @javafx.fxml.FXML
-    public void processRefundButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void processRefundButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ProcessRefund.fxml", "Process Refund");
     }
 
-    @Deprecated
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void viewTransactionButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ViewTransaction.fxml", "View Transaction");
     }
 
-    @javafx.fxml.FXML
-    public void eodReportButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void checkInventoryButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "CheckInventory.fxml", "Check Inventory");
     }
 
-    @javafx.fxml.FXML
-    public void applyPromoCodeButtonOA(ActionEvent actionEvent) {
+
+    @FXML
+    public void eodReportButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "EndOfDayReport.fxml", "End of Day Report");
+    }
+
+    @FXML
+    public void logoutOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

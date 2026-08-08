@@ -48,9 +48,4 @@ public class GroupBooking {
                 ", depositAmt=" + depositAmt +
                 '}';
     }
-
-    public void validateDetails() {}
-    public void verifyCapacity() {}
-    public void calcPricing() {}
-    public void confirmBooking() {}
 }

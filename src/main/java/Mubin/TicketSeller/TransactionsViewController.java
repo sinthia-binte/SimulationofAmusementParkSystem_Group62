@@ -1,26 +1,40 @@
 package Mubin.TicketSeller;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 
 public class TransactionsViewController {
-    @javafx.fxml.FXML
-    private ListView transactionListView;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker transactionFromDateDP;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker transactionToDateDP;
 
-    @javafx.fxml.FXML
-    public void searchTransactionsButtonOA(ActionEvent actionEvent) {
+    @FXML
+    private ListView<String> transactionListView;
+
+    @FXML
+    public void initialize() {
+
     }
 
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void searchTransactionsButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
     }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
+
+    }
+
 }

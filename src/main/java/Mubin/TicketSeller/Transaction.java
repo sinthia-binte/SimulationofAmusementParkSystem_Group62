@@ -2,6 +2,7 @@ package Mubin.TicketSeller;
 
 import java.util.Date;
 
+
 public class Transaction {
     private String transactionId;
     private Date transactionDate;
