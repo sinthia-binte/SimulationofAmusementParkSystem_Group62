@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="520.0" prefWidth="850.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Sinthia.SecurityInCharge.SafetyComplianceManagementViewController">
+
+    <children>
+
+        <Label layoutX="320.0" layoutY="25.0"
+               text="Safety Compliance"
+               style="-fx-background-color: pink;">
+            <font><Font size="24.0"/></font>
+        </Label>
+
+        <Text layoutX="30.0" layoutY="90.0"
+              text="Inspection Area :" />
+        <TextField fx:id="inspectionAreaTF"
+                   layoutX="150.0" layoutY="72.0"
+                   prefWidth="160.0"/>
+
+        <Text layoutX="30.0" layoutY="135.0"
+              text="Safety Regulation :" />
+        <TextField fx:id="regulationTF"
+                   layoutX="150.0" layoutY="117.0"
+                   prefWidth="160.0"/>
+
+        <Text layoutX="30.0" layoutY="180.0"
+              text="Inspection Result :" />
+        <ComboBox fx:id="inspectionResultCB"
+                  layoutX="150.0" layoutY="162.0"
+                  prefWidth="160.0"/>
+
+        <Text layoutX="30.0" layoutY="225.0"
+              text="Violation Details :" />
+        <TextArea fx:id="violationTA"
+                  layoutX="150.0" layoutY="207.0"
+                  prefHeight="65.0" prefWidth="180.0"/>
+
+        <Text layoutX="30.0" layoutY="315.0"
+              text="Corrective Action :" />
+        <TextArea fx:id="correctiveActionTA"
+                  layoutX="150.0" layoutY="295.0"
+                  prefHeight="65.0" prefWidth="180.0"/>
+
+        <Text layoutX="30.0" layoutY="390.0"
+              text="Compliance Score :" />
+        <TextField fx:id="complianceScoreTF"
+                   layoutX="150.0" layoutY="372.0"
+                   prefWidth="160.0"/>
+
+        <Button layoutX="70.0" layoutY="430.0"
+                text="Save"
+                onAction="#saveComplianceButtonOA"/>
+
+        <Button layoutX="160.0" layoutY="430.0"
+                text="Update"
+                onAction="#updateComplianceButtonOA"/>
+
+        <Button layoutX="255.0" layoutY="430.0"
+                text="Delete"
+                onAction="#deleteComplianceButtonOA"/>
+
+        <TableView fx:id="complianceTableView"
+                   layoutX="350.0" layoutY="75.0"
+                   prefHeight="355.0" prefWidth="470.0">
+
+            <columns>
+                <TableColumn fx:id="inspectionAreaTC"
+                             prefWidth="100.0"
+                             text="Area"/>
+
+                <TableColumn fx:id="regulationTC"
+                             prefWidth="100.0"
+                             text="Regulation"/>
+
+                <TableColumn fx:id="resultTC"
+                             prefWidth="90.0"
+                             text="Result"/>
+
+                <TableColumn fx:id="scoreTC"
+                             prefWidth="80.0"
+                             text="Score"/>
+
+                <TableColumn fx:id="actionTC"
+                             prefWidth="100.0"
+                             text="Action"/>
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>
