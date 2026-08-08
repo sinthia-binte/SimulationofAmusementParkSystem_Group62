@@ -110,7 +110,7 @@ public class TourCompletionController {
     @FXML
     public void BackToDashboardOA(ActionEvent actionEvent) {
 
-        SceneSwitcher.switchScene(actionEvent, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
+        SceneSwitcher.switchScene(actionEvent, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
     }
 
 

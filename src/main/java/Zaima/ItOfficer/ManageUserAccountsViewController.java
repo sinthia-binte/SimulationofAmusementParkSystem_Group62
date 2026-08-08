@@ -1,6 +1,7 @@
 package Zaima.ItOfficer;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -11,6 +12,28 @@ public class ManageUserAccountsViewController {
     private ComboBox StatusCB;
     @javafx.fxml.FXML
     private TableColumn UserIDTC;
+    @FXML
+    public void initialize() {
+        RoleCB.getItems().clear();
+
+        RoleCB.getItems().addAll(
+                "IT Officer",
+                "Finance Officer",
+                "Ticket Seller",
+                "Ride Operator",
+                "Tour Guide",
+                "Maintenance Technician",
+                "Security In-Charge",
+                "Event Coordinator"
+        );
+
+        StatusCB.getItems().clear();
+
+        StatusCB.getItems().addAll(
+                "Active",
+                "Inactive"
+        );
+    }
     @javafx.fxml.FXML
     private TextField UserNameTF;
     @javafx.fxml.FXML
@@ -58,3 +81,4 @@ public class ManageUserAccountsViewController {
     public void ResetPasswordOA(ActionEvent actionEvent) {
     }
 }
+

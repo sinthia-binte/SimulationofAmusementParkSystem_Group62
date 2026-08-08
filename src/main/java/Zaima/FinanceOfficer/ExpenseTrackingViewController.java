@@ -1,5 +1,11 @@
 package Zaima.FinanceOfficer;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+
 public class ExpenseTrackingViewController {
     @javafx.fxml.FXML
     private TableColumn VendorTC;
@@ -7,8 +13,6 @@ public class ExpenseTrackingViewController {
     private TableColumn CategoryTC;
     @javafx.fxml.FXML
     private ComboBox CategoryCB;
-    @javafx.fxml.FXML
-    private PieChart PieChart;
     @javafx.fxml.FXML
     private TableColumn AmountTC;
     @javafx.fxml.FXML
@@ -21,6 +25,21 @@ public class ExpenseTrackingViewController {
     private TableColumn DateTC;
     @javafx.fxml.FXML
     private TextField VendorTF;
+    @javafx.fxml.FXML
+    public void initialize() {
+
+        ExpenseTrackingLabel.setText(
+                "Expense Tracking"
+        );
+
+        CategoryCB.getItems().addAll(
+                "Food",
+                "Transportation",
+                "Maintenance",
+                "Utilities",
+                "Other"
+        );
+    }
 
     @javafx.fxml.FXML
     public void UpdateOA(ActionEvent actionEvent) {

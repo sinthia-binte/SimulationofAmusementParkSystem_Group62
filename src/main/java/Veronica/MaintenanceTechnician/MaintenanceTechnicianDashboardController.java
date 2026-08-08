@@ -105,24 +105,24 @@ public class MaintenanceTechnicianDashboardController {
     @FXML
     public void openMaintenanceRecordOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "MaintenanceRecord.fxml", "Record Maintenance");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceRecord.fxml", "Record Maintenance");
 
     }
 
     @FXML
     public void openReportFaultOA(ActionEvent event){
-        SceneSwitcher.switchScene(event, "ReportFault.fxml", "Report Fault");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/ReportFault.fxml", "Report Fault");
 
     }
     @FXML
     public void openPartsRequestOA(ActionEvent event){
-        SceneSwitcher.switchScene(event, "PartsRequest.fxml", "Request Parts");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/PartsRequest.fxml", "Request Parts");
 
     }
     @FXML
     public void openUpdateStatusOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "UpdateStatus.fxml", "Update Status");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/UpdateStatus.fxml", "Update Status");
 
     }
 
@@ -130,12 +130,12 @@ public class MaintenanceTechnicianDashboardController {
     @FXML
     public void openManualOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "RepairManual.fxml", "Repair Manuals");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/RepairManual.fxml", "Repair Manuals");
 
     }
     @FXML
     public void openCompleteTaskOA(ActionEvent event){
-        SceneSwitcher.switchScene(event, "CompleteTask.fxml", "Complete Task");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/CompleteTask.fxml", "Complete Task");
 
     }
 

@@ -1,27 +1,39 @@
 package Mubin.RideOperator;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
+
 public class ReportIncidentViewController {
-    @javafx.fxml.FXML
-    private ComboBox incidentTypeComboBox;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> incidentTypeComboBox;
+
+    @FXML
     private TextField incidentDetailsTF;
-    @javafx.fxml.FXML
+
+    @FXML
     private CheckBox isGuestInvoledCheckBox;
 
-    @javafx.fxml.FXML
-    public void backToDashboardRIS(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void submitIncidentRIS(ActionEvent actionEvent) {
+    @FXML
+    public void submitIncidentRIS(ActionEvent event) {
     }
 
-    @Deprecated
-    public void emergencyStopRIS(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardRIS(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "RideOperatorDashboardView.fxml", "User Dashboard");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

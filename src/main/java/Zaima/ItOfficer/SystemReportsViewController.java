@@ -1,8 +1,5 @@
 package Zaima.ItOfficer;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.*;
-
 public class SystemReportsViewController {
     @javafx.fxml.FXML
     private DatePicker ToDP;
@@ -29,3 +26,4 @@ public class SystemReportsViewController {
     public void GenerateOA(ActionEvent actionEvent) {
     }
 }
+`

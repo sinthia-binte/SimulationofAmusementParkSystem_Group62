@@ -92,6 +92,6 @@ public class AttendanceController {
 
     @FXML
     public void BackToDashboardOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
     }
 }
