@@ -26,4 +26,3 @@ public class SystemReportsViewController {
     public void GenerateOA(ActionEvent actionEvent) {
     }
 }
-`

@@ -28,31 +28,31 @@ public class TourGuideDashboardController {
 
     @FXML
     private void registerGuestOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/Registration.fxml", "Guest Registration");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/GuestRegistrationView.fxml", "Guest Registration");
     }
 
 
     @FXML
     private void closeTourOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/CloseTour.fxml", "Close Tour");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourSessionView.fxml", "Tour Session");
     }
 
 
     @FXML
     private void reportIncidentOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/ReportIncident.fxml", "Report Incident");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/IncidentView.fxml", " Incident");
     }
 
 
     @FXML
     private void recordAttendanceOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/Attendance.fxml", "Guest Attendance");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/AttendanceView.fxml", "Guest Attendance");
     }
 
 
     @FXML
     private void viewScheduleOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourSchedule.fxml", "Assigned Tour Schedule");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourScheduleView.fxml", "Assigned Tour Schedule");
     }
 
 
@@ -64,13 +64,13 @@ public class TourGuideDashboardController {
 
     @FXML
     private void notificationOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/Notification.fxml", "Ride Updates and Notifications");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/NotificationView.fxml", "Ride Updates and Notifications");
     }
 
 
     @FXML
     private void logoutOA(ActionEvent event) {
         loggedInGuide = null;
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Login.fxml", "Login");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "Login");
     }
 }

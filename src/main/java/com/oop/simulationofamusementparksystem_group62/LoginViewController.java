@@ -58,7 +58,7 @@ public class LoginViewController {
 
         else if(roleCB.getValue().equals("Tour Guide")){
             if(userIdTF.getText().equals("TG1") && passwordPF.getText().equals("1234")){
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourGuideDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourGuideDashboardView.fxml"));
                 Node node = loader.load();
                 mainPane.getChildren().setAll(node);
                 return;
@@ -68,7 +68,7 @@ public class LoginViewController {
 
         else if(roleCB.getValue().equals("Maintenance Technician")){
             if(userIdTF.getText().equals("MT") && passwordPF.getText().equals("5678")){
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboardView.fxml"));
                 Node node = loader.load();
                 mainPane.getChildren().setAll(node);
                 return;

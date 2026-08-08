@@ -98,31 +98,31 @@ public class MaintenanceTechnicianDashboardController {
     @FXML
     public void openRideInspectionOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "RideInspection.fxml", "Ride Inspection");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/RideInspectionView.fxml", "Ride Inspection");
 
     }
 
     @FXML
     public void openMaintenanceRecordOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceRecord.fxml", "Record Maintenance");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceRecordView.fxml", "Record Maintenance");
 
     }
 
     @FXML
     public void openReportFaultOA(ActionEvent event){
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/ReportFault.fxml", "Report Fault");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/FaultReportView.fxml", "Report Fault");
 
     }
     @FXML
     public void openPartsRequestOA(ActionEvent event){
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/PartsRequest.fxml", "Request Parts");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/PartsRequestView.fxml", "Request Parts");
 
     }
     @FXML
     public void openUpdateStatusOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/UpdateStatus.fxml", "Update Status");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/EquipmentStausView.fxml", "/Equipment Status");
 
     }
 
@@ -130,12 +130,12 @@ public class MaintenanceTechnicianDashboardController {
     @FXML
     public void openManualOA(ActionEvent event){
 
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/RepairManual.fxml", "Repair Manuals");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceManualView.fxml", "Maintenance Manuals");
 
     }
     @FXML
     public void openCompleteTaskOA(ActionEvent event){
-        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/CompleteTask.fxml", "Complete Task");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceTaskView.fxml", "Maintenance Task");
 
     }
 
