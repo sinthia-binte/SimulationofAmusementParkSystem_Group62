@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="386.0" prefWidth="349.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.SecurityInCharge.RegistrationViewController">
    <children>
-      <Label fx:id="registrationTF" layoutX="146.0" layoutY="31.0" style="-fx-background-color: pink;" text="Registration">
+      <Label fx:id="registrationTF" layoutX="100.0" layoutY="25.0" style="-fx-background-color: pink;" text="Registration">
          <font>
             <Font size="24.0" />
          </font>
