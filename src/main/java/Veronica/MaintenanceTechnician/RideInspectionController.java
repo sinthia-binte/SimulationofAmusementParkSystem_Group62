@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.security.KeyStore;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -40,237 +41,89 @@ public class RideInspectionController {
     @FXML
     private Label AlertmessageLabel;
 
+    private ArrayList<RideInspection> rides;
 
     private RideInspection selectedRide;
-
-
+    ArrayList<RideInspection> list = BinaryFileUtil.readObjects("MaintenanceTask.bin");
 
     @FXML
     public void initialize() {
-
-        ConditionCB.getItems().addAll(
-                "Safe",
-                "Under Maintenance",
-                "Critical"
-        );
-
-        loadRides();
-
-        RideCB.setOnAction(e -> loadRideDetails());
-
+        ConditionCB.getItems().addAll("Safe", "Under Maintenance", "Critical");
     }
 
-
-
-    private void loadRides() {
-
-
-        ArrayList<RideInspection> rides =
-                BinaryFileUtil.readObjects("Rides.bin");
-
-
+    @Deprecated
+    public void loadRideDetailsOA(ActionEvent event) {
         for(RideInspection ride : rides){
-
-            RideCB.getItems().add(
-                    ride.getRideName()
-            );
+            RideCB.getItems().add(ride.getRideName());
 
         }
-
-    }
-
-
-
-
-    private void loadRideDetails() {
-
-
+        rides = BinaryFileUtil.readObjects("MaintenanceTask.bin");
         String name = RideCB.getValue();
+        if(name == null){
+            return;
 
-
-        ArrayList<RideInspection> rides =
-                BinaryFileUtil.readObjects("Rides.bin");
-
-
+        }
         for(RideInspection ride : rides){
-
-
             if(ride.getRideName().equals(name)){
-
-
                 selectedRide = ride;
-
-
-                RideNameTF.setText(
-                        ride.getRideName()
-                );
-
-
-                RideStatusTF.setText(
-                        ride.getStatus()
-                );
-
-
-                SafetyHistoryTF.setText(
-                        ride.getSafetyHistory()
-                );
-
-
-                MaintenanceDateTF.setText(
-                        String.valueOf(
-                                ride.getLastMaintenanceDate()
-                        )
-                );
-
-
+                RideNameTF.setText(ride.getRideName());
+                RideStatusTF.setText(ride.getStatus());
+                SafetyHistoryTF.setText(ride.getSafetyHistory());
+                MaintenanceDateTF.setText(String.valueOf(ride.getLastMaintenanceDate()));
                 break;
-
-            }
-
-        }
+            }}
 
     }
-
-
-
-
-
     @FXML
-    public void reviewInspectionOA(ActionEvent actionEvent) {
-
-
-        Alert alert =
-                new Alert(Alert.AlertType.INFORMATION);
-
-
+    public void reviewInspectionOA(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Inspection Review");
-
-        alert.setHeaderText("Inspection Details");
-
-
-        alert.setContentText(
-
+        alert.setHeaderText("Inspection Details");alert.setContentText(
                 "Ride Name: " + RideNameTF.getText()
-
-                        + "\nStatus: " + RideStatusTF.getText()
-
-                        + "\nSafety History: " + SafetyHistoryTF.getText()
-
-                        + "\nLast Maintenance: " + MaintenanceDateTF.getText()
-
-                        + "\nFindings: " + FindingsTA.getText()
-
-                        + "\nCondition: " + ConditionCB.getValue()
-
-                        + "\nNotes: " + NotesTA.getText()
-
-        );
-
-
-        alert.showAndWait();
+                        + "\nStatus: "
+                        + RideStatusTF.getText()
+                        + "\nFindings: "
+                        + FindingsTA.getText()
+                        + "\nCondition: "
+                        + ConditionCB.getValue()
+                        + "\nNotes: "
+                        + NotesTA.getText());
+        alert.show();
 
     }
 
-
-
-
-
     @FXML
-    public void submitInspectionOA(ActionEvent actionEvent) {
-
-
+    public void submitInspectionOA(ActionEvent event) {
         if(selectedRide == null){
-
-            AlertmessageLabel.setText(
-                    "Please select a ride."
-            );
-
+            AlertmessageLabel.setText("Please select ride first.");
             return;
         }
-
-
-
-        if(FindingsTA.getText().isBlank()
-                || ConditionCB.getValue() == null){
-
-
-            AlertmessageLabel.setText(
-                    "Complete inspection information."
-            );
-
+        if(FindingsTA.getText().isEmpty() || ConditionCB.getValue() == null){
+            AlertmessageLabel.setText("Complete inspection details.");
             return;
 
         }
+        int id = list.size() + 1;
+        RideInspection inspection = new RideInspection(id,
+                selectedRide.getRideId(),
+                selectedRide.getRideName(),
+                selectedRide.getSafetyHistory(),
+                selectedRide.getStatus(),
+                FindingsTA.getText(),
+                ConditionCB.getValue(),
+                NotesTA.getText(),
+                "Maintenance Technician",
+                LocalDate.now(),
+                selectedRide.getLastMaintenanceDate());
 
-
-
-        ArrayList<RideInspection> reports =
-                BinaryFileUtil.readObjects(
-                        "RideInspection.bin"
-                );
-
-
-        int newReportId =
-                reports.size() + 1;
-
-
-
-
-        RideInspection report =
-                new RideInspection(
-
-                        newReportId,
-
-                        selectedRide.getRideId(),
-
-                        selectedRide.getRideName(),
-
-                        selectedRide.getSafetyHistory(),
-
-                        selectedRide.getStatus(),
-
-                        FindingsTA.getText(),
-
-                        ConditionCB.getValue(),
-
-                        NotesTA.getText(),
-
-                        "Maintenance Technician",
-
-                        LocalDate.now(),
-
-                        selectedRide.getLastMaintenanceDate()
-
-                );
-
-
-
-        BinaryFileUtil.appendObject(
-                "RideInspection.bin",
-                report
-        );
-
-
-        AlertmessageLabel.setText(
-                "Inspection saved. ID: "
-                        + newReportId
-        );
+        BinaryFileUtil.appendObject("RideInspection.bin", inspection);
+        AlertmessageLabel.setText("Inspection saved. ID: " + id);
 
     }
 
-
-
-
-
     @FXML
-    public void BACKOA(ActionEvent actionEvent) {
-
-
-        SceneSwitcher.switchScene(
-                actionEvent,
-                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
-                "Maintenance Technician Dashboard"
-        );
+    public void BACKOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
 
     }
 

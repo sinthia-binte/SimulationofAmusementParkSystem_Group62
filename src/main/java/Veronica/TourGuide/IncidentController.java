@@ -45,7 +45,7 @@ public class IncidentController {
 
         incidentList.add(incident);
 
-        BinaryFileUtil.saveList("incident.bin", incidentList);
+        BinaryFileUtil.saveList("TourGuide.bin", incidentList);
 
         ConfirmationTA.setText("Incident Report Submitted Successfully.\nIncident ID: "
                 + incidentId + "\nStatus: Submitted");

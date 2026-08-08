@@ -5,10 +5,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class AccessControlVeiwController{
+public class AccessControlViewController {
 
     @javafx.fxml.FXML
-    private AnchorPane anchorPaneVeiw;
+    private AnchorPane anchorPaneView;
     @javafx.fxml.FXML
     private CheckBox permissionNoCheckBox;
     @javafx.fxml.FXML

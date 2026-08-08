@@ -1,46 +1,35 @@
 package Mubin.RideOperator;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
-public class OperateRideViewController
-{
-    @javafx.fxml.FXML
+
+public class OperateRideViewController {
+
+    @FXML
     public void initialize() {
     }
 
-    @Deprecated
-    public void backToDashboardORS(ActionEvent actionEvent) {
+    @FXML
+    public void startRideButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void startRideORS(ActionEvent actionEvent) {
+    @FXML
+    public void stopRideButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void stopRideORS(ActionEvent actionEvent) {
+    @FXML
+    public void emergencyStopButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void emergencyStopORS(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "RideOperatorDashboardView.fxml", "User Dashboard");
     }
 
-    @javafx.fxml.FXML
-    public void emergencyStopButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void logOUTButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void stopRideButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void startRideButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void logOUTButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

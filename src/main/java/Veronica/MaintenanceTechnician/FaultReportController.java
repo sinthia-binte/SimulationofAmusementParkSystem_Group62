@@ -14,12 +14,6 @@ public class FaultReportController {
     private ComboBox<String> RideCB;
 
     @FXML
-    private TextField EquipmentNameTF;
-
-    @FXML
-    private TextArea EquipmentHistoryTA;
-
-    @FXML
     private TextArea FaultDescriptionTA;
 
     @FXML
@@ -37,6 +31,14 @@ public class FaultReportController {
     @FXML
     private TextArea NotificationTA;
 
+    @FXML
+    private TextArea EquipmentHistoryTF;
+
+    @FXML
+    private TextField EquipmentNameTF;
+
+
+    private ArrayList<FaultReport> reports;
 
     private FaultReport selectedRide;
 
@@ -45,48 +47,44 @@ public class FaultReportController {
     public void initialize() {
 
         SeverityCB.getItems().addAll("Low", "Medium", "High", "Critical");
-        loadRides();
-
-        RideCB.setOnAction(e -> loadRideDetails());
-
+        reports = BinaryFileUtil.readObjects("MaintenanceTask.bin");
+        loadRide();
     }
 
 
-    public void loadRides() {
+    private void loadRide() {
 
-        ArrayList<FaultReport> reports = BinaryFileUtil.readObjects("FaultReport.bin");
-
-        for(FaultReport r : reports) {
+        for (FaultReport r : reports) {
             RideCB.getItems().add(r.getRideId());
-
         }
-
     }
 
-
-    public void loadRideDetails() {
-        String id = RideCB.getValue();
-
-        ArrayList<FaultReport> reports = BinaryFileUtil.readObjects("FaultReport.bin");
-
-
-        for(FaultReport r : reports) {
-
-            if(r.getRideId().equals(id)) {
-                selectedRide = r;
-                EquipmentNameTF.setText(r.getRideName());
-                EquipmentHistoryTA.setText("Previous Fault: " + r.getFaultDescription());
-                break;
-
-            }
-
-        }
-
-    }
 
 
     @FXML
-    public void reviewReportOA(ActionEvent actionEvent) {
+    public void loadRideDetailsOA(ActionEvent event) {
+        String id = RideCB.getValue();
+        if (id == null) {
+            NotificationTA.setText("Please select equipment.");
+            return;
+        }
+
+
+        for (FaultReport r : reports) {
+            if (r.getRideId().equals(id)) {
+                selectedRide = r;
+                EquipmentNameTF.setText(r.getRideName());
+                EquipmentHistoryTF.setText("Previous Fault: " + r.getFaultDescription());
+                break;
+            }
+        }
+    }
+
+
+
+    @FXML
+    public void reviewReportOA(ActionEvent event) {
+
         ReviewTA.setText("Equipment: "
                         + EquipmentNameTF.getText()
                         + "\nFault Description: "
@@ -94,67 +92,56 @@ public class FaultReportController {
                         + "\nSeverity: "
                         + SeverityCB.getValue()
                         + "\nObserved Issue: "
-                        + ObservedIssueTA.getText()
-        );
-
+                        + ObservedIssueTA.getText());
     }
 
-
-
     @FXML
-    public void submitReportOA(ActionEvent actionEvent) {
-
-
-        if(selectedRide == null) {NotificationTA.setText("Select equipment first");
+    public void submitReportOA(ActionEvent event) {
+        if (selectedRide == null) {NotificationTA.setText("Select equipment first.");
             return;
         }
-        if(FaultDescriptionTA.getText().isEmpty() || SeverityCB.getValue() == null) {
-            NotificationTA.setText("Complete fault information");
+
+
+        if (FaultDescriptionTA.getText().isEmpty() || SeverityCB.getValue() == null) {
+            NotificationTA.setText("Complete fault information.");
             return;
         }
-        String id = "FR" + (int)(Math.random()*10000);
+        String id = "FR" + (reports.size() + 1);
 
-
-
-        FaultReport report = new FaultReport(
-                        id,
-                        selectedRide.getRideId(),
+        FaultReport report =
+                new FaultReport(id, selectedRide.getRideId(),
                         selectedRide.getRideName(),
                         FaultDescriptionTA.getText(),
                         SeverityCB.getValue(),
                         ObservedIssueTA.getText(),
-                        "Maintenance Technician"
-                );
+                        "Maintenance Technician");
 
-
-
-        BinaryFileUtil.appendObject("FaultReport.bin", report);
+        BinaryFileUtil.appendObject("MaintenanceTask.bin", report);
         FaultReportIDTF.setText(id);
-
-
         NotificationTA.setText("Fault report sent to Supervisor\nSeverity: " + SeverityCB.getValue());
-
     }
 
 
-
     @FXML
-    public void clearFormOA(ActionEvent actionEvent) {
+    public void clearFormOA(ActionEvent event) {
+
+        RideCB.getSelectionModel().clearSelection();
+        SeverityCB.getSelectionModel().clearSelection();
+        EquipmentNameTF.clear();
+        EquipmentHistoryTF.clear();
         FaultDescriptionTA.clear();
         ObservedIssueTA.clear();
         ReviewTA.clear();
         NotificationTA.clear();
         FaultReportIDTF.clear();
-        SeverityCB.setValue(null);
-
+        selectedRide = null;
     }
 
+
+
     @FXML
-    public void BackToDashBoardOA(ActionEvent actionEvent) {
-        SceneSwitcher.switchScene(
-                actionEvent,
-                "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml",
-                "Maintenance Technician Dashboard"
-        );
+    public void BackToDashBoardOA(ActionEvent event) {
+
+        SceneSwitcher.switchScene(event, "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
     }
 }

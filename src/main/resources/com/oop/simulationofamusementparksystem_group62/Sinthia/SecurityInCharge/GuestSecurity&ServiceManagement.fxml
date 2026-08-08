@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="540.0" prefWidth="850.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Sinthia.SecurityInCharge.GuestSecurityServiceManagementViewController">
+
+    <children>
+
+        <Label layoutX="285.0" layoutY="25.0"
+               text="Guest Security &amp; Service"
+               style="-fx-background-color: pink;">
+            <font><Font size="24.0"/></font>
+        </Label>
+
+        <Text layoutX="30.0" layoutY="90.0"
+              text="Guest Complaint :" />
+        <TextArea fx:id="complaintTA"
+                  layoutX="150.0" layoutY="72.0"
+                  prefHeight="65.0"
+                  prefWidth="180.0"/>
+
+        <Text layoutX="30.0" layoutY="165.0"
+              text="Assistance Type :" />
+        <ComboBox fx:id="assistanceTypeCB"
+                  layoutX="150.0" layoutY="147.0"
+                  prefWidth="160.0"/>
+
+        <Text layoutX="30.0" layoutY="210.0"
+              text="Assigned Team :" />
+        <ComboBox fx:id="assignedTeamCB"
+                  layoutX="150.0" layoutY="192.0"
+                  prefWidth="160.0"/>
+
+        <Text layoutX="30.0" layoutY="255.0"
+              text="Service Response :" />
+        <TextField fx:id="serviceResponseTF"
+                   layoutX="150.0" layoutY="237.0"
+                   prefWidth="160.0"/>
+
+        <Text layoutX="30.0" layoutY="300.0"
+              text="Guest Feedback :" />
+        <TextArea fx:id="guestFeedbackTA"
+                  layoutX="150.0" layoutY="282.0"
+                  prefHeight="65.0"
+                  prefWidth="180.0"/>
+
+        <Text layoutX="30.0" layoutY="375.0"
+              text="Service Quality :" />
+        <TextField fx:id="serviceQualityTF"
+                   layoutX="150.0" layoutY="357.0"
+                   prefWidth="160.0"/>
+
+        <Button layoutX="70.0" layoutY="420.0"
+                text="Save"
+                onAction="#saveGuestServiceButtonOA"/>
+
+        <Button layoutX="160.0" layoutY="420.0"
+                text="Update"
+                onAction="#updateGuestServiceButtonOA"/>
+
+        <Button layoutX="255.0" layoutY="420.0"
+                text="Delete"
+                onAction="#deleteGuestServiceButtonOA"/>
+
+        <TableView fx:id="guestServiceTableView"
+                   layoutX="350.0" layoutY="75.0"
+                   prefHeight="345.0"
+                   prefWidth="470.0">
+
+            <columns>
+
+                <TableColumn fx:id="complaintTC"
+                             prefWidth="100.0"
+                             text="Complaint"/>
+
+                <TableColumn fx:id="assistanceTC"
+                             prefWidth="100.0"
+                             text="Assistance"/>
+
+                <TableColumn fx:id="teamTC"
+                             prefWidth="90.0"
+                             text="Team"/>
+
+                <TableColumn fx:id="responseTC"
+                             prefWidth="90.0"
+                             text="Response"/>
+
+                <TableColumn fx:id="qualityTC"
+                             prefWidth="90.0"
+                             text="Quality"/>
+
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>

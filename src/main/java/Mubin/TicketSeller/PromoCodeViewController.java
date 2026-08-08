@@ -1,32 +1,46 @@
 package Mubin.TicketSeller;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
 public class PromoCodeViewController {
-    @javafx.fxml.FXML
-    private Label newTotalLabel;
-    @javafx.fxml.FXML
-    private TextField ticketNoTF;
-    @javafx.fxml.FXML
-    private Label discountAppliedLabel;
-    @javafx.fxml.FXML
+
+
+    @FXML
     private TextField promoCodeTF;
 
-    @javafx.fxml.FXML
-    public void validateCodeButtonOA(ActionEvent actionEvent) {
+    @FXML
+    private TextField ticketNoTF;
+
+    @FXML
+    private Label discountAppliedLabel;
+
+    @FXML
+    private Label newTotalLabel;
+
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void validateCodeButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void completeSaleButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void completeSaleButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

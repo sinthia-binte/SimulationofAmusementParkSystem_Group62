@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="402.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.EventCoordinator.SecurityReportVeiwcontroller">
+<AnchorPane prefHeight="402.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.SecurityInCharge.Registration.SecurityReportVeiwcontroller">
    <children>
       <Label fx:id="securityReportLabel" layoutX="222.0" layoutY="31.0" style="-fx-background-color: pink;" text="SecurityReport">
          <font>

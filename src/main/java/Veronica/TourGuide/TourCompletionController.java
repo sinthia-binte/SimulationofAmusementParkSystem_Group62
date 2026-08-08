@@ -35,25 +35,17 @@ public class TourCompletionController {
     @FXML
     public void initialize() {
 
-        TourSessionCB.getItems().addAll(
-                new TourCompletion(1, 20, "Morning Tour",
-                        "18 Present", "2 Hours",
-                        "", "Active"),
-
+        TourSessionCB.getItems().addAll(new TourCompletion(1, 20, "Morning Tour", "18 Present", "2 Hours", "", "Active"),
                 new TourCompletion(2, 15, "City Tour",
                         "15 Present", "3 Hours",
-                        "", "Active")
-        );
+                        "", "Active"));
     }
 
 
     @FXML
     public void selectTourOA(ActionEvent actionEvent) {
-
         TourCompletion selectedTour = TourSessionCB.getValue();
-
         if (selectedTour != null) {
-
             GuestCountTF.setText(String.valueOf(selectedTour.getGuestCount()));
             AttendanceTF.setText(selectedTour.getAttendance());
             DurationTF.setText(selectedTour.getDuration());

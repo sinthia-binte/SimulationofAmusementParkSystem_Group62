@@ -1,39 +1,58 @@
 package Mubin.TicketSeller;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
+
+
 public class SellTicketViewController {
-    @javafx.fxml.FXML
-    private ComboBox ticketTypeComboBox;
-    @javafx.fxml.FXML
-    private Label transactionIdLabel;
-    @javafx.fxml.FXML
-    private Label isTicketAvailableLabel;
-    @javafx.fxml.FXML
+
+
+    @FXML
     private TextField ticketNoTF;
-    @javafx.fxml.FXML
-    private Label ticketPriceLabel;
-    @javafx.fxml.FXML
-    private ComboBox ageCategoryComboBox;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField visitorCountTF;
 
-    @javafx.fxml.FXML
-    public void processPaymentButtonOA(ActionEvent actionEvent) {
+    @FXML
+    private ComboBox<String> ageCategoryComboBox;
+
+    @FXML
+    private ComboBox<String> ticketTypeComboBox;
+
+    @FXML
+    private Label isTicketAvailableLabel;
+
+    @FXML
+    private Label ticketPriceLabel;
+
+    @FXML
+    private Label transactionIdLabel;
+
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void checkAvailabilityButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void checkAvailabilityButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void processPaymentButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

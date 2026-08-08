@@ -1,33 +1,48 @@
 package Mubin.TicketSeller;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
+
 public class RefundViewController {
-    @javafx.fxml.FXML
-    private Label refundAmountLabel;
-    @javafx.fxml.FXML
-    private Label refundReferenceLabel;
-    @javafx.fxml.FXML
-    private ComboBox refundReasonComboBox;
-    @javafx.fxml.FXML
+
+
+    @FXML
     private TextField ticketReferenceTF;
 
-    @javafx.fxml.FXML
-    public void confirmRefundButtonOA(ActionEvent actionEvent) {
+    @FXML
+    private ComboBox<String> refundReasonComboBox;
+
+    @FXML
+    private Label refundAmountLabel;
+
+    @FXML
+    private Label refundReferenceLabel;
+
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void retrieveTicketButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void retrieveTicketButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void confirmRefundButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

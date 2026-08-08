@@ -5,35 +5,13 @@ import java.time.LocalDate;
 
 public class TourSession implements Serializable {
 
-    private String tourguideId;
-    private String title;
-    private String description;
-    private String location;
-    private String duration;
-    private String category;
-    private String meetingtime;
-
+    private String tourguideId, title,description,location,duration,category,meetingtime,starttime, endtime;
     private LocalDate date;
-    private String starttime;
-    private String endtime;
-
     private float ticketPrice;
     private int maxParticipants;
 
 
-    public TourSession(String tourguideId,
-                       String title,
-                       String description,
-                       String location,
-                       String duration,
-                       String category,
-                       String meetingtime,
-                       LocalDate date,
-                       String starttime,
-                       String endtime,
-                       float ticketPrice,
-                       int maxParticipants) {
-
+    public TourSession(String tourguideId, String title, String description, String location, String duration, String category, String meetingtime, String starttime, String endtime, LocalDate date, float ticketPrice, int maxParticipants) {
         this.tourguideId = tourguideId;
         this.title = title;
         this.description = description;
@@ -41,13 +19,12 @@ public class TourSession implements Serializable {
         this.duration = duration;
         this.category = category;
         this.meetingtime = meetingtime;
-        this.date = date;
         this.starttime = starttime;
         this.endtime = endtime;
+        this.date = date;
         this.ticketPrice = ticketPrice;
         this.maxParticipants = maxParticipants;
     }
-
 
     public String getTourguideId() {
         return tourguideId;
@@ -57,7 +34,6 @@ public class TourSession implements Serializable {
         this.tourguideId = tourguideId;
     }
 
-
     public String getTitle() {
         return title;
     }
@@ -65,7 +41,6 @@ public class TourSession implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public String getDescription() {
         return description;
@@ -75,7 +50,6 @@ public class TourSession implements Serializable {
         this.description = description;
     }
 
-
     public String getLocation() {
         return location;
     }
@@ -83,7 +57,6 @@ public class TourSession implements Serializable {
     public void setLocation(String location) {
         this.location = location;
     }
-
 
     public String getDuration() {
         return duration;
@@ -93,7 +66,6 @@ public class TourSession implements Serializable {
         this.duration = duration;
     }
 
-
     public String getCategory() {
         return category;
     }
@@ -101,7 +73,6 @@ public class TourSession implements Serializable {
     public void setCategory(String category) {
         this.category = category;
     }
-
 
     public String getMeetingtime() {
         return meetingtime;
@@ -111,16 +82,6 @@ public class TourSession implements Serializable {
         this.meetingtime = meetingtime;
     }
 
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-
     public String getStarttime() {
         return starttime;
     }
@@ -128,7 +89,6 @@ public class TourSession implements Serializable {
     public void setStarttime(String starttime) {
         this.starttime = starttime;
     }
-
 
     public String getEndtime() {
         return endtime;
@@ -138,6 +98,13 @@ public class TourSession implements Serializable {
         this.endtime = endtime;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
     public float getTicketPrice() {
         return ticketPrice;
@@ -147,7 +114,6 @@ public class TourSession implements Serializable {
         this.ticketPrice = ticketPrice;
     }
 
-
     public int getMaxParticipants() {
         return maxParticipants;
     }
@@ -156,9 +122,21 @@ public class TourSession implements Serializable {
         this.maxParticipants = maxParticipants;
     }
 
-
     @Override
     public String toString() {
-        return title;
+        return "TourSession{" +
+                "tourguideId='" + tourguideId + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", location='" + location + '\'' +
+                ", duration='" + duration + '\'' +
+                ", category='" + category + '\'' +
+                ", meetingtime='" + meetingtime + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", endtime='" + endtime + '\'' +
+                ", date=" + date +
+                ", ticketPrice=" + ticketPrice +
+                ", maxParticipants=" + maxParticipants +
+                '}';
     }
 }

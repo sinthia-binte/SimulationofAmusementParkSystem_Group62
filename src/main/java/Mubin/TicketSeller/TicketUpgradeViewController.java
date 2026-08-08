@@ -1,33 +1,48 @@
 package Mubin.TicketSeller;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class TicketUpgradeViewController {
-    @javafx.fxml.FXML
-    private ComboBox upgradeOptionComboBox;
-    @javafx.fxml.FXML
-    private Label priceDifferenceLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField ticketNoTF;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> upgradeOptionComboBox;
+
+    @FXML
+    private Label priceDifferenceLabel;
+
+    @FXML
     private Label upgradeConfirmationLabel;
 
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void retrieveTicketButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void retrieveTicketButtonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void adjustPaymentBjuttonOA(ActionEvent actionEvent) {
+
+    @FXML
+    public void adjustPaymentBjuttonOA(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "TicketSellerDashboardView.fxml", "User Dashboard");
     }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
+    }
+
 }

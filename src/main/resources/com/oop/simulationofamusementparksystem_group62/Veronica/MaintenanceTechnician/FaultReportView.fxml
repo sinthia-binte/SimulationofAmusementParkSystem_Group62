@@ -7,30 +7,69 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="650" prefWidth="900" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.MaintenanceTechnician.FaultReportController">
+<AnchorPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.MaintenanceTechnician.FaultReportController">
+
     <children>
-        <Label layoutX="300" layoutY="20" style="-fx-font-size:24px; -fx-font-weight:bold;" text="Ride Fault Reporting" />
-        <Label layoutX="40" layoutY="80" text="Ride / Equipment ID" />
-        <ComboBox fx:id="RideCB" layoutX="180" layoutY="75" prefWidth="250" />
-        <Label layoutX="40" layoutY="130" text="Equipment Name" />
-        <TextField fx:id="EquipmentNameTF" editable="false" layoutX="180" layoutY="125" prefWidth="250" />
-        <Label layoutX="40" layoutY="180" text="Equipment History" />
-        <TextArea fx:id="EquipmentHistoryTA" editable="false" layoutX="180" layoutY="175" prefHeight="90" prefWidth="300" />
-        <Label layoutX="40" layoutY="300" text="Fault Description" />
-        <TextArea fx:id="FaultDescriptionTA" layoutX="180" layoutY="295" prefHeight="80" prefWidth="300" />
-        <Label layoutX="40" layoutY="400" text="Severity" />
-        <ComboBox fx:id="SeverityCB" layoutX="180" layoutY="395" prefWidth="200" />
-        <Label layoutX="40" layoutY="450" text="Observed Issue" />
-        <TextArea fx:id="ObservedIssueTA" layoutX="180" layoutY="445" prefHeight="80" prefWidth="300" />
-        <Label layoutX="550" layoutY="80" text="Report Review" />
-        <TextArea fx:id="ReviewTA" editable="false" layoutX="550" layoutY="110" prefHeight="180" prefWidth="280" />
-        <Label layoutX="550" layoutY="330" text="Fault Report ID" />
-        <TextField fx:id="FaultReportIDTF" editable="false" layoutX="550" layoutY="360" prefWidth="280" />
-        <Label layoutX="550" layoutY="420" text="Supervisor Notification" />
-        <TextArea fx:id="NotificationTA" editable="false" layoutX="550" layoutY="450" prefHeight="80" prefWidth="280" />
-        <Button layoutX="180" layoutY="580" onAction="#reviewReportOA" prefWidth="140" text="Review Report" />
-        <Button layoutX="350" layoutY="580" onAction="#submitReportOA" prefWidth="140" text="Submit Report" />
-        <Button layoutX="520" layoutY="580" onAction="#clearFormOA" prefWidth="100" text="Clear" />
-      <Button layoutX="699.0" layoutY="580.0" mnemonicParsing="false" onAction="#BackToDashBoardOA" prefHeight="26.0" prefWidth="122.0" text="Back" />
+
+        <Label layoutX="300.0" layoutY="20.0" style="-fx-font-size:24px; -fx-font-weight:bold;" text="Ride Fault Reporting" />
+
+
+        <Label layoutX="40.0" layoutY="80.0" text="Ride / Equipment ID" />
+
+        <ComboBox fx:id="RideCB" layoutX="180.0" layoutY="75.0" onAction="#loadRideDetailsOA" prefWidth="250.0" />
+
+
+        <Label layoutX="40.0" layoutY="130.0" text="Equipment Name" />
+
+        <TextField fx:id="EquipmentNameTF" editable="false" layoutX="180.0" layoutY="125.0" prefWidth="250.0" />
+
+
+        <Label layoutX="40.0" layoutY="180.0" text="Equipment History" />
+
+        <TextArea fx:id="EquipmentHistoryTF" editable="false" layoutX="180.0" layoutY="175.0" prefHeight="90.0" prefWidth="300.0" wrapText="true" />
+
+
+        <Label layoutX="40.0" layoutY="300.0" text="Fault Description" />
+
+        <TextArea fx:id="FaultDescriptionTA" layoutX="180.0" layoutY="295.0" prefHeight="80.0" prefWidth="300.0" wrapText="true" />
+
+
+        <Label layoutX="40.0" layoutY="400.0" text="Severity" />
+
+        <ComboBox fx:id="SeverityCB" layoutX="180.0" layoutY="395.0" prefWidth="200.0" />
+
+
+        <Label layoutX="40.0" layoutY="450.0" text="Observed Issue" />
+
+        <TextArea fx:id="ObservedIssueTA" layoutX="180.0" layoutY="445.0" prefHeight="80.0" prefWidth="300.0" wrapText="true" />
+
+
+        <Label layoutX="550.0" layoutY="80.0" text="Report Review" />
+
+        <TextArea fx:id="ReviewTA" editable="false" layoutX="550.0" layoutY="110.0" prefHeight="180.0" prefWidth="280.0" wrapText="true" />
+
+
+        <Label layoutX="550.0" layoutY="330.0" text="Fault Report ID" />
+
+        <TextField fx:id="FaultReportIDTF" editable="false" layoutX="550.0" layoutY="360.0" prefWidth="280.0" />
+
+
+        <Label layoutX="550.0" layoutY="420.0" text="Supervisor Notification" />
+
+        <TextArea fx:id="NotificationTA" editable="false" layoutX="550.0" layoutY="450.0" prefHeight="80.0" prefWidth="280.0" wrapText="true" />
+
+
+        <Button layoutX="180.0" layoutY="580.0" onAction="#reviewReportOA" prefWidth="140.0" text="Review Report" />
+
+
+        <Button layoutX="350.0" layoutY="580.0" onAction="#submitReportOA" prefWidth="140.0" text="Submit Report" />
+
+
+        <Button layoutX="520.0" layoutY="580.0" onAction="#clearFormOA" prefWidth="100.0" text="Clear" />
+
+
+        <Button layoutX="700.0" layoutY="580.0" onAction="#BackToDashBoardOA" prefWidth="120.0" text="Back" />
+
     </children>
+
 </AnchorPane>

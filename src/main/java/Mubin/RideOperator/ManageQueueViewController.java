@@ -1,54 +1,45 @@
 package Mubin.RideOperator;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class ManageQueueViewController
-{
-    @javafx.fxml.FXML
+
+public class ManageQueueViewController {
+
+    @FXML
     private Label queueLengthLabel;
-    @javafx.fxml.FXML
-    private Label confirmationLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label waitTimeLabel;
 
-    @javafx.fxml.FXML
+    @FXML
+    private Label confirmationLabel;
+
+    @FXML
     public void initialize() {
     }
 
-    @Deprecated
-    public void updateWaitTimeMQS(ActionEvent actionEvent) {
+    @FXML
+    public void loadQueueStatusOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void backToDashboardMQS(ActionEvent actionEvent) {
+    @FXML
+    public void requestCrowdControlOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void requestCrowdControlMQS(ActionEvent actionEvent) {
+    @FXML
+    public void addWaitTimeOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void loadQueueStatusMQS(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "RideOperatorDashboardView.fxml", "User Dashboard");
     }
 
-    @javafx.fxml.FXML
-    public void requestCrowdControlOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void backToDashboardOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void addWaitTimeOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void logOutOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void loadQueueStatusOA(ActionEvent actionEvent) {
+    @FXML
+    public void logOutOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

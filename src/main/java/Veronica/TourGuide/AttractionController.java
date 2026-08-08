@@ -33,28 +33,22 @@ public class AttractionController {
     public void initialize() {
 
         attractionList.add(new Attraction(
-                1,
-                "Roller Coaster",
+                1, "Roller Coaster",
                 "Zone A",
                 "High speed thrilling ride",
-                "10:00 AM - 8:00 PM"
-        ));
-
+                "10:00 AM - 8:00 PM"));
         attractionList.add(new Attraction(
                 2,
                 "Water Park",
                 "Zone B",
                 "Water entertainment area",
-                "9:00 AM - 7:00 PM"
-        ));
-
+                "9:00 AM - 7:00 PM"));
         attractionList.add(new Attraction(
                 3,
                 "Ferris Wheel",
                 "Zone C",
                 "Large observation wheel",
-                "11:00 AM - 9:00 PM"
-        ));
+                "11:00 AM - 9:00 PM"));
     }
 
     @FXML
@@ -69,7 +63,6 @@ public class AttractionController {
                 LocationTF.setText(a.getLocation());
                 VisitingTimeTF.setText(a.getVisitingTime());
                 DescriptionTA.setText(a.getDescription());
-
                 found = true;
                 break;
             }
