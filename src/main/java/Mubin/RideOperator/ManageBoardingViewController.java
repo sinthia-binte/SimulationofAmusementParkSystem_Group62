@@ -1,26 +1,35 @@
 package Mubin.RideOperator;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
+import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+
 public class ManageBoardingViewController {
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField guestCountField;
 
-    @javafx.fxml.FXML
-    public void backToDashboardMBS(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void openQueueGateMBS(ActionEvent actionEvent) {
+    @FXML
+    public void openQueueGateMBS(ActionEvent event) {
     }
 
-    @Deprecated
-    public void finalSafetySweepMBS(ActionEvent actionEvent) {
+    @FXML
+    public void confirmBoardingMBS(ActionEvent event) {
     }
 
-    @javafx.fxml.FXML
-    public void confirmBoardingMBS(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardMBS(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "RideOperatorDashboardView.fxml", "User Dashboard");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

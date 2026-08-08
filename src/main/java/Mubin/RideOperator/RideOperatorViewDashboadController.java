@@ -1,42 +1,58 @@
 package Mubin.RideOperator;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
-public class RideOperatorViewDashboadController
-{
-    @javafx.fxml.FXML
+
+public class RideOperatorViewDashboadController {
+
+    @FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void manageRideCycleOA(ActionEvent actionEvent) {
+    @FXML
+    public void operateRideOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "OperateRideView.fxml", "Operate Ride");
     }
 
-    @javafx.fxml.FXML
-    public void enforceRestrictionsOA(ActionEvent actionEvent) {
+    @FXML
+    public void manageBoardingOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ManageBoardingView.fxml", "Manage Boarding");
     }
 
-    @javafx.fxml.FXML
-    public void inspectRideOA(ActionEvent actionEvent) {
+    @FXML
+    public void manageRideCycleOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ManageRideCycleView.fxml", "Manage Ride Cycle");
     }
 
-    @javafx.fxml.FXML
-    public void reportIncidentOA(ActionEvent actionEvent) {
+    @FXML
+    public void viewScheduleButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ViewScheduleView.fxml", "View Schedule");
     }
 
-    @javafx.fxml.FXML
-    public void viewScheduleButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void reportIncidentOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ReportIncidentView.fxml", "Report Incident");
     }
 
-    @javafx.fxml.FXML
-    public void operateRideOA(ActionEvent actionEvent) {
+    @FXML
+    public void enforceRestrictionsOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "EnforceRestrictionsView.fxml", "Enforce Restrictions");
     }
 
-    @javafx.fxml.FXML
-    public void manageQueueOA(ActionEvent actionEvent) {
+    @FXML
+    public void inspectRideOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "InspectView.fxml", "Inspect Ride");
     }
 
-    @javafx.fxml.FXML
-    public void manageBoardingOA(ActionEvent actionEvent) {
+    @FXML
+    public void manageQueueOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "ManageQueueView.fxml", "Manage Queue");
+    }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }

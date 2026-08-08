@@ -1,55 +1,39 @@
 package Mubin.RideOperator;
 
+import Mubin.SceneSwitcher;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
+import javafx.fxml.FXML;
+
 
 public class ManageRideCycleViewController {
 
-    @Deprecated
-    public void inspectSeatsMRCS(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
     }
 
-    @Deprecated
-    public void backToDashboardMRCS(ActionEvent actionEvent) {
+    @FXML
+    public void confirmStopButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void releaseRestraintsMRCS(ActionEvent actionEvent) {
+    @FXML
+    public void releaseRestraintsButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void assistExitMRCS(ActionEvent actionEvent) {
+    @FXML
+    public void guestExitOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void confirmStopMRCS(ActionEvent actionEvent) {
+    @FXML
+    public void confirmReadyButtonOA(ActionEvent event) {
     }
 
-    @Deprecated
-    public void confirmReadyMRCS(ActionEvent actionEvent) {
+    @FXML
+    public void backToDashboardButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "RideOperatorDashboardView.fxml", "User Dashboard");
     }
 
-    @javafx.fxml.FXML
-    public void guestExitOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void releaseRestraintsButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void backToDashboardButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void confirmStopButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void confirmReadyButtonOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void logOutButtonOA(ActionEvent actionEvent) {
+    @FXML
+    public void logOutButtonOA(ActionEvent event) {
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/LoginView.fxml", "log out");
     }
 }
