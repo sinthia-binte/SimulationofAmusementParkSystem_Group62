@@ -86,7 +86,7 @@ public class TourSessionViewController {
         }
         ArrayList<TourSession> tourList = BinaryFileUtil.readList("TourGuide.bin");
 
-        String tourSessionId = "TS" + (tourList.size() + 1);
+        String tourSessionId = "TS";
 
         TourSession tour = new TourSession(tourSessionId,
                         TitleTF.getText(), DescriptionTF.getText(), LocationTF.getText(),
@@ -112,41 +112,28 @@ public class TourSessionViewController {
     public void previewButtonOA(ActionEvent event) {
 
 
-        PreviewTA.setText(
-
-                "Tour Title: "
+        PreviewTA.setText("Tour Title: "
                         + TitleTF.getText()
-
                         + "\nCategory: "
                         + CategoryCB.getValue()
-
                         + "\nDate: "
                         + DateDP.getValue()
-
                         + "\nStart Time: "
                         + StartTimeTF.getText()
-
                         + "\nEnd Time: "
                         + EndTimeTF.getText()
-
                         + "\nDuration: "
                         + DurationCB.getValue()
-
                         + "\nLocation: "
                         + LocationTF.getText()
-
                         + "\nMeeting Point: "
                         + MeetingPointTF.getText()
-
                         + "\nCapacity: "
                         + CapacityTF.getText()
-
                         + "\nPrice: "
                         + PriceTF.getText()
-
                         + "\nDescription: "
-                        + DescriptionTF.getText()
-        );
+                        + DescriptionTF.getText());
 
     }
 
@@ -154,7 +141,7 @@ public class TourSessionViewController {
 
     @FXML
     public void BackToDashboardOA(ActionEvent event) {
-        SceneSwitcher.switchScene(event, "/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/TourGuide/TourGuideDashBoardView.fxml", "Tour Guide Dashboard");
 
     }
 

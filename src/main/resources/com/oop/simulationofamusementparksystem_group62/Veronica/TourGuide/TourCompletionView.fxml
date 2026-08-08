@@ -42,7 +42,5 @@
         <Label fx:id="ReviewLabel" layoutX="550" layoutY="150" prefHeight="180" prefWidth="300" wrapText="true" />
 
         <Label fx:id="ConfirmationLabel" layoutX="200" layoutY="500" prefHeight="80" prefWidth="400" wrapText="true" />
-
     </children>
-
 </AnchorPane>

@@ -140,6 +140,6 @@ public class EquipmentStatusController {
     @FXML
     public void backToDashboardOA(ActionEvent event) {
 
-        SceneSwitcher.switchScene(event, "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
     }
 }

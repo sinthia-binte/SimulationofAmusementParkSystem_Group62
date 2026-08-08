@@ -8,45 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Veronica.TourGuide.NotificationController">
-
-
     <children>
-
-
         <Label layoutX="250" layoutY="30" style="-fx-font-size:24px; -fx-font-weight:bold;" text="Ride Closures &amp; Attraction Updates" />
         <Label layoutX="50" layoutY="100" text="Select Update" />
-
-
         <ComboBox fx:id="NotificationCB" layoutX="170" layoutY="95" onAction="#viewNotificationOA" prefWidth="300" />
-
         <Label layoutX="50" layoutY="170" text="Title" />
-
         <TextField fx:id="TitleTF" editable="false" layoutX="170" layoutY="165" prefWidth="300" />
-
-
-
         <Label layoutX="50" layoutY="220" text="Attraction" />
-
-
         <TextField fx:id="AttractionTF" editable="false" layoutX="170" layoutY="215" prefWidth="300" />
-
-
-
-
         <Label layoutX="50" layoutY="270" text="Description" />
-
-
         <TextArea fx:id="DescriptionTA" editable="false" layoutX="170" layoutY="265" prefHeight="120" prefWidth="450" />
-
         <Label layoutX="50" layoutY="430" text="Status" />
-
         <TextField fx:id="StatusTF" editable="false" layoutX="170" layoutY="425" prefWidth="200" />
-
         <Button layoutX="170" layoutY="480" onAction="#acknowledgeOA" prefWidth="180" text="Acknowledge Update" />
       <Label fx:id="ConfirmationLabel" layoutX="466.0" layoutY="420.0" prefHeight="120.0" prefWidth="308.0" />
       <Button layoutX="709.0" layoutY="88.0" mnemonicParsing="false" onAction="#BackToDashboardOA" prefHeight="26.0" prefWidth="138.0" text="Back" />
-
     </children>
-
-
 </AnchorPane>

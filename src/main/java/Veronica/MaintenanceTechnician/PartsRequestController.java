@@ -1,6 +1,7 @@
 package Veronica.MaintenanceTechnician;
 
 import Veronica.BinaryFileUtil;
+import Veronica.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -139,5 +140,8 @@ public class PartsRequestController {
 
     @FXML
     public void BackOA(ActionEvent actionEvent) {
+
+        SceneSwitcher.switchScene(actionEvent, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
+
     }
 }

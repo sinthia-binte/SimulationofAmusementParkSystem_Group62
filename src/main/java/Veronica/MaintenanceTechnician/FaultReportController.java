@@ -142,6 +142,6 @@ public class FaultReportController {
     @FXML
     public void BackToDashBoardOA(ActionEvent event) {
 
-        SceneSwitcher.switchScene(event, "/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
+        SceneSwitcher.switchScene(event, "/com/oop/simulationofamusementparksystem_group62/Veronica/MaintenanceTechnician/MaintenanceTechnicianDashboard.fxml", "Maintenance Technician Dashboard");
     }
 }
