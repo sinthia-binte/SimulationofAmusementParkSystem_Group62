@@ -12,11 +12,6 @@ public class TourGuideDashboardController {
     private Label welcomeLabel;
 
 
-    public void setLoggedInGuide(TourGuide guide) {
-        this.loggedInGuide = guide;
-        if (guide != null) {
-            welcomeLabel.setText("Welcome, " + guide.getName());}
-    }
     @FXML
     public void initialize() {
     }
