@@ -191,12 +191,8 @@ public class LoginViewController {
                 Node node = loader.load();
                 mainPane.getChildren().setAll(node);
                 return;
-
             }
-
         }
-
-
         else if(roleCB.getValue().equals("Event Coordinator")){
             if(userIdTF.getText().equals("EC001") && passwordPF.getText().equals("4444")){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/EventCoordinator/EventCoordinatorDashboard.fxml"));

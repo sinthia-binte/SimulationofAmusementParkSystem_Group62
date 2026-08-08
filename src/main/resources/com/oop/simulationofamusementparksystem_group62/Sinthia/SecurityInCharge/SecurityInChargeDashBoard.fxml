@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.SecurityInCharge.SecurityInChargeDashBoardViewController">
+
+    <children>
+
+        <Label fx:id="titleLabel" layoutX="250.0" layoutY="25.0" text="Security In-Charge Dashboard" />
+
+        <Label layoutX="50.0" layoutY="85.0" text="Select Goal:" />
+
+        <TextField fx:id="goalTF" layoutX="130.0" layoutY="80.0" prefWidth="250.0" promptText="Enter goal number" />
+
+        <Button layoutX="50.0" layoutY="140.0" mnemonicParsing="false" onAction="#goal1ButtonOA" prefWidth="280.0" text="Goal 1 - Security Monitoring" />
+
+        <Button layoutX="400.0" layoutY="140.0" mnemonicParsing="false" onAction="#goal2ButtonOA" prefWidth="280.0" text="Goal 2 - Security Threat Management" />
+
+        <Button layoutX="50.0" layoutY="200.0" mnemonicParsing="false" onAction="#goal3ButtonOA" prefWidth="280.0" text="Goal 3 - Emergency Response" />
+
+        <Button layoutX="400.0" layoutY="200.0" mnemonicParsing="false" onAction="#goal4ButtonOA" prefWidth="280.0" text="Goal 4 - Security Report" />
+
+        <Button layoutX="50.0" layoutY="260.0" mnemonicParsing="false" onAction="#goal5ButtonOA" prefWidth="280.0" text="Goal 5 - Safety Compliance" />
+
+        <Button layoutX="400.0" layoutY="260.0" mnemonicParsing="false" onAction="#goal6ButtonOA" prefWidth="280.0" text="Goal 6 - Registration" />
+
+        <Button layoutX="50.0" layoutY="320.0" mnemonicParsing="false" onAction="#goal7ButtonOA" prefWidth="280.0" text="Goal 7 - Security Staff Training" />
+
+        <Button layoutX="400.0" layoutY="320.0" mnemonicParsing="false" onAction="#goal8ButtonOA" prefWidth="280.0" text="Goal 8 - Guest Security &amp; Service" />
+
+        <Button layoutX="300.0" layoutY="400.0" mnemonicParsing="false" onAction="#openGoalOA" text="Open Goal" />
+
+    </children>
+
+</AnchorPane>

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.EventCoordinator.EventCoordinatorViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sinthia.EventCoordinator.EventCoordinatorViewController">
    <children>
       <Label fx:id="eventCoordinatorLabel" layoutX="169.0" layoutY="21.0" prefHeight="54.0" prefWidth="292.0" style="-fx-background-color: Pink;" text="EventCoordinator">
          <font>
@@ -18,27 +16,27 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="279.0" mnemonicParsing="false" onAction="#announcementOA" prefHeight="38.0" prefWidth="147.0" text="Announcement">
+      <Button layoutX="226.0" layoutY="279.0" mnemonicParsing="false" onAction="#announcementOA" prefHeight="38.0" prefWidth="147.0" text="Training">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="230.0" mnemonicParsing="false" onAction="#resourceOA" prefHeight="31.0" prefWidth="147.0" text="Resource">
+      <Button layoutX="226.0" layoutY="230.0" mnemonicParsing="false" onAction="#resourceOA" prefHeight="31.0" prefWidth="147.0" text="Survillance">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="223.0" layoutY="180.0" mnemonicParsing="false" onAction="#staffAssignmentOA" prefHeight="40.0" prefWidth="154.0" text="StaffAssignment">
+      <Button layoutX="223.0" layoutY="180.0" mnemonicParsing="false" onAction="#staffAssignmentOA" prefHeight="40.0" prefWidth="154.0" text="Incident">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="131.0" mnemonicParsing="false" onAction="#registrationOA" prefHeight="31.0" prefWidth="147.0" text="Registration">
+      <Button layoutX="226.0" layoutY="131.0" mnemonicParsing="false" onAction="#registrationOA" prefHeight="31.0" prefWidth="147.0" text="Access Control">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="335.0" mnemonicParsing="false" onAction="#eventReportOA" prefHeight="38.0" prefWidth="147.0" text="EventReport">
+      <Button layoutX="213.0" layoutY="333.0" mnemonicParsing="false" onAction="#eventReportOA" prefHeight="40.0" prefWidth="174.0" text="EventCoordinator">
          <font>
             <Font size="18.0" />
          </font>
