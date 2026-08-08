@@ -1,5 +1,10 @@
 package Zaima.FinanceOfficer;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+
 public class EmployeeSalariesController {
     @javafx.fxml.FXML
     private TableColumn DeductionTC;
@@ -19,6 +24,11 @@ public class EmployeeSalariesController {
     private TextField BonusTF;
     @javafx.fxml.FXML
     private Label EmployeeSalariesLabel;
+    @javafx.fxml.FXML
+    public void initialize() {
+
+        EmployeeSalariesLabel.setText("Employee Salaries");
+    }
 
     @javafx.fxml.FXML
     public void CalculateOA(ActionEvent actionEvent) {

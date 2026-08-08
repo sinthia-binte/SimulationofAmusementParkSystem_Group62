@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zaima.ItOfficer.RideandTicketMonitoringViewController ">
    <children>
       <Label fx:id="RideandTicketMonitoringLabel" layoutX="171.0" layoutY="14.0" prefHeight="42.0" prefWidth="233.0" text="Ride and Ticket Monitoring " underline="true">
@@ -16,7 +15,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="6.0" layoutY="69.0" prefHeight="234.0" prefWidth="588.0">
+      <TableView fx:id="TableTV" layoutX="6.0" layoutY="69.0" prefHeight="234.0" prefWidth="588.0">
         <columns>
           <TableColumn fx:id="RideTC" prefWidth="188.800048828125" text="Ride " />
           <TableColumn fx:id="RideStatusTC" prefWidth="118.39996337890625" text="Ride Status" />

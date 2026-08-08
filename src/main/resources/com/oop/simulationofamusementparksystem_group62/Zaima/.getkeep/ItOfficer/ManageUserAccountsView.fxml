@@ -18,7 +18,7 @@
          </font>
       </Label>
       <TextField fx:id="UserNameTF" layoutX="525.0" layoutY="48.0" />
-      <TableView layoutX="14.0" layoutY="209.0" prefHeight="288.0" prefWidth="689.0">
+      <TableView fx:id="TV" layoutX="14.0" layoutY="209.0" prefHeight="288.0" prefWidth="689.0">
         <columns>
           <TableColumn fx:id="UserIDTC" prefWidth="105.60000801086426" text="UserID" />
             <TableColumn fx:id="RoleTC" prefWidth="88.80007934570312" text="Role" />
